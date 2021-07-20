@@ -1,0 +1,17 @@
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.maf
+*.mtc
+*.mtc*
+*.out
+*.run.xml
+*.synctex.gz
+*.tex.latexmain
+*.toc
+*.xdv
+.DS_store
+tests
