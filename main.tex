@@ -1,0 +1,355 @@
+%!TeX program = xelatex
+\documentclass[a4paper, 12pt, twoside]{book}
+\usepackage[top=2.5cm, bottom=3cm, left=2.25cm, right=1.75cm]{geometry}
+
+%%% Fonts because I'm a nerd
+\usepackage{setspace}
+\usepackage{amsmath}
+\def\myfont{1} % 0=MinionPro, 1=Times, 2=Libertine
+\usepackage[MnSymbol]{mathspec}
+\if\myfont0   % Minion Pro
+    \setstretch{1.025}
+    \setlength{\parskip}{5pt}
+    \setlength{\parindent}{15pt}
+    \setmainfont[
+        Path = /Users/keruzore/Documents/fonts/,
+        BoldFont={Minion Pro Bold.otf},
+        ItalicFont={Minion Pro Italic.ttf},
+        BoldItalicFont={Minion Pro Bold Italic.ttf},
+        Scale=MatchLowercase
+    ]{Minion Pro Regular.otf}
+    \setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Minion Pro}
+    \setmathrm[]{Minion Pro}
+\else
+    \setstretch{1.02}
+    \setlength{\parskip}{10pt}
+    \setlength{\parindent}{15pt}
+    \if\myfont1   % Times/STIX/Termes
+        \setmainfont{TeX Gyre Termes}
+        \setmathsfont(Digits,Latin)[Scale=MatchLowercase]{TeX Gyre Termes}
+        \setmathsfont(Greek)[Scale=MatchLowercase]{STIXGeneral}
+        \setmathrm[]{STIXGeneral}
+        \setmathcal[]{TeX Gyre Chorus}
+    \else\if\myfont2 % Linux Libertine
+        \setmainfont{Linux Libertine O}
+        \setmathsfont(Digits,Latin,Greek)[Scale=MatchLowercase]{Linux Libertine O}
+        \setmathrm[]{Linux Libertine O}
+    \fi
+\fi
+% Make digits be in correct font in URLs (this SUCKS)
+\makeatletter
+    \DeclareMathSymbol{0}{\mathalpha}{\eu@DigitsArabic@symfont}{`0}
+    \DeclareMathSymbol{1}{\mathalpha}{\eu@DigitsArabic@symfont}{`1}
+    \DeclareMathSymbol{2}{\mathalpha}{\eu@DigitsArabic@symfont}{`2}
+    \DeclareMathSymbol{3}{\mathalpha}{\eu@DigitsArabic@symfont}{`3}
+    \DeclareMathSymbol{4}{\mathalpha}{\eu@DigitsArabic@symfont}{`4}
+    \DeclareMathSymbol{5}{\mathalpha}{\eu@DigitsArabic@symfont}{`5}
+    \DeclareMathSymbol{6}{\mathalpha}{\eu@DigitsArabic@symfont}{`6}
+    \DeclareMathSymbol{7}{\mathalpha}{\eu@DigitsArabic@symfont}{`7}
+    \DeclareMathSymbol{8}{\mathalpha}{\eu@DigitsArabic@symfont}{`8}
+    \DeclareMathSymbol{9}{\mathalpha}{\eu@DigitsArabic@symfont}{`9}
+\makeatother
+
+%%% Language options
+\usepackage{polyglossia}
+\setmainlanguage{french}
+\usepackage{csquotes}
+
+%%% Fix apostrophe kerning in MinionPro
+\if\myfont0
+    \makeatletter
+    \edef\qu@te{\string'} % save a copy of the ordinary apostrophe
+    \catcode`'=\active    % make ' active
+    \begingroup
+    \obeylines\obeyspaces%
+    \gdef\@resetactivechars{%
+    \def^^M{\@activechar@info{EOL}\space}%
+    \def {\@activechar@info{space}\space}%
+    }%
+    \endgroup
+    \providecommand\texorpdfstring[2]{#1}
+    \protected\def'{\texorpdfstring{\texqu@te}{\string'}}
+    \@ifpackagewith{inputenc}{utf8}
+      {\DeclareUnicodeCharacter{2019}{\texqu@te}}{}
+    \def\texqu@te{\relax
+      \ifmmode
+        \expandafter^\expandafter\bgroup\expandafter\prim@s
+      \else
+        \expandafter\futurelet\expandafter\@let@token\expandafter\qu@t@
+      \fi}
+    \def\qu@t@{%
+      \ifx'\@let@token
+        \qu@te\qu@te\expandafter\@gobble
+      \else
+        {\kern0em}\qu@te{\kern0em}\penalty\@M\hskip\expandafter\z@skip
+      \fi}
+    \scantokens\expandafter{%
+      \expandafter\def\expandafter\pr@m@s\expandafter{\pr@m@s}}
+    \makeatother
+\fi
+
+%%% Colors because I'm a nerd
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks, allcolors=Maroon]{hyperref}
+
+%%% Good looking sections&chapters
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalsize\huge\color{black}}%
+  {\flushright\huge\color{Maroon}%
+   \MakeUppercase{\chaptertitlename}\hspace{1ex}%
+   {\bfseries\fontsize{40}{40}\selectfont\thechapter}}%
+  {10 pt}%
+  {\flushright\bfseries\Huge}%
+\titlespacing\section{0pt}{12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
+
+%%% Mini table of contents at the beginning of chapters
+\usepackage{minitoc}
+\setcounter{minitocdepth}{2}
+\setcounter{tocdepth}{2}
+
+% Remove bottom page number from ALL pages
+\makeatletter
+  \let\ps@plain\ps@empty
+\makeatother
+
+%%% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE]{\rightmark}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RO,LE]{\thepage}
+\fancyfoot[C]{}
+% Work with chapter*, from https://tex.stackexchange.com/questions/246693/fancyhdr-and-chapter
+%\renewcommand{\chaptermark}[1]{%
+%  \markboth{%
+%    \ifnum\value{chapter}>0
+%      \thechapter.\space
+%    \fi
+%    #1%
+%  }{}%
+%}
+
+%%% Misc
+\usepackage{graphicx}               % figures
+\usepackage[font=footnotesize]{caption}
+\usepackage[rightcaption]{sidecap}  % caption on side
+\sidecaptionvpos{figure}{c}
+\usepackage{afterpage}              % Force next page on figures
+%\usepackage{parskip}                % Set length between paragraphs
+\usepackage{booktabs}               % better table rules
+\usepackage{tabularx}               % control widths
+\usepackage{multirow}               % multi-row cells in tables
+\usepackage{enumitem}               % better lists
+\usepackage{lipsum}                 % Latin placeholder text
+\usepackage{hyperref}               % hyperlinks
+\usepackage{afterpage}
+\usepackage{cleveref}
+\usepackage[toc,page]{appendix}     % Appendices
+\usepackage{stackengine}            % Stack figures
+\usepackage{pdfpages}               % Add ADUM cover
+\usepackage{scrextend}              % To make function forcing even last page
+
+%%% Itemize bullet
+\renewcommand{\labelitemi}{--}
+
+%%% Clear bib
+\usepackage[%
+    backend=biber,
+    style=numeric,
+    citestyle=numeric-comp,
+    sorting=none,
+    giveninits=true,
+    mincitenames=1, % only cite {min} authors et al. when
+    maxcitenames=2, % there are more than {max} total
+]{biblatex}
+\renewbibmacro{in:}{,}
+% clickable links without full URL
+\DefineBibliographyStrings{french}{url = {link}}
+\DeclareFieldFormat{url}{%
+  \ifhyperref
+    {\href{#1}{Lien}}
+    {\url{#1}}
+}
+\DefineBibliographyStrings{french}{phdthesis = {Thèse de doctorat}}
+%
+\addbibresource{phd.bib}
+\AtEveryBibitem{%
+    %\clearfield{url}%
+    \clearfield{urlyear}%
+    \clearlist{language}%
+    \clearfield{month}%
+    \clearfield{day}%
+    \clearfield{issn}%
+    \clearfield{doi}%
+    \clearfield{series}%
+    %\clearfield{pages}%
+    \clearfield{eid}%
+    %\clearfield{eprintclass}%
+    \clearlist{publisher}%
+    \clearfield{note}
+}
+
+% Italicize et al.
+\renewbibmacro*{name:andothers}{% Based on name:andothers from biblatex.def
+  \ifboolexpr{
+    test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+    and
+    test \ifmorenames
+  }
+    {\ifnumgreater{\value{liststop}}{1}
+       {\finalandcomma}
+       {}%
+     \andothersdelim\bibstring[\emph]{andothers}}
+    {}}
+
+% Remove weird random smallcaps coming from french (why?)
+\addto\captionsfrench{\def\figurename{Figure}}
+\addto\captionsfrench{\def\tablename{Table}}
+\DefineBibliographyExtras{french}{\restorecommand\mkbibnamefamily} % author names in bib
+
+%%% Ensure last page has even number
+\newcommand{\OpenNewPageIfNeeded}{%
+  \ifthispageodd{%
+    \newpage
+    \null
+  }{%
+  }%
+}
+
+%%% New commands
+\renewcommand{\d}{\mathrm{d}}
+%\newcommand{\ln}{\mathrm{ln}}
+\newcommand{\da}{\mathcal{D}_\textsc{a}}
+\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdvsq}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\unit}[1]{\rm #1}
+\newcommand{\xt}{\vec{x}, t}
+\newcommand{\ym}{{Y|M}}
+\newcommand{\yz}{{Y|Z}}
+\newcommand{\e}{{\rm e}}
+\newcommand{\eg}{voir par exemple}
+\newcommand{\act}{ACT-CL~J0215.4+0030} % ultimate laziness
+\newcommand{\prior}{\textit{a priori}} % ultimate laziness
+\newcommand{\addref}{{\color{Red}\bfseries [ADD REF]}}
+\newcommand{\todo}[1]{{\color{Red}\bfseries [TODO: #1]}}
+\newcommand{\myciteauthor}[1]{\citeauthor{#1} \cite{#1}}
+\newcommand{\myfullcite}[1]{%
+    \citeauthor{#1}, %
+    \citefield{#1}{journaltitle} \citefield{#1}{volume}, \citefield{#1}{pages}, %
+    \citeyear{#1} \cite{#1}%
+}
+\newcommand{\mypageref}[1]{\ref{#1} (page \pageref{#1})}
+
+
+%%% Begin
+\title{Cosmologie avec des amas de galaxies à partir d'observations de l'effet Sunyaev-Zeldovich avec la caméra NIKA2}
+\author{Florian \textsc{K\'eruzor\'e}}
+\date{}
+
+\begin{document}
+
+\begin{titlepage}
+    \includepdf[pages={1}]{couverture.pdf}
+\end{titlepage}
+
+\phantom{ }
+\vfill
+{\footnotesize \noindent
+    Image de couverture: toile cosmique dans la simulation Millenium,
+    crédit: Springel \textit{et al.} (2005) \cite{springel_simulations_2005}, \\
+    \url{https://wwwmpa.mpa-garching.mpg.de/galform/virgo/millennium/} \\
+    Télescope de 30 mètres de l'IRAM
+}
+
+\setlength{\parskip}{2.5pt}
+%\newpage
+\dominitoc[n]
+\tableofcontents
+\adjustmtc
+\setlength{\parskip}{5pt}
+
+% ==================================================================================== %
+
+\chapter*{Introduction}
+\label{chap:intro}
+\addcontentsline{toc}{chapter}{\nameref{chap:intro}}
+\markboth{}{\uppercase{Introduction}}
+\input{chap_intro.tex}
+
+% ------------------------------------------- %
+%\part{Cosmologie avec les amas de galaxies}
+
+\chapter{Évolution de l'Univers et des grandes structures}
+\label{chap:cosmo1}
+\minitoc
+\input{chap_cosmo.tex}
+
+\chapter{Sonder la cosmologie à l'aide d'amas de galaxies}
+\label{chap:amas}
+\minitoc
+\input{chap_amas.tex}
+
+% ------------------------------------------- %
+%\part{NIKA2 et son grand programme SZ}
+
+\chapter{NIKA2 et son Grand Programme SZ}
+\label{chap:nika2}
+\minitoc
+\input{chap_nk2.tex}
+
+% ------------------------------------------- %
+%\part{Exploitation des donn\'ees de NIKA2}
+
+\chapter{Construction de cartes de l'effet SZ avec NIKA2}
+\label{chap:decorr}
+\minitoc
+\input{chap_decorr.tex}
+
+\chapter{Pipeline pour la mesure des propriétés thermodynamique du milieu intra-amas}
+\chaptermark{Pipeline pour la mesure de profils de pression}
+\label{chap:panco}
+\minitoc
+\input{chap_panco.tex}
+
+\chapter{Mesure des propriétés thermodynamiques d'un amas distant de faible masse}
+\chaptermark{Propriétés thermodynamiques de l'amas \act}
+\label{chap:actj0215}
+\minitoc
+\input{chap_actj0215.tex}
+
+% ------------------------------------------- %
+%\part{Pr\'eparation \`a l'exploitation cosmologique du grand programme SZ de NIKA2}
+
+\chapter{La relation d'échelle SZ -- Masse}
+\label{chap:scaling}
+\minitoc
+\input{chap_scaling.tex}
+
+% ------------------------------------------- %
+\chapter*{Conclusions}
+\label{chap:conclu}
+\addcontentsline{toc}{chapter}{\nameref{chap:conclu}}
+\markboth{}{\uppercase{Conclusions}}
+\input{chap_conclu.tex}
+
+% ------------------------------------------- %
+\chapter*{Perspectives}
+\label{chap:persp}
+\addcontentsline{toc}{chapter}{\nameref{chap:persp}}
+\markboth{}{\uppercase{Perspectives}}
+\input{chap_persp.tex}
+
+% ==================================================================================== %
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+% ==================================================================================== %
+\clearpage
+\OpenNewPageIfNeeded
+\includepdf[pages={1}]{abstracts.pdf}
+
+\end{document}

@@ -1,0 +1,66 @@
+Ce manuscrit résume le travail effectué au cours de mes trois années de thèse, s'inscrivant dans le cadre général de la cosmologie observationnelle avec des amas de galaxies.
+Plus particulièrement, je me suis intéressé à l'utilisation de suivis d'amas pour mieux contraindre les outils nécessaires aux études cosmologiques, et mieux comprendre les systématiques affectant ces outils.
+Mon travail s'est concentré sur les axes de recherche suivants:
+\begin{itemize}[leftmargin=*]
+\setlength\itemsep{0pt}
+    \item L'analyse des données brutes de NIKA2 pour construire les cartes de l'effet SZ;
+    \item L'extraction des propriétés physiques d'un amas distant de faible masse à partir d'observations NIKA2 et \textit{XMM-Newton};
+    \item Le développement et la publication d'un logiciel permettant la mesure des propriétés thermodynamiques du milieu intra-amas à partir d'observations SZ;
+    \item L'étude de la relation d'échelle masse-observable dans le cas du grand programme SZ de NIKA2.
+\end{itemize}
+
+Je me suis tout d'abord intéressé au traitement des données brutes de NIKA2.
+Comme nous l'avons vu au chapitre \ref{chap:decorr}, la construction de cartes SZ à partir des données en temps n'est pas triviale, du fait de la structure complexe du bruit.
+En participant aux campagnes d'observation avec NIKA2, j'ai pu acquérir une compréhension des différentes sources de bruit dans les données brutes, de leur origine et de leurs caractéristiques.
+Cette compréhension m'a permis de maîtriser le processus de décorrélation et de pouvoir traiter des données NIKA2 de manière autonome.
+J'ai également pu participer à des études sur l'amélioration de ce processus, dont les résultats sont à l'heure actuelle très préliminaires, et qui ne sont pas présentés dans ce manuscrit.
+Enfin, j'ai développé le programme permettant de réduire les données NIKA2 des amas de galaxies du grand programme SZ.
+Ce programme utilise le \textit{pipeline} de la collaboration NIKA2 pour réaliser la décorrélation d'observations d'amas, et permet de calculer le spectre de puissance du bruit résiduel et la fonction de transfert.
+Ces deux grandeurs quantifient respectivement la structure et l'amplitude du bruit n'ayant pas été retiré par la décorrélation, et le filtrage subi par le signal au cours de cette procédure.
+Elles servent donc à la fois de critères pour juger la qualité de la décorrélation, mais aussi d'outils permettant de propager les biais et systématiques à l'extraction des propriétés physiques d'amas à partir des cartes de l'effet SZ.
+Ce programme est disponible pour la collaboration NIKA2, et est aujourd'hui systématiquement utilisé pour la réduction des données associées aux amas de galaxies du grand programme SZ.
+
+J'ai ensuite réalisé l'étude des propriétés physiques de l'un des amas de galaxies du grand programme SZ, constituant la deuxième étude d'un amas individuel du programme, et présentée dans le chapitre \ref{chap:actj0215}.
+J'ai choisi pour cette étude de combiner plusieurs difficultés, afin d'évaluer la qualité des contraintes pouvant être apportées sur la thermodynamique d'un amas à partir d'observations NIKA2 dans le pire des cas.
+D'une part, la qualité des données NIKA2 de cet amas est représentative de celle attendue pour les amas du grand programme SZ.
+D'autre part, cet amas fait partie des plus basses masses et des plus hauts redshifts de l'échantillon, en faisant une source compacte et faible.
+Enfin, le faible signal SZ de l'amas est fortement contaminé par la présence de galaxies submillimétriques dans le champ.
+Après avoir identifié les sources à partir de données du satellite \textit{Herschel}, j'ai développé le logiciel \texttt{PSTools}, permettant de calculer la distribution de probabilité du flux d'une source submillimétrique dans la bande à 150 GHz de NIKA2.
+Ce calcul repose sur un ajustement par MCMC du spectre de la source à partir de son flux mesuré par \textit{Herschel} et par NIKA2 à 260 GHz.
+Le logiciel \texttt{PSTools} est aujourd'hui disponible pour la collaboration NIKA2, et utilisé pour l'analyse des sources ponctuelles contaminant les observations d'amas du grand programme SZ.
+J'ai ensuite développé une extension du logiciel \texttt{PANCO}, développé par F. \myciteauthor{ruppin_cosmologie_2018}, afin de tenir compte de la présence de sources ponctuelles dans l'ajustement des propriétés thermodynamiques d'un amas.
+Cette approche permet d'ajuster jointement les propriétés thermodynamiques de l'amas et les sources ponctuelles, considérées comme des paramètres de nuisance, et donc de propager l'incertitude sur la contamination par des sources aux résultats finaux.
+J'ai donc pu obtenir une estimation du profil de pression de l'amas et des incertitudes associées. %, en accord avec une estimation antérieure réalisée à l'aide d'observations X par \textit{XMM-Newton}.
+En combinant les observations SZ et X, j'ai pu caractériser plus en détail les propriétés thermodynamiques de l'amas.
+Celui-ci se trouve dans un état dynamique perturbé, avec un cœur chaud, et possède une masse compatible avec celle estimée grâce à son signal SZ intégré et une relation d'échelle masse-observable.
+Les contraintes mises sur les propriétés thermodynamiques représentent une amélioration en précision par rapport aux contraintes antérieures, illustrant la puissance de la combinaison d'observations X et SZ à haute résolution, même dans le cas de cette source complexe.
+Cette étude est publiée dans \myfullcite{keruzore_exploiting_2020}.
+
+Alors que les observations NIKA2 des amas du grand programme SZ progressent, il est devenu capital de pouvoir disposer d'un moyen d'analyser les données NIKA2 rapidement, afin de pouvoir analyser des échantillons d'amas dans un temps limité.
+Au début de ma thèse, le goulot d'étranglement de l'analyse complète des données NIKA2 d'un amas, des données brutes aux propriétés thermodynamiques, était l'ajustement du profil de pression, réalisé par \texttt{PANCO}.
+J'ai donc développé le logiciel \texttt{\texttt{PANCO}2}, dont le but premier était de fournir à la collaboration un logiciel optimisé pour mesurer le profil de pression d'amas de galaxies à partir de cartes SZ.
+Ce logiciel, présenté au chapitre \ref{chap:panco}, permet de tenir compte des différents biais et systématiques caractéristiques des observations SZ, comme le filtrage du signal, la présence bruit corrélé résiduel, ou la contamination par des sources ponctuelles.
+\texttt{PANCO2} propose deux modélisations du profil de pression: le modèle gNFW, paramétrique et largement utilisé dans la littérature, et un modèle non-paramétrique.
+Ces modèles sont ajusté sur les données en utilisant un échantillonnage MCMC, qui permet ensuite de calculer des estimateurs et intervalles de confiance pour les propriétés physiques de l'amas.
+J'ai réalisé la validation de \texttt{PANCO2} sur des simulations, aussi bien analytiques qu'hydrodynamiques, et ai pu montrer que les contraintes apportées sur le profil de pression n'étaient pas biaisées.
+Au vu des performances de \texttt{PANCO2}, une généralisation du code est en cours pour pouvoir l'utiliser avec des données provenant de plusieurs instruments autres que NIKA2.
+Cette généralisation sera rendue publique, et accompagnée d'une publication présentant l'algorithme de \texttt{PANCO2} et sa validation.
+
+Enfin, j'ai pu travailler sur la relation d'échelle masse-observable dans le cadre du grand programme SZ.
+L'ajustement d'une telle relation est complexe, du fait du grand nombre de systématiques intervenants dans l'analyse.
+J'ai proposé d'utiliser un modèle bayésien hiérarchique pour l'ajustement, en utilisant la librairie \texttt{LIRA} \cite{sereno_bayesian_2016}.
+Cette approche permet de tenir compte d'un grand nombre d'effets systématiques présents dans l'analyse, des incertitudes corrélées sur les grandeurs mesurées aux effets de sélection, en passant par le biais et la dispersion de l'estimateur de masse utilisé.
+J'ai évalué la capacité de \texttt{LIRA} à tenir compte de ces sources d'erreur en utilisant des jeux de données simulés arbitraires.
+J'ai ensuite procédé à la validation de l'utilisation de cette méthode pour le grand programme SZ en mettant en place une procédure Monte Carlo de simulation d'échantillons réalistes du programme.
+Pour cela, un échantillon est généré suivant une fonction de masse, qui décrit la distribution théorique des amas dans l'Univers, puis une relation d'échelle fiducielle lui est appliquée.
+Un sous-échantillon d'amas est alors sélectionné de la même façon que le vrai échantillon du grand programme SZ, et utilisé pour ajuster la relation d'échelle et comparer le résultat à la relation fiducielle utilisée.
+Cette étude a permis de dresser plusieurs conclusions.
+Dans un premier temps, j'ai pu mettre en évidence un biais sur l'ordonnée à l'origine de la relation d'échelle dû à la fonction de sélection de l'échantillon, singulier par rapport aux biais de sélections habituellement rencontrés.
+Ce biais pourrait être négligeable ou significatif selon la valeur de la dispersion intrinsèque de la relation.
+Dans un second temps, j'ai pu estimer les incertitudes attendues sur les paramètres de la relation d'échelle pour le grand programme SZ.
+Ces incertitudes sont complètes, et tiennent compte à la fois de la statistique et des systématiques intervenant dans l'analyse.
+Elles montrent que le LPSZ apportera une amélioration à la connaissance de la relation par rapport aux mesures précédentes.
+Enfin, j'ai utilisé la même méthodologie pour évaluer l'apport d'une extension du grand programme SZ.
+J'ai montré qu'une augmentation du nombre d'amas dans le programme n'améliorerait que peu les contraintes sur la relation d'échelle.
+Toutefois, j'ai aussi pu montrer qu'il était possible d'améliorer les contraintes en étendant l'échantillon du programme aux amas de basse masse.
+Une telle extension pourra être proposée comme un programme en temps ouvert avec NIKA2 dans le futur.

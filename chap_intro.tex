@@ -1,0 +1,79 @@
+%\begin{flushright}
+%    \small
+%    \textit{Une intro, ça commence par \guillemotleft De tout temps l'Homme s'est intéressé à la cosmologie avec des amas. \guillemotright} \footnote{C'est une blague, je l'enlève après...}\\
+%    -- Anonyme, 2021
+%    \normalsize
+%\end{flushright}
+
+Les vingt dernières années ont été le théâtre de l'essor de la cosmologie observationnelle.
+Le développement de grandes expériences permettant de réaliser des relevés profonds du ciel avec une grande précision a permis d'accroître notre connaissance des propriétés de l'Univers.
+En particulier, les paramètres cosmologiques ont pu être contraints avec une grande précision en ajustant les paramètres libres du modèle standard de la cosmologie à partir de ces données.
+L'utilisation de plusieurs sondes pour mesurer ces paramètres cosmologiques permet de tirer profit des différentes sensibilités des observables aux propriétés de l'Univers.
+Si la plupart de ces mesures concordent, certains désaccords subsistent, pouvant être le signe de physique encore inconnue, ou bien d'effets systématiques non-maîtrisés.
+Avec l'augmentation de la quantité des données disponibles et la diminution des incertitudes statistiques résultante, ces effets deviendront de plus en plus dominants.
+La cosmologie observationnelle devient donc une science de grande précision, ce qui crée un besoin d'études rigoureuses des systématiques associées aux analyses cosmologiques.
+
+Dans ce contexte, les amas de galaxies sont des objets d'un grand intérêt.
+Leur abondance en masse et en redshift est étroitement liée à la distribution de masse dans l'Univers.
+Cette dernière étant intimement liée aux paramètres cosmologiques, le comptage d'amas dans l'Univers par intervalles de masse et redshift peut être utilisé comme une sonde.
+De grands catalogues d'amas ont pu être compilés au cours des dernières années, qui exploitent les observables des amas dans différentes longueurs d'onde pour les détecter dans de grands relevés du ciel.
+Parmi les observables utilisées, l'effet Sunyaev-Zeldovich (SZ) permet de détecter les amas dans le domaine millimétrique, grâce à leur empreinte sur le fond diffus cosmologique.
+Les catalogues les plus récents construits grâce à l'effet SZ ont été obtenus à partir des télescopes ACT (Atacama Cosmology Telescope, \cite{hilton_atacama_2021}), SPT (South Pole Telescope, \cite{bleem_galaxy_2015,bleem_sptpol_2020}) et du satellite \textit{Planck} \cite{planck_collaboration_planck_2016-3}, et comportent plusieurs milliers d'amas.
+Dans le futur, le Simons Observatory \cite{ade_simons_2019} et CMB-S4 \cite{abazajian_cmb-s4_2016} augmenteront ce nombre par un à deux ordres de grandeur, et seront accompagnés par les relevés du Vera Rubin Observatory \cite{lsst_dark_energy_science_collaboration_large_2012} et d'\textit{Euclid} \cite{sartoris_next_2016} en optique et infrarouge, et de eROSITA \cite{pillepich_forecasts_2018} en X.
+
+Ainsi, à l'instar de la cosmologie observationnelle dans laquelle elle s'inscrit, la cosmologie avec des amas entre dans une ère de précision, avec un grand nombre de catalogues comportant chacun de grands nombres d'amas.
+Le contrôle des systématiques s’avère être d’une importance cruciale, afin de pouvoir tirer pleinement profit de ces catalogues d'amas comme sondes cosmologiques.
+Cette maîtrise est actuellement limitée par une faible connaissance des propriétés physiques des amas de galaxies, en particulier des amas distants.
+En effet, une caractérisation précise de la physique des amas est nécessaire à leur exploitation cosmologique.
+Dans le cadre des relevés de l'effet SZ mentionnés précédemment, cette connaissance est limitée aux objets proches du fait de la faible résolution angulaire des instruments.
+Il est donc nécessaire de compléter ces relevés avec des suivis d'amas distants, en utilisant des instruments à haute résolution.
+Parmi ces études, le grand programme SZ de NIKA2 réalise un suivi d'amas distants détectés par \textit{Planck} et ACT avec la caméra millimétrique à grande résolution angulaire NIKA2, installée au télescope de 30 mètres de l'IRAM \cite{perotto_calibration_2020}.
+L'objectif de ce suivi est d'exploiter les observations SZ résolues pour mesurer deux outils nécessaires à la cosmologie à partir de relevés SZ: le profil de pression moyen des amas de galaxies, et la relation d'échelle masse-observable.
+Ces outils sont actuellement étalonnés sur des amas proches, en utilisant des observations SZ à basse résolution ou X.
+
+Le travail développé au cours de cette thèse s'inscrit dans le cadre du grand programme SZ de NIKA2, et de l'étude des effets systématiques en cosmologie avec des amas détectés par effet SZ.
+Ce manuscrit présente le travail effectué, de l'analyse des données NIKA2 aux prédictions des contraintes pouvant être mises sur la relation d'échelle masse-observable grâce au grand programme SZ, en passant par la mesure des propriétés thermodynamiques des amas de galaxies en tenant compte des systématiques caractéristiques des observations millimétriques.
+Il se découpe en sept chapitres.
+\begin{itemize}[leftmargin=*]
+\setlength\itemsep{5pt}
+\item
+    Le chapitre \ref{chap:cosmo1} présente le contexte du modèle standard de la cosmologie, en décrivant le lien entre le contenu de l'Univers et ses propriétés, et la formation des grandes structures.
+    Il permet d'introduire les éléments importants des analyses cosmologiques basées sur des amas de galaxies.
+\item
+    Le chapitre \ref{chap:amas} est consacré aux amas de galaxies et à leur utilisation en cosmologie.
+    La définition des amas de galaxies, leur composition et leurs caractéristiques sont présentées, de même que les différentes possibilités pour les observer.
+   Nous décrivons le lien entre la distribution d'amas en masse et en redshift et les paramètres cosmologiques, et les analyses par comptage d'amas permettant de contraindre ces derniers à partir de catalogues d'amas.
+   Nous présentons quelques-uns des résultats les plus récents de telles études, et les expériences à venir.
+\item
+    Le chapitre \ref{chap:nika2} présente la caméra NIKA2 au télescope de 30 mètres de l'IRAM, ainsi que son grand programme SZ.
+    Nous décrivons les caractéristiques techniques du télescope et de NIKA2, notamment les détecteurs à inductance cinétiques novateurs de cette caméra.
+    Les performances de l'instrument sont également présentées, de même que les observations au télescope, que j'ai pu réaliser en participant à cinq semaines d'observation au télescope au cours des 18 premiers mois de ma thèse, puis trois semaines d'observations à distance.
+    Nous présentons les caractéristiques du grand programme SZ de NIKA2, son échantillon d'amas, et ses objectifs scientifiques.
+\item
+    Le chapitre \ref{chap:decorr} décrit la procédure utilisée pour construire des cartes de l'effet SZ à partir des données brutes de NIKA2.
+    Nous présentons tout d'abord la procédure employée pour extraire le signal astrophysique d'intérêt du bruit dans les données.
+    Cette procédure, nommée décorrélation, nécessite un traitement complexe du bruit dans les données, car celui-ci est plusieurs ordres de grandeur supérieur au signal d'intérêt.
+    Nous présentons l'évaluation de la performance de la décorrélation et des systématiques qu'elle induit, qui sont prises en compte au cours de l'analyse des cartes SZ résultantes.
+    Nous décrivons également la procédure mise en place pour estimer la contamination des cartes SZ par des sources ponctuelles.
+\item
+    Le chapitre \ref{chap:panco} présente le logiciel \texttt{PANCO2}, que j'ai développé au cours de ma thèse.
+    L'objectif de ce programme est de contraindre les propriétés thermodynamiques des amas de galaxies à partir d'observations SZ par analyse Monte Carlo à chaînes de Markov.
+    Le développement d'un nouveau logiciel pour de telles analyses était nécessaire pour des raisons de performance: les outils existants ne permettaient pas de réaliser l'analyse d'un échantillon d'amas en un temps raisonnablement court.
+    Son fonctionnement permet de tenir compte des effets systématiques caractéristiques des observations SZ, comme la corrélation du bruit résiduel, le filtrage du signal, et la contamination par des sources ponctuelles.
+    Nous décrivons le fonctionnement du logiciel et les propriétés physiques qu'il permet de sonder, puis présentons sa validation sur des données simulées.
+    \texttt{PANCO2} est le \textit{pipeline} officiel pour l'analyse des données du grand programme SZ de NIKA2, et une généralisation est en cours pour qu'il puisse être utilisé pour d'autres instruments.
+    Ce logiciel sera alors rendu public pour la communauté scientifique.
+\item
+    Le chapitre \ref{chap:actj0215} est dédié à l'analyse des propriétés thermodynamiques de l'un des amas les plus complexes du grand programme SZ, \act.
+    Il représente l'un des amas de plus faible masse et de plus haut redshift de l'échantillon, et le premier amas du programme pour lequel les observations NIKA2 sont de qualité standard.
+    De plus, le signal SZ de l'amas est fortement contaminé par des sources ponctuelles, dont le flux masque le signal de l'amas.
+    Nous présentons l'extraction des propriétés thermodynamiques de l'amas en considérant les sources ponctuelles comme des paramètres de nuisance de l'analyse, dont le flux est connu \prior\ grâce à des observations du satellite \textit{Herschel}.
+    Nous combinons les observations SZ avec NIKA2 avec des données X obtenues par le satellite \textit{XMM-Newton}, ce qui permet une caractérisation complète des propriétés de l'amas.
+    %Bien que l'analyse soit complexe, nous réussissons à obtenir des contraintes fortes sur les propriétés de l'amas, ce qui témoigne du pouvoir de contrainte des observations avec NIKA2.
+\item
+    Enfin, le chapitre \ref{chap:scaling} présente la relation d'échelle liant la masse des amas à leur observable dans les relevés SZ.
+    Nous présentons une approche probabiliste basée sur un modèle bayésien hiérarchique.
+    Cette approche permet de tenir compte d'un grand nombre d'effets systématiques caractéristiques des relations masse-observable, comme la dispersion ou le biais des estimateurs de masse, la dispersion intrinsèque autour de la relation, et les effets de sélection.
+    Nous appliquons cette modélisation à des simulations réalistes d'échantillons d'amas similaires au grand programme SZ de NIKA2, ce qui permet d'identifier les biais et systématiques et de prévoir les incertitudes attendues sur les paramètres de la relation à l'issue du grand programme SZ.
+    Nous utilisons également cet outil pour évaluer l'intérêt d'extensions du grand programme SZ.
+\end{itemize}

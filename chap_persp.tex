@@ -1,0 +1,83 @@
+Cette section présente une vision personnelle non exhaustive des perspectives en cosmologie observationnelle, et plus particulièrement avec des amas de galaxies.
+
+La cosmologie observationnelle moderne a pour objectif une mesure toujours plus précise (avec des contraintes fortes) et juste (non-biaisée) des paramètres cosmologiques, afin de répondre aux questions fondamentales sur l'Univers toujours en suspens.
+Avec l'augmentation du nombre et de la qualité des observations, les incertitudes statistiques sur ces paramètres ont chuté, jusqu'à révéler des différences entre les résultats obtenus avec différentes sondes cosmologiques.
+L'une des motivations ayant mené à la création du grand programme SZ de NIKA2 était la tension apparente entre les contraintes cosmologiques imposées par le comptage d'amas et le spectre de puissance des anisotropies primaires du CMB, notamment sur la combinaison de paramètres $S_8$ (voir figure \ref{fig:cluster_S8}).
+Cette tension s'est amoindrie avec la réanalyse du CMB et une évolution dans la valeur de la profondeur optique à la réionisation $\tau$ (voir \cite{salvati_constraints_2018}, et \cite{planck_collaboration_planck_2020}, section 3.6).
+Il demeure néanmoins des désaccords, par exemple sur le taux d'expansion actuel de l'Univers $H_0$ mesuré à partir du CMB et de sondes plus récentes, soulevant un grand nombre de questions sur de potentielles systématiques non prises en compte dans les analyses \cite{efstathiou_h0_2021,freedman_measurements_2021}.
+Il est donc primordial d'étudier ces systématiques afin de pouvoir quantifier la significativité des tensions.
+
+% ===================================================================================== %
+\section*{Suivis dédiés d'échantillons d'amas}
+
+L'étude des systématiques liées aux propriétés physiques des amas requiert une caractérisation fine de ces dernières, qui peut être apportée par des suivis dédiés de petits échantillons d'amas.
+Le grand programme SZ de NIKA2 permettra très prochainement d'obtenir une connaissance précise des propriétés thermodynamiques du milieu intra-amas, en combinant les observations SZ à haute résolution et X.
+L'étude des propriétés de ces amas permettra de comparer les outils nécessaires aux analyses cosmologiques -- le profil de pression moyen des amas et la relation d'échelle $Y_{500}-M_{500}$ -- avec les mesures actuelles, à plus bas redshift et utilisant des observations X seulement ou SZ à basse résolution.
+Outre les implications cosmologiques directes liées aux possibles changements dans ces outils, comme l'évolution de la relation d'échelle avec le redshift, la caractérisation des propriétés thermodynamiques permettra d'étudier le lien entre la physique des amas et les outils cosmologiques.
+Par exemple, la combinaison de la densité du milieu intra-amas, mesurée en X, et de sa pression mesurée en SZ permet de calculer l'entropie du gaz, qui renferme une grande quantité d'information sur l'histoire thermique de la formation de l'amas.
+
+Nous avons également évoqué la possibilité d'étendre le LPSZ avec l'observation d'amas de plus faible masse, celui-ci étant composé d'amas de masses supérieures à $3.5 \times 10^{14} \; M_\odot$.
+Nous avons vu au chapitre \ref{chap:scaling} qu'une telle extension pourrait améliorer les contraintes sur la relation d'échelle.
+En plus de cette amélioration, les amas de basse masse sont des objets intéressants dont l'étude peut renseigner sur la physique de la formation des structures, et donc sur la cosmologie.
+D'une part, ces amas sont bien plus nombreux que les amas massifs, la fonction de masse étant très piquée vers les faibles masses.
+L'augmentation du nombre d'amas détectés dans un relevé repose donc sur la détection de ces objets; le Simons observatory prévoit de détecter en SZ des objets jusqu'à $\sim 10^{14} \; M_\odot$.
+Les amas de faible masse seront donc un élément incontournable de la cosmologie dans les années à venir, et l'impact scientifique du LPSZ pourrait être renforcé en offrant des contraintes sur les propriétés de ces objets.
+D'autre part, les processus brisant l'équilibre thermique des amas -- fusions, injection d'énergie non-thermique par des noyaux actifs de galaxies ou explosions de supernovas -- sont plus visibles dans les potentiels gravitationnels plus faibles des amas de faible masse.
+L'étude des propriétés thermodynamiques de ces objets pourrait donc livrer des informations sur ces processus physiques, et amener à des études sur leur impact sur la cosmologie.
+
+Enfin, dans le futur proche, les progrès instrumentaux permettront de réaliser des suivis d'amas qui affineront notre compréhension des propriétés du milieu intra-amas.
+En SZ, des instruments seront capables de cartographier l'effet SZ avec une meilleure résolution angulaire et une plus grande \textit{mapping speed} que NIKA2, comme les caméras MISTRAL au Sardinia Radio Telescope \cite{bolli_sardinia_2015} ou TolTEC au Large Millimeter Telescope \cite{wilson_toltec_2020}.
+Ces instruments ouvriront la possibilité de réaliser des suivis d'échantillons plus nombreux et couvrant des domaines plus étendus en masse et en redshift, afin d'étudier avec une grande précision l'évolution des propriétés thermodynamiques du milieu intra-amas avec le redshift.
+De même, l'instrument CONCERTO \cite{the_concerto_collaboration_wide_2020} installé au télescope APEX permet de réaliser un suivi spectroscopique dans le domaine millimétrique.
+Les observations d'amas en cours permettront de séparer les différentes composantes de l'effet SZ -- thermique, cinétique, et relativiste -- à partir d'un seul instrument, ce qui offrira une nouvelle possibilité de mesure des propriétés thermodynamiques du milieu intra-amas indépendante des observations X.
+Enfin, toutes ces observations pourront être combinées et comparées à celles réalisées par les observatoires X à venir, comme \textit{Athena} \cite{nandra_hot_2013, barret_athena_2020} et \textit{Lynx} \cite{the_lynx_team_lynx_2018}, pour améliorer la compréhension de l'état thermodynamiques des amas et des possibles différences entre les observations X et SZ.
+
+
+% ===================================================================================== %
+\section*{Simulations numériques}
+
+L'étude des propriétés physiques des amas à partir d'observations est malheureusement limitée par la qualité de ces observations et par les hypothèses utilisées dans les analyses.
+Par exemple, la comparaison de différents estimateurs de masse d'un amas est affectée par le fait qu'aucun estimateur n'est parfait.
+Les simulations numériques d'amas offrent alors un moyen de contourner ces défauts et de statuer sur la qualité des hypothèses et des analyses.
+D'une part, l'utilisation des propriétés réelles des amas simulés permet d'évaluer la qualité des estimateurs de ces propriétés.
+Dans l'exemple de la masse des amas, comparer la masse réelle des amas à la masse hydrostatique obtenue à partir des propriétés thermodynamiques du milieu intra-amas permet de mesurer le biais hydrostatique réel, là où une comparaison entre la masse hydrostatique d'un amas et de sa masse obtenue par lentillage est affectée par les biais et systématiques des deux estimateurs.
+De plus, la création d'observations simulées d'amas synthétiques permet d'évaluer la qualité des analyses par comparaison des propriétés observées des amas et de leurs propriétés réelles.
+Ainsi, en mesurant la masse hydrostatique d'un amas à partir des cartes SZ et X simulées, on peut comparer les résultats à la masse hydrostatique réelle de l'amas, ce qui permet d'identifier les biais et systématiques dans l'analyse des données.
+On peut également les comparer à la masse réelle de l'amas, ce qui permet d'évaluer les systématiques associées aux hypothèses; par exemple, le biais $\alpha_{X|Z}$ et la dispersion $\sigma_{X|Z}$ de l'estimateur de masse hydrostatique dans l'équation (\ref{eq:scaling:mass_estim}).
+L'évolution des simulations numériques permet aujourd'hui d'atteindre un grand niveau de complexité physique, avec des observations simulées de tout le ciel \cite{lsst_dark_energy_science_collaboration_lsst_desc_lsst_2021,heitmann_last_2021} ou de régions abritant des amas de galaxies par \textit{zoom-in}, comme la simulation Three Hundred \cite{cui_three_2018}.
+Cette dernière comporte 300 amas simulés avec un grand niveau de précision, qui peuvent être utilisés pour générer des observations simulées avec plusieurs types d'instruments.
+Ces données permettront de quantifier les sources d'erreur présentes dans les analyses cosmologiques basées sur des amas, augmentant ainsi la qualité des contraintes cosmologiques.
+
+Notons également que la validité des résultats de ces études est limitée par le réalisme des simulations.
+La réalisation de simulations hydrodynamiques d'amas de galaxies repose sur plusieurs hypothèses, en particulier pour les processus physiques se déroulant à des échelles plus petites que leur résolution (rétroaction des AGN, formation stellaire, etc).
+Ces hypothèses sont en général justifiées par les observations: lorsqu'une simulation est réalisée, ses résultats sont comparés aux amas réellement observés dans l'Univers.
+L'origine des éventuelles différences est ensuite interprétée pour raffiner les hypothèses de base de la simulation.
+Grâce aux suivis dédiés à grande résolution comme le grand programme SZ de NIKA2 et les études à venir, détaillés au paragraphe précédent, notre connaissance des propriétés physiques des amas sera améliorée, ce qui permettra d'offrir un retour aux simulations afin de les rendre de plus en plus réalistes.
+
+% ===================================================================================== %
+\section*{Cosmologie multi-longueurs d'onde avec des amas}
+
+Le caractère multi-longueurs d'onde des amas de galaxies est un grand atout pour l'étude des systématiques affectant la cosmologie.
+En effet, les observations d'amas dans différentes longueurs d'onde sont sensibles à des propriétés physiques différentes, et sont donc associées à des sources d'incertitudes différentes.
+Combiner ces observations permettra donc de tirer parti de ces différences afin de caractériser les diverses systématiques propres à chaque domaine de longueurs d'onde.
+
+Un exemple de bénéfice apporté par l'étude jointe de relevés d'amas est l'étalonnage des masses de ces objets.
+Comme nous l'avons déjà évoqué dans cette thèse, cet étalonnage représente l'une des sources majeures d'incertitude dans les analyses cosmologiques basées sur des catalogues d'amas, et ce dans toutes les longueurs d'onde d'intérêt.
+Les systématiques affectant les mesures de masse dans chaque longueur d'onde sont toutefois très différentes: biais hydrostatique pour les observations SZ et X, biais et dispersion dus à la modélisation des amas pour le lentillage de galaxies d'arrière-plan \cite{grandis_calibration_2021,sommer_weak_2021} et pour le lentillage du fond diffus cosmologique \cite{zubeldia_cosmological_2019}.
+Il est alors possible d'exploiter la différence entre ces systématiques pour mieux les comprendre, en combinant des relevés millimétriques (Simons Observatory, CMB-S4), X (eROSITA) et visibles (LSST, \textit{Euclid}) \cite{rhodes_scientific_2017,dodelson_cosmic_2016}.
+La comparaison des masses d'amas estimées à partir de ces relevés permettra d'étudier le biais et la dispersion de chaque estimateur, afin d'améliorer l'utilisation des amas de galaxies comme sondes cosmologiques.
+
+% ===================================================================================== %
+\section*{Les amas à l'ère de la combinaison de sondes}
+
+La combinaison des contraintes sur les paramètres cosmologiques obtenues à l'aide de plusieurs sondes permet différents types d'étude.
+D'une part, les différentes dégénérescences propres à chaque sonde font de la combinaison de sondes un moyen d'obtenir des contraintes plus précises sur les paramètres cosmologiques.
+De plus, la comparaison des paramètres obtenus grâce à des sondes différentes permet de mettre en évidence d'éventuelles tensions entre les sondes.
+
+Les amas de galaxies étant par essence des objets multi-longueurs d'onde, ils peuvent être détectés dans la grande majorité des relevés cosmologiques.
+Si ces objets sont rarement présentés comme l'objectif premier d'un relevé, ils constituent donc néanmoins une opportunité de combinaison de sondes pour chaque expérience visant à contraindre les paramètres cosmologiques.
+Par exemple, l'analyse des données \textit{Planck} en considérant conjointement les amas de galaxies et les anisotropies primaires du CMB permet de préciser les contraintes sur $S_8$, avec une diminution de l'incertitude d'environ 30\% par rapport au CMB seul \cite{salvati_constraints_2018}.
+Les expériences millimétriques à venir, comme le Simons Observatory ou CMB-S4, pourront détecter un grand nombre d'amas par effet SZ, et l'analyse jointe de ces catalogues d'amas et des anisotropies primaires du CMB offrira des contraintes d'une grande qualité sur les paramètres cosmologiques.
+En optique, les relevés réalisés par le Vera Rubin Observatory et par la mission \textit{Euclid} permettront également la création de grands catalogues d'amas, et les contraintes cosmologiques résultantes pourront être combinées avec les analyses de la distribution à grande échelle des galaxies, du diagramme de Hubble des supernovas de type Ia, etc.
+Les amas de galaxies s'imposent donc comme une sonde permettant de maximiser l'impact scientifique des expériences à venir.
+

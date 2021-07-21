@@ -1,0 +1,112 @@
+%!TeX program = xelatex
+\documentclass[a4paper, 11pt]{article}
+\usepackage[top=1.5cm, bottom=1.75cm, left=1.75cm, right=2.0cm]{geometry}
+
+%%% Fonts because I'm a nerd
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage[MnSymbol]{mathspec}
+\def\usemnpro{0}
+\if\usemnpro1
+    \setstretch{1.0}
+    \setlength{\parskip}{5pt}
+    \setlength{\parindent}{15pt}
+    \setmainfont[
+        Path = /Users/keruzore/Documents/fonts/,
+        BoldFont={Minion Pro Bold.otf},
+        ItalicFont={Minion Pro Italic.ttf},
+        BoldItalicFont={Minion Pro Bold Italic.ttf},
+        Scale=MatchLowercase
+    ]{Minion Pro Regular.otf}
+    \setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Minion Pro}
+    \setmathrm[]{Minion Pro}
+\else
+    \setstretch{1.0}
+    \setlength{\parskip}{10pt}
+    \setlength{\parindent}{15pt}
+    \setmainfont[
+        Path = /Users/keruzore/Documents/fonts/opentype/,
+        BoldFont={texgyretermes-bold.otf},
+        ItalicFont={texgyretermes-italic.otf},
+        BoldItalicFont={texgyretermes-bolditalic.otf},
+        Scale=MatchLowercase
+    ]{texgyretermes-regular.otf}
+    \setmathsfont(Digits,Latin)[Numbers={Lining,Proportional}]{Times}
+    \setmathsfont(Greek){Times New Roman}
+    \setmathrm[]{Times}
+\fi
+%\usepackage{dsfont}
+
+%%% Language options
+\usepackage{polyglossia}
+\setmainlanguage{french}
+\usepackage{csquotes}
+\usepackage{hyperref}
+
+%%% Fix apostrophe kerning
+\if\usemnpro1
+    \makeatletter
+    \edef\qu@te{\string'} % save a copy of the ordinary apostrophe
+    \catcode`'=\active    % make ' active
+    \begingroup
+    \obeylines\obeyspaces%
+    \gdef\@resetactivechars{%
+    \def^^M{\@activechar@info{EOL}\space}%
+    \def {\@activechar@info{space}\space}%
+    }%
+    \endgroup
+    \providecommand\texorpdfstring[2]{#1}
+    \protected\def'{\texorpdfstring{\texqu@te}{\string'}}
+    \@ifpackagewith{inputenc}{utf8}
+      {\DeclareUnicodeCharacter{2019}{\texqu@te}}{}
+    \def\texqu@te{\relax
+      \ifmmode
+        \expandafter^\expandafter\bgroup\expandafter\prim@s
+      \else
+        \expandafter\futurelet\expandafter\@let@token\expandafter\qu@t@
+      \fi}
+    \def\qu@t@{%
+      \ifx'\@let@token
+        \qu@te\qu@te\expandafter\@gobble
+      \else
+        {\kern0em}\qu@te{\kern0em}\penalty\@M\hskip\expandafter\z@skip
+      \fi}
+    \scantokens\expandafter{%
+      \expandafter\def\expandafter\pr@m@s\expandafter{\pr@m@s}}
+    \makeatother
+\fi
+
+%%% Good looking sections&chapters
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalsize\huge\color{black}}%
+  {\flushright\huge\color{Maroon}%
+   \MakeUppercase{\chaptertitlename}\hspace{1ex}%
+   {\bfseries\fontsize{40}{40}\selectfont\thechapter}}%
+  {10 pt}%
+  {\flushright\bfseries\Huge}%
+\titlespacing\section{0pt}{12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
+
+%%% Begin
+\title{Cosmologie avec des amas de galaxies à partir d'observations de l'effet Sunyaev-Zeldovich avec la caméra NIKA2}
+\author{Florian \textsc{K\'eruzor\'e}}
+\date{}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\section*{Résumé}
+
+Les amas de galaxies représentent l'aboutissement du processus de formation des grandes structures, et forment les plus grands objets gravitationnellement liés de l'Univers. Leur abondance en masse et en redshift permet de tracer la distribution de matière et son évolution avec le temps, et constitue donc une sonde cosmologique. L'effet Sunyaev-Zeldovich (SZ) permet de détecter les amas de galaxies grâce à leur empreinte sur le fond diffus cosmologique. Des catalogues d'amas ont pu être dressés grâce à l'observation de cet effet, notamment par le satellite \textit{Planck}. Cependant, leur utilisation pour contraindre les paramètres cosmologiques requiert la connaissance de la masse des amas, qui n'est pas une observable directe. Il est donc nécessaire de s'appuyer sur des relations d'échelle liant les observables à la masse. Ces relations sont étalonnées sur des échantillons d'amas dont les propriétés physiques sont caractérisées avec un grand niveau de détail, notamment grâce à des observations à haute résolution. Cette connaissance fine des propriétés des amas permet d'étudier les systématiques intervenant en cosmologie, comme l'impact de l'état de relaxation des amas sur la relation d'échelle.
+
+Cette thèse s'inscrit dans le cadre du grand programme SZ de NIKA2, qui a pour but d'exploiter les observations à haute résolution de l'effet SZ avec la caméra NIKA2 au télescope de 30 mètres de l'IRAM pour étudier les propriétés d'un échantillon d'amas de galaxies distants. Le travail effectué utilise des techniques statistiques avancées pour étudier les systématiques devant être prise en compte en cosmologie avec des amas. Une partie de ce travail porte sur l'analyse des données de NIKA2 afin de caractériser les propriétés thermodynamiques des amas en tenant compte des systématiques associées aux observations SZ, aboutissant au développement d'un logiciel public permettant de contraindre les propriétés thermodynamiques des amas de galaxies à partir d'observations SZ. Les méthodes développées sont ensuite utilisées pour caractériser les propriétés de l'un des amas les plus complexes du programme, en exploitant notamment la synergie entre les observations NIKA2 et \textit{XMM-Newton} de l'amas de résolutions comparables. Par la suite, nous présentons une modélisation statistique rigoureuse de la relation masse-observable dans le cas des observations SZ, en utilisant un modèle bayésien hiérarchique permettant de tenir compte des systématiques affectant les mesures de masse et d'observable. Nous appliquons cette analyse sur des simulations réalistes, permettant de mettre en évidence les biais et effets systématiques impliqués dans cette analyse, et de prédire les contraintes pouvant être apportées par les observations avec NIKA2 sur la relation masse-observable.
+
+\section*{Abstract}
+
+Galaxy clusters are the culmination of large-scale structure formation, and represent the largest gravitationally bound objects in the Universe. Their abundance in mass and redshift is therefore a tracer of matter distribution across space and time, and thus constitutes a cosmological probe. The Sunyaev-Zeldovich (SZ) effect enables the detection of clusters through their imprint on the cosmic microwave background. Cluster catalogs have been compiled thanks to the observation of this effect, for example by the \textit{Planck} satellite. However, their use to constrain cosmological parameters requires the knowledge of cluster masses, which cannot be directly observed. Cosmological analyses therefore rely on scaling relations linking observables to cluster masses. These relations are calibrated on samples of few clusters with well-characterized properties, for example thanks to high-resolution observations. This detailed knowledge of cluster properties enables studying systematic effects taking place in cluster cosmology, such as the impact of relaxation state on the scaling relation.
+
+This thesis takes place within the NIKA2 SZ large program, which aims to exploit high angular resolution observations of the SZ effect using the NIKA2 camera at the IRAM 30 meter telescope to study the physical properties of a sample of distant galaxy clusters. The work presented uses advanced statistical methods to study the systematics that need to be taken into account in cluster cosmology. Part of this work is dedicated to the analysis of NIKA2 data in order to characterize the thermodynamical properties of galaxy clusters while taking into account the systematics associated with SZ observations, leading to the development of a public software to constrain thermodynamical properties of a galaxy cluster from SZ observations. The methods developed are then used to characterize the properties of one of the most challenging clusters in the program, exploiting the synergy between NIKA2 and \textit{XMM-Newton} observations of the cluster with comparable resolution. Subsequently, we present a rigorous statistical modeling of the mass-observable scaling relation for SZ observations, using a bayesian hierarchical model that allows us to take into account systematics affecting mass and observable measurements. We apply this analysis to realistic mock simulations, that allow us to highlight biases and systematic effects involved in the analysis, and to forecast the constraints that will be set on this scaling relation using NIKA2 observations.
+
+\end{document}
