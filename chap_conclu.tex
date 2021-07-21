@@ -22,15 +22,15 @@ Ce programme est disponible pour la collaboration NIKA2, et est aujourd'hui syst
 
 J'ai ensuite réalisé l'étude des propriétés physiques de l'un des amas de galaxies du grand programme SZ, constituant la deuxième étude d'un amas individuel du programme, et présentée dans le chapitre \ref{chap:actj0215}.
 J'ai choisi pour cette étude de combiner plusieurs difficultés, afin d'évaluer la qualité des contraintes pouvant être apportées sur la thermodynamique d'un amas à partir d'observations NIKA2 dans le pire des cas.
-D'une part, la qualité des données NIKA2 de cet amas est représentative de celle attendue pour les amas du grand programme SZ.
+D'une part, la qualité des données NIKA2 de cet amas est représentative de celle attendue pour les amas du grand programme SZ, et inférieure aux premières observations d'amas avec NIKA2.
 D'autre part, cet amas fait partie des plus basses masses et des plus hauts redshifts de l'échantillon, en faisant une source compacte et faible.
 Enfin, le faible signal SZ de l'amas est fortement contaminé par la présence de galaxies submillimétriques dans le champ.
 Après avoir identifié les sources à partir de données du satellite \textit{Herschel}, j'ai développé le logiciel \texttt{PSTools}, permettant de calculer la distribution de probabilité du flux d'une source submillimétrique dans la bande à 150 GHz de NIKA2.
 Ce calcul repose sur un ajustement par MCMC du spectre de la source à partir de son flux mesuré par \textit{Herschel} et par NIKA2 à 260 GHz.
 Le logiciel \texttt{PSTools} est aujourd'hui disponible pour la collaboration NIKA2, et utilisé pour l'analyse des sources ponctuelles contaminant les observations d'amas du grand programme SZ.
 J'ai ensuite développé une extension du logiciel \texttt{PANCO}, développé par F. \myciteauthor{ruppin_cosmologie_2018}, afin de tenir compte de la présence de sources ponctuelles dans l'ajustement des propriétés thermodynamiques d'un amas.
-Cette approche permet d'ajuster jointement les propriétés thermodynamiques de l'amas et les sources ponctuelles, considérées comme des paramètres de nuisance, et donc de propager l'incertitude sur la contamination par des sources aux résultats finaux.
-J'ai donc pu obtenir une estimation du profil de pression de l'amas et des incertitudes associées. %, en accord avec une estimation antérieure réalisée à l'aide d'observations X par \textit{XMM-Newton}.
+Cette approche permet d'ajuster jointement les propriétés thermodynamiques de l'amas et les sources ponctuelles, considérées comme des paramètres de nuisance, et donc de propager l'incertitude sur la contamination par ces sources aux résultats finaux.
+J'ai donc pu obtenir une estimation du profil de pression de l'amas et des incertitudes associées.
 En combinant les observations SZ et X, j'ai pu caractériser plus en détail les propriétés thermodynamiques de l'amas.
 Celui-ci se trouve dans un état dynamique perturbé, avec un cœur chaud, et possède une masse compatible avec celle estimée grâce à son signal SZ intégré et une relation d'échelle masse-observable.
 Les contraintes mises sur les propriétés thermodynamiques représentent une amélioration en précision par rapport aux contraintes antérieures, illustrant la puissance de la combinaison d'observations X et SZ à haute résolution, même dans le cas de cette source complexe.
@@ -50,7 +50,7 @@ Enfin, j'ai pu travailler sur la relation d'échelle masse-observable dans le ca
 L'ajustement d'une telle relation est complexe, du fait du grand nombre de systématiques intervenants dans l'analyse.
 J'ai proposé d'utiliser un modèle bayésien hiérarchique pour l'ajustement, en utilisant la librairie \texttt{LIRA} \cite{sereno_bayesian_2016}.
 Cette approche permet de tenir compte d'un grand nombre d'effets systématiques présents dans l'analyse, des incertitudes corrélées sur les grandeurs mesurées aux effets de sélection, en passant par le biais et la dispersion de l'estimateur de masse utilisé.
-J'ai évalué la capacité de \texttt{LIRA} à tenir compte de ces sources d'erreur en utilisant des jeux de données simulés arbitraires.
+J'ai évalué la capacité de \texttt{LIRA} à tenir compte de ces sources d'erreur en utilisant des jeux de données simulés.
 J'ai ensuite procédé à la validation de l'utilisation de cette méthode pour le grand programme SZ en mettant en place une procédure Monte Carlo de simulation d'échantillons réalistes du programme.
 Pour cela, un échantillon est généré suivant une fonction de masse, qui décrit la distribution théorique des amas dans l'Univers, puis une relation d'échelle fiducielle lui est appliquée.
 Un sous-échantillon d'amas est alors sélectionné de la même façon que le vrai échantillon du grand programme SZ, et utilisé pour ajuster la relation d'échelle et comparer le résultat à la relation fiducielle utilisée.

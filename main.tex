@@ -29,7 +29,7 @@
         \setmathsfont(Digits,Latin)[Scale=MatchLowercase]{TeX Gyre Termes}
         \setmathsfont(Greek)[Scale=MatchLowercase]{STIXGeneral}
         \setmathrm[]{STIXGeneral}
-        \setmathcal[]{TeX Gyre Chorus}
+        \setmathcal[Scale=MatchUppercase]{TeX Gyre Chorus}
     \else\if\myfont2 % Linux Libertine
         \setmainfont{Linux Libertine O}
         \setmathsfont(Digits,Latin,Greek)[Scale=MatchLowercase]{Linux Libertine O}
@@ -222,7 +222,7 @@
 
 %%% New commands
 \renewcommand{\d}{\mathrm{d}}
-%\newcommand{\ln}{\mathrm{ln}}
+\newcommand{\N}{\mathcal{N}\,}
 \newcommand{\da}{\mathcal{D}_\textsc{a}}
 \newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdvsq}[2]{\frac{\partial^2 #1}{\partial #2^2}}
@@ -230,6 +230,7 @@
 \newcommand{\xt}{\vec{x}, t}
 \newcommand{\ym}{{Y|M}}
 \newcommand{\yz}{{Y|Z}}
+\newcommand{\yzb}{{Y\,|\,Z}}
 \newcommand{\e}{{\rm e}}
 \newcommand{\eg}{voir par exemple}
 \newcommand{\act}{ACT-CL~J0215.4+0030} % ultimate laziness

@@ -562,9 +562,9 @@ Elles peuvent également être des sources radio, présentant une émission plus
 \footnotetext{Notons que cette distinction entre galaxie poussiéreuse et source radio est une simplification, le spectre d'émission de la poussière présentant une composante d'émission radio.}
 Les SMG sont plus simples à identifier avec NIKA2, puisque leur flux est plus élevé dans la bande à 260 GHz, où le signal SZ n'est en général pas détectable.
 
-Afin de mesurer le spectre d'une source, la connaissance du flux des sources dans une large gamme de fréquence est nécessaire.
+Afin de mesurer le spectre d'une source, la connaissance de son flux dans une large gamme de fréquence est nécessaire.
 \texttt{PSTools} permet de traiter la contamination due à des sources submillimétriques détectées par l'instrument SPIRE à bord du satellite \textit{Herschel} \cite{griffin_herschel-spire_2010}.
-Nous utilisons la combinaison des mesures des flux dans chacune des bandes de SPIRE (250, 350, et 500 $\mu$m, soit 1200, 860, et 600 GHz, respectivement) et dans la bande à 260 GHz de NIKA2, dans laquelle le signal SZ est négligeable devant le bruit et le flux des sources ponctuelles.
+Nous utilisons la combinaison des mesures de flux dans chacune des bandes de SPIRE (250, 350, et 500 ${\rm \mu m}$, soit 1200, 860, et 600 GHz, respectivement) et dans la bande à 260 GHz de NIKA2, dans laquelle le signal SZ est négligeable devant le bruit et le flux des sources ponctuelles.
 Il est également possible d'utiliser les flux des sources à plus haute fréquence dans les bandes passantes de l'instrument PACS à bord de \textit{Herschel} \cite{poglitsch_photodetector_2010}, lorsque ceux-ci sont publics.
 Par la suite, nous considèrerons le cas où seules des données SPIRE sont disponibles, cas bien plus fréquent pour les amas du grand programme SZ.
 
@@ -588,7 +588,7 @@ Dans la suite, nous présentons les trois grandes étapes de l'analyse, représe
 
 Le flux de chaque source à 260 GHz et sa position sont mesurés dans la carte NIKA2 à cette fréquence.
 Pour cela, un modèle de lobe de NIKA2 est ajusté dans une portion carrée de la carte, centrée sur la position de détection de chaque source dans SPIRE.
-L'évolution de la mesure du flux des sources avec la taille de cette portion a été étudiée, montrant de meilleurs résultats pour des tailles de l'ordre de 1'.
+L'évolution de la mesure du flux des sources avec la taille de cette portion a été étudiée, montrant de meilleurs résultats pour des tailles d'environ une minute d'arc.
 Le lobe est modélisé par une Gaussienne de largeur à mi-hauteur fixée à $\mathrm{FWHM} = 12.5$'', en accord avec le modèle utilisé pour l'étalonnage des cartes \cite{perotto_calibration_2020}, avec une amplitude et une position libres, ainsi qu'un éventuel niveau zéro.
 L'ajustement est réalisé à l'aide de la librairie Python \texttt{iminuit} \cite{hans_dembinski_scikit-hepiminuit_2020}, et l'amplitude de la Gaussienne ajustée livre une estimation du flux de la source à 260 GHz.
 Lorsque deux sources sont proches, elles sont ajustées simultanément dans la même portion de carte, afin d'éviter une surestimation des flux.
@@ -609,7 +609,7 @@ On voit que cette différence ne présente pas de structure au niveau des source
 % ------------------------------------------------------------------------------------- %
 \subsection{Ajustement du spectre de chaque source}
 
-Le flux à 260 GHz de chaque source est ensuite combiné avec les trois flux SPIRE, permettant une couverture spectrale allant de 160 à 1200 GHz.
+Le flux à 260 GHz de chaque source est ensuite combiné avec les trois flux SPIRE, permettant une couverture spectrale allant de 260 à 1200 GHz.
 La SED de chaque source est ensuite ajustée sur ces quatre flux, en utilisant un modèle d'émission de corps noir modifié:
 \begin{equation}
     F(\nu) = A_0 \left(\frac{\nu}{\nu_0}\right)^\beta B_\nu(T),
@@ -623,8 +623,8 @@ Nous considérons une fonction de vraisemblance gaussienne.
 Lorsque les flux des sources ponctuelles dans les bandes de PACS ne sont pas disponibles, la couverture spectrale est relativement étroite, et ne permet pas de lever la dégénérescence entre les trois paramètres du modèle de corps noir modifié \cite{desert_submillimetre_2008,magnelli_herschel_2012,smith_isothermal_2013}.
 Il n'est donc pas possible de laisser ces paramètres complètement libres, avec des \prior\ non-informatifs.
 La normalisation de la SED, $A_0$, est donc ajustée linéairement sur les données et fixée pour chaque ajustement.
-Enfin, un \prior\ sur l'indice spectral de chaque source est imposé par une distribution gaussienne $\beta \sim \mathcal{N}(2, 0.5)$, tel que suggéré par les mesures de SED de grands nombres de galaxies (voir par exemple \cite{magnelli_herschel_2012}).
-Un \prior\ uniforme est utilisé pour la température effective de chaque source, $0 < T < 50 \; \mathrm{K}$.
+Un \prior\ sur l'indice spectral de chaque source est imposé par une distribution gaussienne $\beta \sim \N(2, 0.5)$, tel que suggéré par les mesures de SED de grands nombres de galaxies (voir par exemple \cite{magnelli_herschel_2012}).
+Enfin, un \prior\ uniforme est utilisé pour la température effective de chaque source, $0 < T < 50 \; \mathrm{K}$.
 
 À chaque étape du MCMC, une correction de couleur est appliquée aux flux mesurés afin de tenir compte de la différence entre le spectre de chaque source et celui de référence utilisé pour l'étalonnage des cartes.
 Pour les flux SPIRE, la correction de couleur est interpolée \`a partir de mesures existantes\footnotemark ; pour le flux NIKA2, nous utilisons les corrections décrites dans \cite{perotto_calibration_2020}.

@@ -41,9 +41,11 @@ En y injectant une solution de la forme $\rho(r) = \alpha \, r^\beta$, on trouve
     \rho(r) = \frac{k_\textsc{b} T}{2\pi G m} \frac{1}{r^2}.
 \end{equation}
 On peut évaluer la masse $M(<r)$ contenue dans une sphère de rayon $r$ en intégrant cette équation:
-\begin{equation}
-    M(<r) = 4\pi \int_0^r r^2 \rho(r) \, \d r = \frac{2 k_\textsc{b} T}{Gm}r.
-\end{equation}
+\begin{align}
+    \nonumber M(<r) &= 4\pi \int_0^r r^2 \rho(r) \, \d r \\
+    &= \frac{2 k_\textsc{b} T}{Gm}r.
+    \label{eq:scaling:t_m_r}
+\end{align}
 La masse contenue dans un rayon $r$ est donc proportionnelle à ce rayon.
 On parle alors d'autosimilarité des amas de galaxies: les amas sont des répliques à l'échelle les uns des autres.
 Cette hypothèse joue un rôle important en cosmologie avec des amas de galaxies, par exemple pour le calcul du profil de pression moyen des amas (voir section \ref{sec:univ_press_prof}, page \pageref{sec:univ_press_prof}).
@@ -53,7 +55,7 @@ Le rayon caractéristique $R_\Delta$ est défini en section \mypageref{sec:int_q
     \label{eq:scaling:r_delta}
     R_\Delta = \left[ \frac{2GM_\Delta}{\Delta \times H^2(z)} \right]^{1/3}.
 \end{equation}
-La masse $M_\Delta$ contenue dans un rayon $R_\Delta$, définie dans l'équation (\ref{eq:r_delta_from_m}), s'écrit alors:
+D'après l'équation (\ref{eq:scaling:t_m_r}), la masse $M_\Delta$ contenue dans un rayon $R_\Delta$ s'écrit:
 \begin{equation}
     \label{eq:scaling:m_r_delta}
     M_\Delta = \frac{2 k_\textsc{b} T}{Gm} R_\Delta
@@ -219,9 +221,9 @@ Il est possible de tenir compte du caractère non-déterministe de la relation m
 On peut notamment considérer une distribution gaussienne:
 \begin{equation}
     \label{eq:scaling:general_pdf}
-    P(\yz) = \mathcal{N} \left(\alpha_\yz + \beta_\yz Z + \gamma \, E(z) + \delta \, E(z) \, Z, \sigma_\yz^2 \right),
+    P(\yzb) = \N \left(\alpha_\yz + \beta_\yz Z + \gamma \, E(z) + \delta \, E(z) \, Z, \sigma_\yz^2 \right),
 \end{equation}
-où $\mathcal{N}(\mu, \nu)$ est la distribution normale de moyenne $\mu$ et variance $\nu$. \\
+où $\N(\mu, \nu)$ est la distribution normale de moyenne $\mu$ et variance $\nu$. \\
 On note $\sigma_\yz$ la dispersion intrinsèque de la relation d'échelle, encapsulant la variabilité des valeurs d'observable $Y$ pouvant être associés à une valeur de masse $Z$.
 Cette équation constitue l'un des sous-modèles permettant de structurer le modèle hiérarchique de relation d'échelle.
 
@@ -239,7 +241,7 @@ De même, un estimateur de masse dispersé induit un biais sur la pente de la re
 Afin de tenir compte des imperfections caractéristiques de l'estimateur de masse utilisé, on peut définir l'estimateur de masse $X$, relié à la masse réelle de l'amas $Z$ au travers d'une distribution de probabilité:
 \begin{equation}
     \label{eq:scaling:mass_estim}
-    P(X|Z) = \mathcal{N} \left(\alpha_{X|Z} + \beta_{X|Z} Z, \sigma_{X|Z}^2\right),
+    P(X\,|\,Z) = \N \left(\alpha_{X|Z} + \beta_{X|Z} Z, \sigma_{X|Z}^2\right),
 \end{equation}
 où $\alpha_{X|Z}$ est le biais de l'estimateur de masse, $\beta_{X|Z}$ quantifie l'évolution de ce biais avec la masse de l'amas, et $\sigma_{X|Z}$ est la dispersion de l'estimateur. \\
 Dans le cas de la masse hydrostatique, $\alpha_{X|Z}$ est le biais hydrostatique $b$ discuté en section \mypageref{sec:hse_bias}.
@@ -259,8 +261,8 @@ Le modèle \textit{errors in variable} permet de tenir compte des incertitudes d
 Pour un amas de galaxies $i$, on peut alors écrire:
 \begin{equation}
     \label{eq:scaling:pdf_data}
-    P(x_i, y_i | X_i, Y_i) = \mathcal{N}_{\rm 2D}\big(\{X_i, Y_i\}, V_i\big),
-    %P(X_i, Y_i | x_i, y_i) = \mathcal{N}_{\rm 2D}\big(\{x_i, y_i\}, V_i\big),
+    P(x_i, y_i \,|\, X_i, Y_i) = \N_{\rm 2D}\big(\{X_i, Y_i\}, V_i\big),
+    %P(X_i, Y_i | x_i, y_i) = \N_{\rm 2D}\big(\{x_i, y_i\}, V_i\big),
 \end{equation}
 où $x_i$ et $y_i$ sont les valeurs mesurées de l'estimateur de masse et de l'observable, $X_i$ et $Y_i$ sont les vraies valeurs de ces deux grandeurs, et $V_i$ est la matrice de covariance des incertitudes sur $x_i$ et $y_i$. \\
 Ainsi, dans cette modélisation de la relation d'échelle, les valeurs réelles des estimateurs de masse et d'observable sont des paramètres de nuisance du modèle.
@@ -329,7 +331,7 @@ Dans le cadre de la modélisation \textit{errors in variable}, cette prise en co
 Pour une coupure à une valeur de seuil $y_{\rm th.}$, l'équation (\ref{eq:scaling:pdf_data}) peut être réécrite comme:
 \begin{equation}
     \label{eq:scaling:pdf_data_trunc}
-    P(x_i, y_i | X_i, Y_i) \propto \mathcal{N}_{\rm 2D}\big(\{X_i, Y_i\}, V_i\big) \times H(y_i - y_{\rm th.}),
+    P(x_i, y_i \,|\, X_i, Y_i) \propto \N_{\rm 2D}\big(\{X_i, Y_i\}, V_i\big) \times H(y_i - y_{\rm th.}),
 \end{equation}
 où $H(x)$ est la fonction de Heaviside, définie comme
 \begin{equation}
@@ -357,7 +359,7 @@ Cette approche a été introduite par \myciteauthor{kelly_aspects_2007} et repri
 Dans cette approche, la distribution de la variable latente est modélisée comme une somme de $n_{\rm mix}$ gaussiennes pondérées:
 \begin{equation}
     \label{eq:scaling:gauss_mix}
-    P(Z) = \frac{1}{n_{\rm mix}}\sum_{k=1}^{n_{\rm mix}} \pi_k \, \mathcal{N}(\mu_k, \sigma_k^2),
+    P(Z) = \frac{1}{n_{\rm mix}}\sum_{k=1}^{n_{\rm mix}} \pi_k \, \N(\mu_k, \sigma_k^2),
 \end{equation}
 où $\mu_k$ et $\sigma_k^2$ représentent les moyennes et variances de la gaussienne $k$, et $\pi_k$ son poids\footnotemark.
 \footnotetext{Notons que les paramètres $\pi_k$, $\mu_k$ et $\sigma_k$ pourraient évoluer avec le redshift, mais que nous ne considèrerons pas de telles évolutions.}
@@ -373,7 +375,7 @@ L'objectif de l'ajustement de cette relation est l'obtention de la distribution 
 De même que pour l'ajustement des profils de pression avec \texttt{PANCO2} (voir chapitre \ref{chap:panco}), cette distribution peut être obtenue à partir du théorème de Bayes:
 \begin{equation}
     \label{eq:bayes_scaling}
-    P(\vartheta | D) = \frac{P(D | \vartheta) P(\vartheta)}{P(D)},
+    P(\vartheta \,|\, D) = \frac{P(D \,|\, \vartheta) \; P(\vartheta)}{P(D)},
 \end{equation}
 où $\vartheta$ est un vecteur représentant les paramètres de l'analyse, $D$ représente les données, c'est-à-dire les valeurs de $(x_i, y_i)$ et leurs covariances $V_i$.
 $P(D|\vartheta)$ représente la fonction de vraisemblance comparant le modèle aux données, obtenu par combinaison des équations  (\ref{eq:scaling:pdf_data}), (\ref{eq:scaling:general_pdf}), (\ref{eq:scaling:mass_estim}) et (\ref{eq:scaling:gauss_mix}).
@@ -413,7 +415,7 @@ Pour les paramètres de pente, $\beta_\yz$ et $\beta_{X|Z}$, la distribution de 
 Une distribution $t_1(\beta)$ sur la pente d'une relation linéaire correspond à une distribution uniforme sur l'angle entre cette droite et l'axe des abscisses, $\theta = \arctan(\beta)$.
 L'utilisation de la distribution de Student revient donc à l'utilisation d'une distribution \prior\ non-informative en coordonnées polaires.
 Ce choix peut donner lieu à des valeurs de pentes moins biaisées vers les grandes valeurs de pente qu'un \prior\ uniforme sur $\beta$ \cite{andreon_measurement_2013,sereno_bayesian_2016}. \\
-Un autre groupe de paramètres pour lesquels la distribution \prior\ n'est pas uniforme est l'ensemble des poids des gaussiennes considérées pour la modélisation de la distribution intrinsèque de la variable latente, $\pi_k, k \in [0\dots n_{\rm mix}]$.
+Un autre groupe de paramètres pour lesquels la distribution \prior\ n'est pas uniforme est l'ensemble des poids des gaussiennes considérées pour la modélisation de la distribution intrinsèque de la variable latente, $\pi_k,\; k \in [0\dots n_{\rm mix}]$.
 La distribution adoptée est la distribution de Dirichlet, qui permet à la somme des poids d'être égale à 1. \\
 Enfin, les paramètres quantifiant l'évolution de la relation d'échelle avec le redshift sont par défaut fixés par défaut à leur valeur autosimilaire, $\gamma=-2/3$ et $\delta=0$ (équation \ref{eq:scaling:sz}).
 
@@ -456,7 +458,7 @@ Lors de la présentation de résultats dans les sections \ref{sec:scaling:valid}
         %\midrule
         %\multicolumn{3}{c}{\itshape Paramètres de nuisance: données} \\
         %\midrule
-        %$(X_i, Y_i)$ & Valeurs réelles des estimateurs & $\mathcal{N}_{\rm 2D}(\{x_i, y_i\}, V_i$) \\
+        %$(X_i, Y_i)$ & Valeurs réelles des estimateurs & $\N_{\rm 2D}(\{x_i, y_i\}, V_i$) \\
         % -------------------------------------------------------------------------- %
         \bottomrule
     \end{tabular}
@@ -501,7 +503,7 @@ L'échantillonnage de Gibbs est un algorithme MCMC qui produit des chaînes de M
 Il offre une grande performance au vu du nombre important de paramètres dans l'analyse.
 L'échantillonnage réalisé dans \texttt{LIRA} utilise le logiciel JAGS\footnote{\textit{Just Another Gibbs Sampler}, \url{https://mcmc-jags.sourceforge.io/}}, dédié à l'échantillonnage de Gibbs pour des modèles bayésiens structurels.
 La marginalisation sur les paramètres de nuisance permet d'obtenir la distribution de probabilité des paramètres d'intérêt au vu des données.
-Cette distribution permet alors de calculer la probabilité $P(\yz)$ qu'un amas de masse $Z$ soit détectable avec une valeur d'observable $Y$.
+Cette distribution permet alors de calculer la probabilité $P(\yzb)$ qu'un amas de masse $Z$ soit détectable avec une valeur d'observable $Y$.
 Comme nous l'avons vu en section \mypageref{sec:cluster_nbcount}, cette probabilité peut être utilisée pour l'étalonnage en masse d'un échantillon d'amas de galaxies en vue de son exploitation cosmologique (équation \ref{eq:nbcount_obs}).
 
 % ===================================================================================== %
@@ -519,11 +521,11 @@ Ces jeux de données n'ont pas vocation à être des réalisations réalistes po
 Nous commençons par générer des données simples, en considérant la présence d'incertitudes de mesures décorrelées sur les deux axes, et l'existence d'une dispersion intrinsèque.
 Un total de cent points $i$ sont générés de la façon suivante:
 \begin{align}
-    \nonumber Z_i &\sim \mathcal{N}(0, 1); \\
-    \nonumber X_i &\sim \mathcal{N}(\alpha_{X|Z} + Z_i, \sigma_{X|Z}^2); \\
-    \nonumber Y_i &\sim \mathcal{N}(\alpha_\yz + \beta_\yz Z_i, \sigma_\yz^2); \\
-    \nonumber x_i &\sim \mathcal{N}(X_i, 0.01); \\
-              y_i &\sim \mathcal{N}(Y_i, 0.01),
+    \nonumber Z_i &\sim \N(0, 1); \\
+    \nonumber X_i &\sim \N(\alpha_{X|Z} + Z_i, \sigma_{X|Z}^2); \\
+    \nonumber Y_i &\sim \N(\alpha_\yz + \beta_\yz Z_i, \sigma_\yz^2); \\
+    \nonumber x_i &\sim \N(X_i, 0.01); \\
+              y_i &\sim \N(Y_i, 0.01),
               \label{eq:scaling:sim_sample_valid}
 \end{align}
 où $A \sim B$ signifie \guillemotleft $A$ est distribué suivant $B$ \guillemotright, et les valeurs utilisées pour les paramètres sont consignées en table \ref{tab:scaling:valid}. \\
@@ -726,7 +728,7 @@ Ces échantillons sont générés en suivant la procédure suivante, schématis�
         et la relation d'échelle de l'équation (\ref{eq:scaling:general_pdf}) devient:
         \begin{equation}
             \label{eq:scaling:general_pdf_noz}
-            P(\yz) = \mathcal{N} \left(\alpha_\yz + \beta_\yz Z, \sigma_\yz^2 \right).
+            P(\yzb) = \N \left(\alpha_\yz + \beta_\yz Z, \sigma_\yz^2 \right).
         \end{equation}
     \item La sélection en boîtes du grand programme SZ est appliquée à la population d'amas simulée.
         Cinq amas sont sélectionnés pour chaque boîte, selon leur valeur de redshift et d'observable SZ.
@@ -914,7 +916,7 @@ Une telle connaissance peut être obtenue par l'étude d'amas simulés, en compa
 \subsection{Extensions du grand programme SZ}
 
 Comme nous l'avons vu en section \mypageref{sec:lpsz}, le grand programme SZ de NIKA2 dispose de 300 heures d'observations avec NIKA2, attribuées à la collaboration pour la construction de l'instrument.
-La caméra NIKA2 étant aujourd'hui à disposition de la communauté scientifique, il est possible de soumettre des propositions d'observations pour observer d'autres amas que ceux présents au sein de l'échantillon du LPSZ.
+La caméra NIKA2 étant aujourd'hui à disposition de la communauté scientifique, il est possible de soumettre des propositions pour obsrver d'autres amas que ceux présents au sein de l'échantillon du LPSZ.
 La possibilité d'observer un échantillon d'amas complémentaire au LPSZ est donc envisagée.
 Dans cette section, nous nous intéressons à l'apport de telles extensions au programme, du point de vue des contraintes sur la relation d'échelle masse-observable.
 Pour cela, nous répétons l'analyse présentée précédemment pour des échantillons combinant le LPSZ et d'autres amas, en considérant différentes sélections.
@@ -946,7 +948,7 @@ S'il n'est pas réaliste d'améliorer les contraintes mises par le LPSZ sur la r
 Par exemple, il est possible d'observer des amas en dehors de la gamme de masse et de redshift de l'échantillon de base.
 Une extension en redshift n'apporterait que peu de contraintes supplémentaires mesurables dans cette étude.
 En effet, nous n'avons pas considéré la mesure de l'évolution avec le redshift de la relation d'échelle.
-Ainsi, ajouter des amas à bas (ou haut) redshift sur la même gamme de masse que celle couverte par l'échantillon du LPSZ reviendrait donc simplement à un ajout d'amas dans l'échantillon, et nous avons vu précédemment que le gain en précision serait moindre.
+Ainsi, ajouter des amas à bas (ou haut) redshift sur la même gamme de masse que celle couverte par l'échantillon du LPSZ reviendrait simplement à un ajout d'amas dans l'échantillon, et nous avons vu précédemment que le gain en précision serait minime.
 
 En revanche, il est possible d'étendre la gamme de masse couverte.
 Étant donné le peu d'amas de masse supérieure à $10^{15} \; M_\odot$ dans l'Univers (voir figure \ref{fig:cluster_catalogs_mz}), une extension à haute masse semble irréaliste.
@@ -956,7 +958,7 @@ Elle correspond à l'ajout de deux boîtes à faibles valeurs de $Y$, une pour c
 L'extension représente alors seulement dix amas, soit bien moins que les 150 nécessaires à multiplier la taille de l'échantillon par quatre.
 
 Les incertitudes relatives sur les paramètres de la relation d'échelle pour 5000 réalisations d'échantillons comportant cette extension sont présentés en rouge sur la figure \ref{fig:scaling:eta_ext}.
-On voit que les incertitudes sur l'ordonnée à l'origine et la dispersion intrinsèque de la relation sont inchangées.
+On voit que les incertitudes sur l'ordonnée à l'origine et la dispersion intrinsèque de la relation sont inchangées par rapport à l'analyse de base (ligne noire pointillée).
 En revanche, l'incertitude sur la pente $\beta$ est diminuée, atteignant une valeur moyenne de $\sim$7\%.
 Ce gain correspond à une couverture étendue en masse, permettant de mieux ajuster la relation.
 Le suivi de dix amas de basse masse pourrait donc améliorer les contraintes mises par le LPSZ sur la relation d'échelle, en plus d'études intéressantes sur les propriétés physiques de ces objets \cite{keruzore_exploiting_2020}.
@@ -974,7 +976,7 @@ Il sera donc nécessaire de calculer le temps d'observation requis, pour éventu
 \end{figure*}
 
 % ===================================================================================== %
-\section{Conclusions}
+\section{Conclusions et perspectives}
 
 Dans ce chapitre, nous avons présenté la relation d'échelle liant le paramètre de Compton intégré $Y_{500}$ et la masse $M_{500}$, son origine physique, et sa modélisation statistique.
 Nous avons mis en place une analyse basée sur un modèle bayésien hiérarchique, consistant en une combinaison structurelle de plusieurs sous-modèles répondant chacun à un effet systématique pouvant affecter l'ajustement de cette relation.
@@ -995,12 +997,12 @@ Une piste pour corriger ce biais serait d'étudier sa dépendance avec les param
 Répéter l'étude présentée dans ce chapitre pour différentes valeurs de dispersion intrinsèque permettrait de quantifier l'évolution du biais avec ce paramètre, et donc de pouvoir mettre en place une correction \textit{ad-hoc} pour les résultats finaux du grand programme SZ, en fonction de la valeur de dispersion mesurée lors de l'ajustement des données réelles.
 
 Nous avons vu que la procédure d'ajustement du modèle bayésien hiérarchique permettait de tenir compte d'un grand nombre d'effets systématiques en introduisant des paramètres de nuisance.
-Cependant, si cette procédure permet d'obtenir une propagation complète des incertitudes sur les résultats finaux, elle implique par conséquent une augmentation de ces incertitudes.
+Cependant, si cette procédure permet d'obtenir une propagation complète des incertitudes sur les résultats finaux, elle implique par construction une augmentation de ces incertitudes.
 La question des \prior\ sur les paramètres de nuisance est donc centrale.
 Afin de pouvoir concilier une propagation complète de toutes les incertitudes systématiques et une mesure précise de la relation d'échelle, il sera nécessaire d'imposer des \prior\ informatifs sur les paramètres de nuisance comme le biais et la dispersion de l'estimateur de masse hydrostatique.
 Ces \prior\ pourront être mesurés en combinant le LPSZ avec des données externes (par exemple en optique avec des mesures de masse dynamique ou par dispersion de vitesses), ou en utilisant des simulations hydrodynamiques.
 
 Enfin, l'étude développée a été utilisée pour commencer à prévoir une extension du grand programme SZ pouvant améliorer le pouvoir de contrainte de ce dernier sur la relation d'échelle.
-Nous avons vu que multiplier la taille de l'échantillon par deux, trois ou quatre demandait des temps d'observations beaucoup trop importants pour de faibles améliorations.
+Nous avons vu que multiplier la taille de l'échantillon par deux, trois ou quatre demandait des temps d'observations beaucoup trop importants pour les améliorations atteignables.
 En revanche, nous avons aussi montré que le suivi avec NIKA2 d'un échantillon d'amas de faible masse permettrait une amélioration conséquente des contraintes sur la pente de la relation avec seulement dix amas.
 Ce résultat pourra être utilisé pour justifier une demande de temps d'observation avec NIKA2.

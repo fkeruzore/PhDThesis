@@ -130,7 +130,7 @@ Pour cela, il est nécessaire de connaitre la valeur du flux de chaque source, e
 Cette approche, présentée plus en détail dans le chapitre \ref{chap:actj0215}, permet de propager l'incertitude sur les flux des différentes sources ponctuelles à la mesure des propriétés thermodynamiques du milieu intra-amas.
 Pour cela, des sources modélisées comme le lobe de NIKA2\footnote{Voir section~\ref{sec:nk_perf}.} peuvent être ajoutées au modèle de carte de brillance de surface présenté précédemment avant que celle-ci ne soit comparée aux données.
 Les flux de ces sources sont alors considérés comme des paramètres supplémentaires du modèle.
-La distribution de probabilité du flux de chaque source, pouvant être obtenue avec \texttt{PSTools} (voir section \ref{sec:decor:pstools}), peut alors être utilisée comme \prior\ sur le paramètre, comme nous le verrons en section \ref{sec:panco:priors}.
+La distribution de probabilité du flux de chaque source, obtenue avec \texttt{PSTools} (voir section \ref{sec:decor:pstools}), peut alors être utilisée comme \prior\ sur le paramètre, comme nous le verrons en section \ref{sec:panco:priors}.
 
 % ------------------------------------------------------------------------------------ %
 \subsection{Signal SZ intégré}
@@ -225,8 +225,8 @@ Notons en particulier que les paramètres correspondant au flux des sources ponc
         \multicolumn{3}{c}{\itshape Paramètres de nuisance} \\
         \midrule
         $C_{\rm conv}$ & Conversion de $y$ en Jy/beam & Gaussienne définie par l'utilisateur \\[3pt]
-        $Z$ & Niveau zéro de la carte & Gaussienne $\mathcal{N}(0,0.1 \; {\rm mJy/beam})$ \\[3pt]
-        $F_i, \; i = 0 \dotsc n_{\rm PS}$ & Flux des sources ponctuelles & -- Distribution issue de \texttt{PSTools} \cite{keruzore_pstools_2019} \\
+        $Z$ & Niveau zéro de la carte & Gaussienne $\N(0,0.1 \; {\rm mJy/beam})$ \\[3pt]
+        $F_i, \; i = 0 \dotsc n_{\rm PS}$ & Flux des sources ponctuelles & -- Distribution issue de \texttt{PSTools} (section \ref{sec:decor:pstools} \\
         & & -- Uniformes avec limites définies par l'utilisateur \\
         \bottomrule
     \end{tabular}
