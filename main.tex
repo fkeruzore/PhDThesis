@@ -165,8 +165,10 @@
     giveninits=true,
     mincitenames=1, % only cite {min} authors et al. when
     maxcitenames=2, % there are more than {max} total
+    backref=true,
 ]{biblatex}
 \renewbibmacro{in:}{,}
+\DeclareFieldFormat{postnote}{#1}
 % clickable links without full URL
 \DefineBibliographyStrings{french}{url = {link}}
 \DeclareFieldFormat{url}{%

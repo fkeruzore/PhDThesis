@@ -5185,7 +5185,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{This book lays out the scientific goals to be addressed by the next-generation ground-based cosmic microwave background experiment, CMB-S4, envisioned to consist of dedicated telescopes at the South Pole, the high Chilean Atacama plateau and possibly a northern hemisphere site, all equipped with new superconducting cameras. CMB-S4 will dramatically advance cosmological studies by crossing critical thresholds in the search for the B-mode polarization signature of primordial gravitational waves, in the determination of the number and masses of the neutrinos, in the search for evidence of new light relics, in constraining the nature of dark energy, and in testing general relativity on large scales.}
       \field{day}{1}
-      \field{journaltitle}{ArXiv E-Prints}
+      \field{journaltitle}{arXiv}
       \field{month}{10}
       \field{title}{{{CMB}}-{{S4 Science Book}}, {{First Edition}}}
       \field{urlday}{9}
@@ -5194,7 +5194,7 @@
       \field{year}{2016}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:1610.02743}
+      \field{pages}{1610.02743}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/A4BFZMN6/Abazajian et al. - 2016 - CMB-S4 Science Book, First Edition.pdf;/Users/keruzore/Zotero/storage/EI8Q65II/abstract.html
@@ -5225,7 +5225,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{This white paper describes the LSST Dark Energy Science Collaboration (DESC), whose goal is the study of dark energy and related topics in fundamental physics with data from the Large Synoptic Survey Telescope (LSST). It provides an overview of dark energy science and describes the current and anticipated state of the field. It makes the case for the DESC by laying out a robust analytical framework for dark energy science that has been defined by its members and the comprehensive three-year work plan they have developed for implementing that framework. The analysis working groups cover five key probes of dark energy: weak lensing, large scale structure, galaxy clusters, Type Ia supernovae, and strong lensing. The computing working groups span cosmological simulations, galaxy catalogs, photon simulations and a systematic software and computational framework for LSST dark energy data analysis. The technical working groups make the connection between dark energy science and the LSST system. The working groups have close linkages, especially through the use of the photon simulations to study the impact of instrument design and survey strategy on analysis methodology and cosmological parameter estimation. The white paper describes several high priority tasks identified by each of the 16 working groups. Over the next three years these tasks will help prepare for LSST analysis, make synergistic connections with ongoing cosmological surveys and provide the dark energy community with state of the art analysis tools. Members of the community are invited to join the LSST DESC, according to the membership policies described in the white paper. Applications to sign up for associate membership may be made by submitting the Web form at http://www.slac.stanford.edu/exp/lsst/desc/signup.html with a short statement of the work they wish to pursue that is relevant to the LSST DESC.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{11}
       \field{shorttitle}{Large {{Synoptic Survey Telescope}}}
       \field{title}{Large {{Synoptic Survey Telescope}}: {{Dark Energy Science Collaboration}}}
@@ -5236,7 +5236,7 @@
       \field{year}{2012}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:1211.0310}
+      \field{pages}{1211.0310}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/G7GM68ZV/LSST Dark Energy Science Collaboration - 2012 - Large Synoptic Survey Telescope Dark Energy Scien.pdf
@@ -7370,7 +7370,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{This thesis introduces a set of methods for testing models of modified gravity using galaxy clusters. In particular, a technique for constraining models with a chameleon screening is introduced. In addition, the outlined technique is expanded to test a wider class of models, such as the theory of emergent gravity. Finally, the first part of the thesis is concluded by adapting the mentioned tests for model independent constraints. The obtained results indicate that galaxy clusters can be used to obtain some of the most powerful constraints on cosmological scales. The second part of the thesis is dedicated to the topic of cosmological emulators. More specifically, a technique of emulating cosmological N-body simulation output data based on machine learning is introduced. Generative adversarial networks (GANs) are used to emulate dark matter-only as well as hydrodynamical simulation data. In addition, N-body modified gravity simulations are explored as well. The presented investigation of the GAN algorithm shows that such emulators offer a powerful, fast and efficient way of producing simulation output data with different cosmological parameters. The power spectrum analysis indicates a 1-20\% difference between the training and the generated data depending on the dataset used and whether Gaussian smoothing is applied or not.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{11}
       \field{title}{Testing and {{Emulating Modified Gravity}} on {{Cosmological Scales}}}
       \field{urlday}{4}
@@ -7380,7 +7380,7 @@
       \field{year}{2020}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2011.08786}
+      \field{pages}{2011.08786}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/QDISJ4T3/Tamosiunas - 2020 - Testing and Emulating Modified Gravity on Cosmolog.pdf
@@ -8587,7 +8587,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Measurement of the distances to nearby galaxies have improved rapidly in recent decades. The ever-present challenge is to reduce systematic effects, especially as greater distances are probed, and the uncertainties become larger. In this paper, we combine several recent calibrations of the Tip of the Red Giant Branch (TRGB) method. These calibrations are internally self-consistent at the 1\% level. New Gaia Early Data Release 3 (EDR3) data provide an additional consistency check, at a (lower) 5\% level of accuracy, a result of the well-documented Gaia angular covariance bias. The updated TRGB calibration applied to a distant sample of Type Ia supernovae from the Carnegie Supernova Project results in a value of the Hubble constant of Ho = 69.8 \$\textbackslash pm\$ 0.6 (stat) \$\textbackslash pm\$ 1.6 (sys) km/s/Mpc. No statistically significant difference is found between the value of Ho based on the TRGB and that determined from measurements of the cosmic microwave background. The TRGB results are also consistent to within 2\$\textbackslash sigma\$ with the SHoES and Spitzer plus HST Key Project Cepheid calibrations. The TRGB results alone do not demand additional new physics beyond the standard Lambda-CDM cosmological model. They have the advantage of simplicity of the underlying physics (the core He flash) and small systematic uncertainties (from extinction, metallicity and crowding). Finally, the strengths and weaknesses of both the TRGB and Cepheids are reviewed, and prospects for addressing the current discrepancy with future Gaia, HST and JWST observations are discussed. Resolving this discrepancy is essential for ascertaining if the claimed tension in Ho between the locally-measured and the CMB-inferred value is physically motivated.}
       \field{day}{1}
-      \field{journaltitle}{ArXiv E-Prints}
+      \field{journaltitle}{arXiv}
       \field{month}{6}
       \field{shorttitle}{Measurements of the {{Hubble Constant}}}
       \field{title}{Measurements of the {{Hubble Constant}}: {{Tensions}} in {{Perspective}}}
@@ -8597,7 +8597,7 @@
       \field{year}{2021}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2106.15656}
+      \field{pages}{2106.15656}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/8NRLQGYF/Freedman - 2021 - Measurements of the Hubble Constant Tensions in P.pdf;/Users/keruzore/Zotero/storage/U48DV4BZ/abstract.html
@@ -10872,7 +10872,7 @@
            giveni={A\bibinitperiod}}}%
       }
       \list{location}{1}{%
-        {eprint: arXiv:astro-ph/0010409}%
+        {eprint: astro-ph/0010409}%
       }
       \strng{namehash}{9de7714567712748994196cd0d1e6031}
       \strng{fullhash}{9de7714567712748994196cd0d1e6031}
@@ -10886,7 +10886,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{HISTORICAL PRESENTATION (Invited review)}
       \field{eventtitle}{Constructing the {{Universe}} with {{Clusters}} of {{Galaxies}}}
-      \field{journaltitle}{ArXiv E-Prints}
+      \field{journaltitle}{arXiv}
       \field{shorttitle}{From {{Messier}} to {{Abell}}}
       \field{title}{From {{Messier}} to {{Abell}}: 200 {{Years}} of {{Science}} with {{Galaxy Clusters}}}
       \field{urlday}{29}
@@ -10895,7 +10895,7 @@
       \field{year}{2000}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:astro\bibrangedash ph/0010409}
+      \field{pages}{astro\bibrangedash ph/0010409}
       \range{pages}{-1}
       \verb{urlraw}
       \verb http://adsabs.harvard.edu/abs/2000cucg.confE...1B
@@ -12393,7 +12393,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Cosmological inference from cluster number counts is systematically limited by the accuracy of the mass calibration, i.e. the empirical determination of the mapping between cluster selection observables and halo mass. In this work we demonstrate a method to quantitatively determine the bias and uncertainties in weak-lensing mass calibration. To this end, we extract a library of projected matter density profiles from hydrodynamical simulations. Accounting for shear bias and noise, photometric redshift uncertainties, mis-centering, cluster member contamination, cluster morphological diversity, and line-of-sight projections, we produce a library of shear profiles. Fitting a one-parameter model to these profiles, we extract the so-called \textbackslash emph\{weak lensing mass\} \$M\_\textbackslash text\{WL\}\$. Relating the weak-lensing mass to the halo mass from gravity-only simulations with the same initial conditions as the hydrodynamical simulations allows us to estimate the impact of hydrodynamical effects on cluster number counts experiments. Creating new shear libraries for \$\textbackslash sim\$1000 different realizations of the systematics, provides a distribution of the parameters of the weak-lensing to halo mass relation, reflecting their systematic uncertainty. This result can be used as a prior for cosmological inference. We also discuss the impact of the inner fitting radius on the accuracy, and determine the outer fitting radius necessary to exclude the signal from neighboring structures. Our method is currently being applied to different Stage\textasciitilde III lensing surveys, and can easily be extended to Stage\textasciitilde IV lensing surveys.}
-      \field{journaltitle}{ArXiv E-Prints}
+      \field{journaltitle}{arXiv}
       \field{langid}{english}
       \field{month}{3}
       \field{title}{Calibration of Bias and Scatter Involved in Cluster Mass Measurements Using Optical Weak Gravitational Lensing}
@@ -12403,7 +12403,7 @@
       \field{year}{2021}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2103.16212}
+      \field{pages}{2103.16212}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/CYIELXYT/Grandis et al. - 2021 - Calibration of bias and scatter involved in cluste.pdf;/Users/keruzore/Zotero/storage/F6J9CB9N/abstract.html
@@ -12465,7 +12465,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{Parametric modeling of galaxy cluster density profiles from weak lensing observations leads to a mass bias, whose detailed understanding is critical in deriving accurate mass-observable relations for constraining cosmological models. Drawing from existing methods, we develop a robust framework for calculating this mass bias in one-parameter fits to simulations of dark matter halos. We show that our approach has the advantage of being independent of the absolute noise level, so that only the number of halos in a given simulation and the representativeness of the simulated halos for real clusters limit the accuracy of the bias estimation. While we model the bias as a log-normal distribution and the halos with a Navarro-Frenk-White profile, our method can be generalized to any bias distribution and parametric model of the radial mass distribution. We find that the log-normal assumption is not strictly valid in the presence of miscentring of halos. We investigate the use of cluster centers derived from weak lensing in the context of mass bias, and tentatively find that such centroids can yield sensible mass estimates if the convergence peak has a signal-to-noise ratio approximately greater than four. In this context we also find that the standard approach to estimating the positional uncertainty of weak lensing mass peaks using bootstrapping severely underestimates the true positional uncertainty for peaks with low signal-to-noise ratios. Though we determine the mass and redshift dependence of the bias distribution for a few experimental setups, our focus remains providing a general approach to computing such distributions.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{5}
       \field{title}{Weak Lensing Mass Modeling Bias and the Impact of Miscentring}
       \field{urlday}{21}
@@ -12475,7 +12475,7 @@
       \field{year}{2021}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2105.08027}
+      \field{pages}{2105.08027}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/LBXYT27L/Sommer et al. - 2021 - Weak lensing mass modeling bias and the impact of .pdf
@@ -13877,7 +13877,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{A survey that can cover the sky in optical bands over wide fields to faint magnitudes with a fast cadence will enable many of the exciting science opportunities of the next decade. The Large Synoptic Survey Telescope (LSST) will have an effective aperture of 6.7 meters and an imaging camera with field of view of 9.6 deg\^2, and will be devoted to a ten-year imaging survey over 20,000 deg\^2 south of +15 deg. Each pointing will be imaged 2000 times with fifteen second exposures in six broad bands from 0.35 to 1.1 microns, to a total point-source depth of r\textasciitilde 27.5. The LSST Science Book describes the basic parameters of the LSST hardware, software, and observing plans. The book discusses educational and outreach opportunities, then goes on to describe a broad range of science that LSST will revolutionize: mapping the inner and outer Solar System, stellar populations in the Milky Way and nearby galaxies, the structure of the Milky Way disk and halo and other objects in the Local Volume, transient and variable objects both at low and high redshift, and the properties of normal and active galaxies at low and high redshift. It then turns to far-field cosmological topics, exploring properties of supernovae to z\textasciitilde 1, strong and weak lensing, the large-scale distribution of galaxies and baryon oscillations, and how these different probes may be combined to constrain cosmological models and the physics of dark energy.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{12}
       \field{title}{{{LSST Science Book}}, {{Version}} 2.0}
       \field{urlday}{30}
@@ -13887,7 +13887,7 @@
       \field{year}{2009}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:0912.0201}
+      \field{pages}{0912.0201}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/NB9WLP63/LSST Science Collaboration et al. - 2009 - LSST Science Book, Version 2.0.pdf
@@ -15775,7 +15775,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{This White Paper, submitted to the recent ESA call for science themes to define its future large missions, advocates the need for a transformational leap in our understanding of two key questions in astrophysics: 1) How does ordinary matter assemble into the large scale structures that we see today? 2) How do black holes grow and shape the Universe? Hot gas in clusters, groups and the intergalactic medium dominates the baryonic content of the local Universe. To understand the astrophysical processes responsible for the formation and assembly of these large structures, it is necessary to measure their physical properties and evolution. This requires spatially resolved X-ray spectroscopy with a factor 10 increase in both telescope throughput and spatial resolving power compared to currently planned facilities. Feedback from supermassive black holes is an essential ingredient in this process and in most galaxy evolution models, but it is not well understood. X-ray observations can uniquely reveal the mechanisms launching winds close to black holes and determine the coupling of the energy and matter flows on larger scales. Due to the effects of feedback, a complete understanding of galaxy evolution requires knowledge of the obscured growth of supermassive black holes through cosmic time, out to the redshifts where the first galaxies form. X-ray emission is the most reliable way to reveal accreting black holes, but deep survey speed must improve by a factor \textasciitilde 100 over current facilities to perform a full census into the early Universe. The Advanced Telescope for High Energy Astrophysics (Athena+) mission provides the necessary performance (e.g. angular resolution, spectral resolution, survey grasp) to address these questions and revolutionize our understanding of the Hot and Energetic Universe. These capabilities will also provide a powerful observatory to be used in all areas of astrophysics.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{6}
       \field{shorttitle}{The {{Hot}} and {{Energetic Universe}}}
       \field{title}{The {{Hot}} and {{Energetic Universe}}: {{A White Paper}} Presenting the Science Theme Motivating the {{Athena}}+ Mission}
@@ -15786,7 +15786,7 @@
       \field{year}{2013}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:1306.2307}
+      \field{pages}{1306.2307}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/TLQQQHNY/Nandra et al. - 2013 - The Hot and Energetic Universe A White Paper pres.pdf
@@ -15939,7 +15939,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{eROSITA is the primary instrument on the Russian SRG mission. In the first four years of scientific operation after its launch, foreseen for 2014, it will perform a deep survey of the entire X-ray sky. In the soft X-ray band (0.5-2 keV), this will be about 20 times more sensitive than the ROSAT all sky survey, while in the hard band (2-10 keV) it will provide the first ever true imaging survey of the sky at those energies. Such a sensitive all-sky survey will revolutionize our view of the high-energy sky, and calls for major efforts in synergic, multi-wavelength wide area surveys in order to fully exploit the scientific potential of the X-ray data. The design-driving science of eROSITA is the detection of very large samples (\textasciitilde 10\^5 objects) of galaxy clusters out to redshifts z{$>$}1, in order to study the large scale structure in the Universe, test and characterize cosmological models including Dark Energy. eROSITA is also expected to yield a sample of around 3 millions Active Galactic Nuclei, including both obscured and un-obscured objects, providing a unique view of the evolution of supermassive black holes within the emerging cosmic structure. The survey will also provide new insights into a wide range of astrophysical phenomena, including accreting binaries, active stars and diffuse emission within the Galaxy, as well as solar system bodies that emit X-rays via the charge exchange process. Finally, such a deep imaging survey at high spectral resolution, with its scanning strategy sensitive to a range of variability timescales from tens of seconds to years, will undoubtedly open up a vast discovery space for the study of rare, unpredicted, or unpredictable high-energy astrophysical phenomena. In this living document we present a comprehensive description of the main scientific goals of the mission, with strong emphasis on the early survey phases.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{9}
       \field{shorttitle}{{{eROSITA Science Book}}}
       \field{title}{{{eROSITA Science Book}}: {{Mapping}} the {{Structure}} of the {{Energetic Universe}}}
@@ -15950,7 +15950,7 @@
       \field{year}{2012}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:1209.3114}
+      \field{pages}{1209.3114}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/DMVHU4GM/Merloni et al. - 2012 - eROSITA Science Book Mapping the Structure of the.pdf
@@ -16405,10 +16405,10 @@
       \verb /Users/keruzore/Zotero/storage/BPD7RXK4/Mroczkowski et al. - 2019 - Astrophysics with the Spatially and Spectrally Res.pdf;/Users/keruzore/Zotero/storage/7TG7PRF8/ui.adsabs.harvard.edu.html
       \endverb
       \verb{urlraw}
-      \verb https://ui.adsabs.harvard.edu/#abs/arXiv:1811.02310
+      \verb https://ui.adsabs.harvard.edu/#abs/1811.02310
       \endverb
       \verb{url}
-      \verb https://ui.adsabs.harvard.edu/#abs/arXiv:1811.02310
+      \verb https://ui.adsabs.harvard.edu/#abs/1811.02310
       \endverb
     \endentry
     \entry{kompaneets_establishment_1957}{article}{}
@@ -16484,7 +16484,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{The relaxation of a photon bath to thermal equilibrium via Compton scattering with electrons is described in the Kompaneets equation (1956). The equation is mostly known from studies of astrophysical plasmas, for its convergence to the Planck distribution and for explaining the Sunyaev-Zeldovich effect changing the apparent brightness of the cosmic microwave background radiation. We revisit its derivation emphasizing its structure as a Kramers-Moyal diffusion approximation to the quantum Boltzmann equation or Master equation with stimulated emission. We do not assume that the Planck law is stationary in performing the continuum approximation but we emphasize the necessity of the flux or Møller factor to arrive at a continuity equation. On the other hand, the structure allows more general assumptions than originally envisioned by Kompaneets.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{3}
       \field{title}{On the Derivation of the {{Kompaneets}} Equation}
       \field{urlday}{12}
@@ -16494,7 +16494,7 @@
       \field{year}{2021}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2103.06654}
+      \field{pages}{2103.06654}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/TSKJ2DWR/Freire Oliveira et al. - 2021 - On the derivation of the Kompaneets equation.pdf
@@ -17590,7 +17590,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Characterise the large-scale structure in the Universe from present times to the high redshift epoch of reionisation is essential to constraining the cosmology, the history of star formation and reionisation, measuring the gas content of the Universe and obtaining a better understanding of the physical process that drive galaxy formation and evolution. Using the integrated emission from unresolved galaxies or gas clouds, line intensity mapping (LIM) provides a new observational window to measure the larger properties of structure. This very promising technique motivates the community to plan for LIM experiments. We describe the development of a large field-of-view instrument, named CONCERTO, operating in the range 130-310 GHz from the APEX 12-meters telescope. CONCERTO is a low-resolution spectrometer based on the Lumped Element Kinetic Inductance Detectors technology. Spectra are obtained using a fast Fourier Transform Spectrometer (FTS), coupled to a dilution cryostat with base temperature of 0.1K. Two 2 kilo-pixels arrays of LEKID are mounted inside the cryostat that also contains the cold optics and the front-end electronics. We present in detail the technological choices leading to the instrumental concept, together with the design and fabrication of the instrument and preliminary laboratory tests on the detectors. We also give our best estimates of CONCERTO sensitivity and give predictions for two of the main scientific goals of CONCERTO, i.e. a [CII]-intensity mapping survey and observations of galaxy clusters. We provide a detail description of the instrument design. Based on realistic comparisons with existing instruments developed by our group (NIKA, NIKA2, and KISS), and on laboratory detectors characterisation, we provide an estimate of CONCERTO sensitivity on sky. Finally, we describe in detail two out of the main science goals offered by CONCERTO at APEX.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{7}
       \field{shorttitle}{A Wide Field-of-View Low-Resolution Spectrometer at {{APEX}}}
       \field{title}{A Wide Field-of-View Low-Resolution Spectrometer at {{APEX}}: Instrument Design and Science Forecast}
@@ -17601,7 +17601,7 @@
       \field{year}{2020}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2007.14246}
+      \field{pages}{2007.14246}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/XS9Q7L4I/The CONCERTO collaboration et al. - 2020 - A wide field-of-view low-resolution spectrometer a.pdf
@@ -17866,7 +17866,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{Matched filters are routinely used in cosmology in order to detect galaxy clusters from mm observations through their thermal Sunyaev-Zeldovich (tSZ) signature. In addition, they naturally provide an observable, the detection signal-to-noise or significance, which can be used as a mass proxy in number counts analyses of tSZ-selected cluster samples. In this work, we show that this observable is, in general, non-Gaussian, and that it suffers from a positive bias, which we refer to as optimisation bias. Both aspects arise from the fact that the signal-to-noise is constructed through an optimisation operation on noisy data, and hold even if the cluster signal is modelled perfectly well, no foregrounds are present, and the noise is Gaussian. After reviewing the general mathematical formalism underlying matched filters, we study the statistics of the signal-to-noise with a set Monte Carlo mock observations, finding it to be well-described by a unit-variance Gaussian for signal-to-noise values of 6 and above, and quantify the magnitude of the optimisation bias, for which we give an approximate expression that may be used in practice. We also consider the impact of the bias on the cluster number counts of Planck and the Simons Observatory (SO), finding it to be negligible for the former and potentially significant for the latter.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{6}
       \field{title}{Understanding Matched Filters for Precision Cosmology}
       \field{urlday}{8}
@@ -17876,7 +17876,7 @@
       \field{year}{2021}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2106.03718}
+      \field{pages}{2106.03718}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/SR5XTPPK/Zubeldia et al. - 2021 - Understanding matched filters for precision cosmol.pdf
@@ -23484,7 +23484,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{We present a cosmological analysis of abundances and stacked weak-lensing profiles of galaxy clusters, exploiting the AMICO KiDS-DR3 catalogue. The sample consists of 3652 galaxy clusters with intrinsic richness \$\textbackslash lambda\^*\textbackslash geq20\$, over an effective area of 377 deg\$\^2\$, in the redshift range \$z\textbackslash in[0.1,\textbackslash,0.6]\$. We quantified the purity and completeness of the sample through simulations. The statistical analysis has been performed by simultaneously modelling the comoving number density of galaxy clusters and the scaling relation between the intrinsic richnesses and the cluster masses, assessed through a stacked weak-lensing profile modelling. The fluctuations of the matter background density, caused by super-survey modes, have been taken into account in the likelihood. Assuming a flat \$\textbackslash Lambda\$CDM model, we constrained \$\textbackslash Omega\_\{\textbackslash rm m\}\$, \$\textbackslash sigma\_8\$, \$S\_8 \textbackslash equiv \textbackslash sigma\_8(\textbackslash Omega\_\{\textbackslash rm m\}/0.3)\^\{0.5\}\$, and the parameters of the mass-richness scaling relation. We obtained \$\textbackslash Omega\_\{\textbackslash rm m\}=0.24\^\{+0.04\}\_\{-0.03\}\$, \$\textbackslash sigma\_8=0.89\^\{+0.06\}\_\{-0.05\}\$, \$S\_8=0.80\^\{+0.04\}\_\{-0.04\}\$. The constraint on \$S\_8\$ is consistent within 1\$\textbackslash sigma\$ with the results from WMAP and Planck. Furthermore, we got constraints on the cluster mass scaling relation in agreement with those obtained from a previous weak-lensing only analysis.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{12}
       \field{shorttitle}{{{AMICO}} Galaxy Clusters in {{KiDS}}-{{DR3}}}
       \field{title}{{{AMICO}} Galaxy Clusters in {{KiDS}}-{{DR3}}: Cosmological Constraints from Counts and Stacked Weak-Lensing}
@@ -23495,7 +23495,7 @@
       \field{year}{2020}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2012.12273}
+      \field{pages}{2012.12273}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/KAJ5QIYW/Lesci et al. - 2020 - AMICO galaxy clusters in KiDS-DR3 cosmological co.pdf
@@ -26861,7 +26861,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{We present constraints on extensions to the \$\textbackslash Lambda\$CDM cosmological model from measurements of the \$E\$-mode polarization auto-power spectrum and the temperature-\$E\$-mode cross-power spectrum of the cosmic microwave background (CMB) made using 2018 SPT-3G data. The extensions considered vary the primordial helium abundance, the effective number of relativistic degrees of freedom, the sum of neutrino masses, the relativistic energy density and mass of a sterile neutrino, and the mean spatial curvature. We do not find clear evidence for any of these extensions, from either the SPT-3G 2018 dataset alone or in combination with baryon acoustic oscillation and \textbackslash textit\{Planck\} data. None of these model extensions significantly relax the tension between Hubble-constant, \$H\_0\$, constraints from the CMB and from distance-ladder measurements using Cepheids and supernovae. The addition of the SPT-3G 2018 data to \textbackslash textit\{Planck\} reduces the square-root of the determinants of the parameter covariance matrices by factors of \$1.3 - 2.0\$ across these models, signaling a substantial reduction in the allowed parameter volume. We also explore CMB-based constraints on \$H\_0\$ from combined SPT, \textbackslash textit\{Planck\}, and ACT DR4 datasets. While individual experiments see some indications of different \$H\_0\$ values between the \$TT\$, \$TE\$, and \$EE\$ spectra, the combined \$H\_0\$ constraints are consistent between the three spectra. For the full combined datasets, we report \$H\_0 = 67.49 \textbackslash pm 0.53\textbackslash,\textbackslash mathrm\{km\textbackslash,s\^\{-1\}\textbackslash,Mpc\^\{-1\}\}\$, which is the tightest constraint on \$H\_0\$ from CMB power spectra to date and in \$4.1\textbackslash,\textbackslash sigma\$ tension with the most precise distance-ladder-based measurement of \$H\_0\$. The SPT-3G survey is planned to continue through at least 2023, with existing maps of combined 2019 and 2020 data already having \$\textbackslash sim3.5\textbackslash times\$ lower noise than the maps used in this analysis.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{3}
       \field{title}{Constraints on {{$\Lambda$CDM Extensions}} from the {{SPT}}-{{3G}} 2018 {{EE}} and {{TE Power Spectra}}}
       \field{urlday}{2}
@@ -26871,7 +26871,7 @@
       \field{year}{2021}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2103.13618}
+      \field{pages}{2103.13618}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/DIJ5A7Q8/Balkenhol et al. - 2021 - Constraints on $Lambda$CDM Extensions from the SP.pdf
@@ -29935,7 +29935,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{Lumped-element kinetic inductance detectors(LEKIDs) have recently shown considerable promise as direct absorption mm-wavelength detectors for astronomical applications. One major research thrust within the Néel Iram Kids Array (NIKA) collaboration has been to investigate the suitability of these detectors for deployment at the 30-meter IRAM telescope located on Pico Veleta in Spain. Compared to microwave kinetic inductance detectors (MKID), using quarter wavelength resonators, the resonant circuit of a LEKID consists of a discrete inductance and capacitance coupled to a feedline. A high and constant current density distribution in the inductive part of these resonators makes them very sensitive. Due to only one metal layer on a silicon substrate, the fabrication is relatively easy. In order to optimize the LEKIDs for this application, we have recently probed a wide variety of individual resonator and array parameters through simulation and physical testing. This included determining the optimal feed-line coupling, pixel geometry, resonator distribution within an array (in order to minimize pixel cross-talk), and resonator frequency spacing. Based on these results, a 144-pixel Aluminum array was fabricated and tested in a dilution fridge with optical access, yielding an average optical NEP of \textasciitilde 2E-16 W/Hz\^1/2 (best pixels showed NEP = 6E-17 W/Hz\^1/2 under 4-8 pW loading per pixel). In October 2010 the second prototype of LEKIDs has been tested at the IRAM 30 m telescope. A new LEKID geometry for 2 polarizations will be presented. Also first optical measurements of a titanium nitride array will be discussed.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{12}
       \field{title}{Development of {{Lumped Element Kinetic Inductance Detectors}} for {{NIKA}}}
       \field{urlday}{8}
@@ -29945,7 +29945,7 @@
       \field{year}{2012}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:1212.4585}
+      \field{pages}{1212.4585}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/CKSWY6KU/Roesch et al. - 2012 - Development of Lumped Element Kinetic Inductance D.pdf
@@ -40817,7 +40817,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{We present the results of a joint analysis of \$Chandra\$ X-ray and South Pole Telescope (SPT) SZ observations targeting the first sample of galaxy clusters at \$0.3 {$<$} z {$<$} 1.3\$, selected to be the progenitors of well-studied nearby clusters based on their expected accretion rate. We develop a new procedure in order to tackle the analysis challenge that is estimating the intracluster medium (ICM) properties of low-mass and high-redshift clusters with \$\{\textbackslash sim\}150\$ X-ray counts. One of the dominant sources of uncertainty on the ICM density profile estimated with a standard X-ray analysis with such shallow X-ray data is due to the systematic uncertainty associated with the ICM temperature obtained through the analysis of the background-dominated X-ray spectrum. We show that we can decrease the uncertainty on the density profile by a factor \$\{\textbackslash sim\}5\$ with a joint deprojection of the X-ray surface brightness profile measured by \$Chandra\$ and the SZ integrated Compton parameter available in the SPT cluster catalog. We apply this technique to the whole sample of 67 clusters in order to track the evolution of the ICM core density during cluster growth. We confirm that the evolution of the gas density profile is well modeled by the combination of a fixed core and a self-similarly evolving non-cool core profile. We show that the fraction of cool-cores in this sample is remarkably stable with redshift although clusters have gained a factor \$\{\textbackslash sim\}4\$ in total mass over the past \$\{\textbackslash sim\}9\$ Gyr. This new sample combined with our new X-ray/SZ analysis procedure and extensive multi-wavelength data will allow us to address fundamental shortcomings in our current understanding of cluster formation and evolution at \$z {$>$} 1\$.}
       \field{day}{1}
-      \field{journaltitle}{arXiv e-prints}
+      \field{journaltitle}{arXiv}
       \field{month}{12}
       \field{shorttitle}{Stability of {{Cool Cores During Galaxy Cluster Growth}}}
       \field{title}{Stability of {{Cool Cores During Galaxy Cluster Growth}}: {{A Joint Chandra}}/{{SPT Analysis}} of 67 {{Galaxy Clusters Along}} a {{Common Evolutionary Track Spanning}} 9 {{Gyr}}}
@@ -40828,7 +40828,7 @@
       \field{year}{2020}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:2012.14669}
+      \field{pages}{2012.14669}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/PVRDL8J8/Ruppin et al. - 2020 - Stability of Cool Cores During Galaxy Cluster Grow.pdf
@@ -41579,7 +41579,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The aim of this paper, triggered by some discussions in the astrophysics community raised by astro-ph/0508529, is to introduce the issue of `fits' from a probabilistic perspective (also known as Bayesian), with special attention to the construction of model that describes the `network of dependences' (a Bayesian network) that connects experimental observations to model parameters and upon which the probabilistic inference relies. The particular case of linear fit with errors on both axes and extra variance of the data points around the straight line (i.e. not accounted by the experimental errors) is shown in detail. Some questions related to the use of linear fit formulas to log-linearized exponential and power laws are also sketched, as well as the issue of systematic errors.}
-      \field{journaltitle}{ArXiv E-Prints}
+      \field{journaltitle}{arXiv}
       \field{langid}{english}
       \field{month}{11}
       \field{title}{Fits, and Especially Linear Fits, with Errors on Both Axes, Extra Variance of the Data Points and Other Complications}
@@ -43982,7 +43982,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{Lynx is the next-generation observatory which will provide unprecedented X-ray vision into the otherwise invisible Universe to gain understanding of origins and physics of the cosmos. Lynx will see the dawn of black holes, reveal what drives galaxy formation and evolution, and unveil the energetic side of stellar evolution and stellar ecosystems. Lynx science payload will enables radical advances and leaps in capability over NASA's existing flagship Chandra and the ESA's planned Athena mission: 100-fold increase in sensitivity via coupling superb angular resolution with high throughput; 16 times larger field of view (FOV) for sub-arcsecond imaging; and 10-20 times higher spectral resolution for both point-like and extended sources. The Lynx Design Reference Mission has been designed to meet the science objectives of the future while capitalizing where appropriate on decades of experience, and especially from efficient, flight-proven approaches, design choices, and mission operations software and procedures developed for Chandra. While the science program outlined for Lynx in this report is already very broad, the observatory is designed such that there will be ample resources to execute many other programs, even those not anticipated today. Virtually all astronomers will be able to use Lynx for their own particular science.}
       \field{day}{1}
-      \field{journaltitle}{ArXiv E-Prints}
+      \field{journaltitle}{arXiv}
       \field{month}{9}
       \field{title}{The {{Lynx Mission Concept Study Interim Report}}}
       \field{urlday}{16}
@@ -43991,7 +43991,7 @@
       \field{year}{2018}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:1809.09642}
+      \field{pages}{1809.09642}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/RW8F3XXT/The Lynx Team - 2018 - The Lynx Mission Concept Study Interim Report.pdf
@@ -45069,7 +45069,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Cosmic surveys provide crucial information about high energy physics including strong evidence for dark energy, dark matter, and inflation. Ongoing and upcoming surveys will start to identify the underlying physics of these new phenomena, including tight constraints on the equation of state of dark energy, the viability of modified gravity, the existence of extra light species, the masses of the neutrinos, and the potential of the field that drove inflation. Even after the Stage IV experiments, DESI and LSST, complete their surveys, there will still be much information left in the sky. This additional information will enable us to understand the physics underlying the dark universe at an even deeper level and, in case Stage IV surveys find hints for physics beyond the current Standard Model of Cosmology, to revolutionize our current view of the universe. There are many ideas for how best to supplement and aid DESI and LSST in order to access some of this remaining information and how surveys beyond Stage IV can fully exploit this regime. These ideas flow to potential projects that could start construction in the 2020's.}
       \field{day}{1}
-      \field{journaltitle}{ArXiv E-Prints}
+      \field{journaltitle}{arXiv}
       \field{month}{4}
       \field{shorttitle}{Cosmic {{Visions Dark Energy}}}
       \field{title}{Cosmic {{Visions Dark Energy}}: {{Science}}}
@@ -45079,7 +45079,7 @@
       \field{year}{2016}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{arXiv:1604.07626}
+      \field{pages}{1604.07626}
       \range{pages}{-1}
       \verb{file}
       \verb /Users/keruzore/Zotero/storage/WCFDUJRB/Dodelson et al. - 2016 - Cosmic Visions Dark Energy Science.pdf
