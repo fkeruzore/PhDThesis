@@ -1,7 +1,3 @@
-%Cette thèse parle de la cosmologie avec des amas de galaxies.
-%Pour comprendre, il faut donc savoir ce que c'est la cosmologie.
-%Dans ce chapitre, on fait ça.
-
 Le modèle standard de la cosmologie offre un formalisme décrivant l'évolution de l'Univers, du \textit{Big Bang} à aujourd'hui.
 Ses succès observationnels sont nombreux, de l'expansion de l'Univers à l'existence du fond diffus cosmologique, en passant par la nucléosynthèse primordiale; aujourd'hui, il n'existe pas d'observations le mettant en échec.
 Dans ce cadre, les propriétés de l'Univers sont décrites par un nombre restreint de quantités, nommées paramètres cosmologiques, dont la mesure est aujourd'hui l'enjeu de la cosmologie observationnelle.
@@ -21,7 +17,7 @@ La cosmologie moderne décrit l'Univers comme un objet dynamique obéissant aux 
 Ce cadre permet de lier la structure de l'espace-temps avec le contenu de l'Univers au travers des équations d'\myciteauthor{einstein_feldgleichungen_1915}:
 \begin{equation}
     \label{eq:einst_field}
-    G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}.
+    G_{\mu\nu} - \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}.
 \end{equation}
 La partie gauche de l'équation encode la géométrie de l'espace-temps au travers du tenseur d'Einstein $G_{\mu\nu}$ et de la métrique $g_{\mu\nu}$, et la partie droite décrit la dynamique des composants de l'Univers par leur tenseur énergie-impulsion $T_{\mu\nu}$.
 $G$ est la constante gravitationnelle Newtonienne, $c$ la vitesse de la lumière dans le vide, et $\Lambda$ la constante cosmologique, qui sera discutée en section \ref{sec:dark_energy}.
@@ -50,7 +46,7 @@ Alors, la combinaison des équations (\ref{eq:einst_field}), (\ref{eq:flrw}) et 
 où $\dot{a}$ dénote la dérivée temporelle de $a$, et $H(t)$ est le paramètre de Hubble, quantifiant le taux d'expansion de l'Univers.
 
 Ces équations différentielles lient la dynamique de l'Univers à l'évolution de la densité d'énergie et de pression de son contenu.
-Cette évolution dépend du paramètre d'équation d'état $w=p/\rho c^2$ du fluide: la combinaison des équations (\ref{eq:fried1}) et (\ref{eq:fried2}) donne l'équation de conservation de l'énergie pour un fluide parfait comobile,
+Cette évolution dépend du paramètre d'équation d'état $w=p/(\rho c^2)$ du fluide: la combinaison des équations (\ref{eq:fried1}) et (\ref{eq:fried2}) donne l'équation de conservation de l'énergie pour un fluide parfait comobile,
 \begin{equation}
     \dot{\rho} = -3(\rho + p/c^2) \times H(t),
 \end{equation}
@@ -63,9 +59,8 @@ Le contenu de l'Univers peut être séparé en plusieurs fluides parfaits comobi
 Ces constituants sont la matière, comprenant l'ensemble des baryons de l'Univers, ainsi que la matière sombre, et le rayonnement, composé des photons et autres espèces relativistes de l'Univers.
 L'équation de Friedmann (\ref{eq:fried1}) peut s'écrire en fonction des densités $\rho_j$ des différents constituants $j$ de l'Univers:
 \begin{equation}
-    H^2(a) = \frac{8\pi G}{3 }\sum_j \rho_j(a) + \frac{\Lambda c^2}{3} - \frac{kc^2}{a^2}
+    H^2(a) = \frac{8\pi G}{3 }\sum_j \rho_j(a) + \frac{\Lambda c^2}{3} - \frac{kc^2}{a^2}.
 \end{equation}
-où $H_0$ est le taux d'expansion actuel de l'Univers. \\
 Ainsi, en introduisant la densité critique $\rho_c$ comme:
 \begin{equation}
     \label{eq:rho_crit}
@@ -78,7 +73,7 @@ La première équation de Friedmann (\ref{eq:fried1}) s'écrit finalement:
     \label{eq:fried_omega}
     H^2(a) = H_0^2 \sum_i \Omega_{i,0} \, a^{-3(1+w_i)},
 \end{equation}
-où les composantes $i$ comprennent les constituants précédemment notés $j$ (matière et rayonnement), ainsi que la courbure et la constante cosmologique.
+où $H_0$ est le taux d'expansion actuel de l'Univers, et où les composantes $i$ comprennent les constituants précédemment notés $j$ (matière et rayonnement), ainsi que la courbure et la constante cosmologique.
 Leurs abondances relatives actuelles sont notées $\Omega_{i,0}$.
 Les différents constituants de l'Univers, leurs paramètres d'équation d'état, et leur abondances actuelles mesurées par l'analyse des anisotropies du fond diffus cosmologique (ou CMB pour \textit{Cosmic Microwave Background}) par le satellite \textit{Planck} \cite{planck_collaboration_planck_2020} sont résumés dans la table \ref{tab:cosmo_params}.
 
@@ -106,14 +101,14 @@ Les différents constituants de l'Univers, leurs paramètres d'équation d'état
 \label{sec:dark_energy}
 
 Les équations de Friedmann permettent de lier l'évolution du facteur d'échelle de l'Univers aux densités d'énergie de ses différents constituants, et d'étudier cette évolution dans le temps.
-D'après la combinaison de la première équation de Friedmann (\ref{eq:fried_omega}) et de l'équation (\ref{eq:rho_w}), il apparait que le facteur d'échelle d'un Univers de densité d'énergie dominée par un constituant d'équation d'état $w \geqslant -1$ ne peut qu'augmenter avec le temps.
+D'après la combinaison de la première équation de Friedmann (\ref{eq:fried_omega}) et de l'équation (\ref{eq:rho_w}), il apparait que le facteur d'échelle d'un Univers de densité d'énergie dominée par un constituant $i$ d'équation d'état $w_i \geqslant -1$ ne peut qu'augmenter avec le temps\footnote{Dans la mesure où $\Omega_{i, 0}$ est positif.}.
 Chacun des constituants de notre Univers vérifiant cette condition (comme montré en table \ref{tab:cosmo_params}), nous pouvons en déduire que celui-ci est en expansion.
 Cette expansion se caractérise par une dilatation de l'espace-temps avec le temps, et une augmentation des distances séparant les différents objets présents dans l'Univers.
 Il en découle que par le passé, l'Univers entier était contenu dans un volume bien plus faible qu'aujourd'hui, diminuant en remontant le temps jusqu'à atteindre une singularité de l'espace-temps: c'est le modèle du \textit{Big Bang}, élément majeur de notre compréhension de la cosmologie.
 
 Historiquement, la constante cosmologique $\Lambda$ fût introduite par Einstein dans les équations du champ (\ref{eq:einst_field}) afin de pouvoir décrire un modèle d'Univers statique.
 Cette hypothèse fût mise en échec par les confirmations observationnelles de l'expansion par \myciteauthor{lemaitre_univers_1927} et \myciteauthor{hubble_relation_1929}.
-Ces études ont mis en évidence le décalage vers le rouge des spectres de galaxies l'expansion: un photon émis a un instant $t_1$ et à une longueur d'onde $\lambda_1$, verra sa longueur d'onde augmenter au cours de son voyage dans l'Univers de par la dilatation de l'espace temps.
+Ces études ont mis en évidence le décalage vers le rouge des spectres de galaxies l'expansion: un photon émis a un instant $t_1$ et à une longueur d'onde $\lambda_1$, verra sa longueur d'onde augmenter au cours de son voyage dans l'Univers de par la dilatation de l'espace-temps.
 Ainsi, à un instant postérieur $t_0$, sa longueur d'onde $\lambda_0$ sera décalée vers les grandes longueurs d'onde -- et donc vers le rouge, décalage quantifié par le \textit{redshift} $z$:
 \begin{equation}
     \label{eq:redshift}
@@ -294,11 +289,6 @@ Enfin, le champ d'inflaton permet de comprendre l'origine des fluctuations de de
 \end{equation}
 où $\bar{\varphi}(t)$ est la valeur moyenne du champ dans l'espace, ne dépendant que du temps dans l'hypothèse d'homogénéité. \\
 Il apparait alors que la valeur du champ et de son potentiel ne sont pas égales en tout point de l'espace.
-%On peut introduire le spectre de puissance des fluctuations de $\varphi$ comme la transformée de Fourier de sa fonction de corrélation à deux points $\xi_{\delta\varphi}(\vec{x})$:
-%\begin{equation}
-%    \label{eq:infla_pk}
-%    P_{\delta\varphi}(k) = \int \xi_{\delta\varphi}(\vec{x}) e^{-i \vec{k} \cdot \vec{x}} \, \d^3 \vec{x}.
-%\end{equation}
 En vertu du lien entre densité d'énergie et espace-temps décrit par les équations d'Einstein (\ref{eq:einst_field}), ces inhomogénéités créent des perturbations dans la métrique de l'Univers, qui génèrent à leur tour des fluctuations dans la densité d'énergie du plasma primordial.
 Ainsi, en plus des problèmes de l'horizon et de la platitude, l'inflation offre une origine au processus de formation des structures, qui sera détaillée dans la section suivante.
 
@@ -366,9 +356,8 @@ Dans le cas de fluctuations gaussiennes, la distribution de densité primordiale
     \xi(\vec{r}) = \left< \delta(\vec{x} + \vec{r}) \delta(\vec{r}) \right>,
 \end{equation}
 où $\left< \cdots \right>$ représente la valeur moyenne prise en toute position $\vec{x}$ de l'Univers. \\
-On peut encore définir le spectre de puissance primordial $P_{\rm prim.}(k)$ comme la transformé de Fourier de cette fonction de corrélation, %ou bien sous la forme:
+On peut encore définir le spectre de puissance primordial $P_{\rm prim.}(k)$ comme la transformée de Fourier de cette fonction de corrélation,
 \begin{equation}
-    %\Delta^2(k) \equiv \frac{k^3}{2\pi^2} P(k) = \frac{k^3}{2\pi^2} \int \xi(\vec{r}) e^{-i \vec{k} \cdot \vec{r}} \, \d^3 \vec{r}.
     P_{\rm prim.}(k) = \int \xi(\vec{r}) e^{-i \vec{k} \cdot \vec{r}} \, \d^3 \vec{r}.
 \end{equation}
 Les contraintes observationnelles sur le spectre de puissance primordial, obtenues notamment à partir de l'analyse des anisotropies du CMB, favorisent une forme en loi de puissance de ce dernier, soit $P(k) \propto k^n$, avec $n \simeq 1$ \cite{planck_collaboration_planck_2020}.
@@ -460,7 +449,7 @@ La mesure de son paramètre d'équation d'état, et de son éventuelle évolutio
 
 La mesure toujours plus précise des valeurs des paramètres cosmologiques est l'un des enjeux majeurs de la cosmologie moderne.
 Dans ce but, la combinaison de plusieurs observables, nommées \textit{sondes cosmologiques}, s'impose comme un puissant moyen de mitiger les différentes incertitudes systématiques associées à chacune des sondes individuelles.
-Plusieurs études récentes semblent indiquer un désaccord entre les mesures des paramètres cosmologiques effectués avec différentes sondes.
+Plusieurs études récentes semblent indiquer un désaccord entre les mesures des paramètres cosmologiques effectuées avec différentes sondes.
 Par exemple, les mesures du taux actuel d'expansion de l'Univers $H_0$ réalisées par l'analyse des anisotropies du CMB sont en désaccord avec les mesures réalisées dans l'Univers contemporain (voir par exemple \cite{riess_large_2019,wong_h0licow_2020,efstathiou_h0_2021, freedman_measurements_2021}).
 On note également la différence entre les estimations du paramètre $S_8$ par l'analyse du CMB et d'autres sondes, qui sera discutée au chapitre suivant.
 Ces tensions peuvent être un signe de nouvelle physique, ou bien indiquer des effets systématiques non-maîtrisés.

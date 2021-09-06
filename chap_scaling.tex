@@ -107,6 +107,7 @@ On peut réécrire l'équation (\ref{eq:scaling:sz_full}) pour tenir compte de p
 \end{equation}
 où $E(z) \equiv H(z)/H_0$ est le paramètre de Hubble réduit. \\
 La valeur de $\alpha$ dépend directement des propriétés physiques des amas de galaxies, comme par exemple la fraction de gaz $f$ et la composition chimique du milieu intra-amas $\mu_g$.
+On peut utiliser des valeurs typiques de ces grandeurs issues de simulaions numériques: en prenant $\,f = 0.175$, $\mu = 0.59$ et $\mu_g = 1.14$ (\eg\ \cite{arnaud_universal_2010}), on trouve $\alpha = -0.53$.
 En revanche, la valeur de $\beta = 5/3$ est fixe dans le scénario autosimilaire.
 L'ajustement de cette relation sur un jeu de données permet alors de mesurer les paramètres $\alpha$ et $\beta$.
 
@@ -170,8 +171,9 @@ De telles approches sont décrites dans la revue d'\myciteauthor{andreon_measure
 De telles relations peuvent prendre une forme linéaire en s'intéressant aux logarithmes de la masse et de l'observable; on peut alors écrire
 \begin{equation}
     \label{eq:scaling:general}
-    Y = \alpha_\yz + \beta_\yz Z + \gamma \, E(z) + \delta \, E(z) \, Z.
+    Y = \alpha_\yz + \beta_\yz Z + \gamma \, T(z) + \delta \, T(z) \, Z,
 \end{equation}
+où $T(z) = \log_{10} E(z)$. \\
 Dans cette équation, $Y$ est le logarithme de l'observable, et $Z$ celui de la masse\footnotemark.
 \footnotetext{Par la suite, nous parlerons d'observable et de masse pour $Y$ et $Z$ par simplicité.}
 Dans la littérature statistique traitant des régressions linéaires, $Z$ est nommée variable latente ou indépendante, tandis que $Y$ est nommée variable de réponse.
@@ -180,11 +182,11 @@ En procédant par association entre les équations (\ref{eq:sz_scaling}) et (\re
 \begin{align}
     \nonumber Y &\equiv \log_{10} \left[\frac{Y_{500}}{10^{-4} \,\unit{Mpc^2}}\right], \\
     \nonumber Z &\equiv \log_{10} \left[\frac{M_{500}}{3 \times 10^{14} \,M_\odot}\right], \\
-    \nonumber \gamma &= -2/3, \\
+    \nonumber \gamma &= 2/3, \\
     \delta &= 0.
     \label{eq:scaling:sz}
 \end{align}
-Ainsi, l'équation (\ref{eq:scaling:general}) est plus générale que (\ref{eq:sz_scaling}), puisque la possibilité de considérer des valeurs de $\gamma \neq -2/3$ et $\delta \neq 0$ permet d'étudier l'écart à l'autosimilarité et l'évolution d'une relation d'échelle avec le redshift.
+Ainsi, l'équation (\ref{eq:scaling:general}) est plus générale que (\ref{eq:sz_scaling}), puisque la possibilité de considérer des valeurs de $\gamma \neq 2/3$ et $\delta \neq 0$ permet d'étudier l'écart à l'autosimilarité et l'évolution d'une relation d'échelle avec le redshift.
 
 L'ajustement d'une relation d'échelle est donc celui d'une relation linéaire.
 Toutefois, plusieurs caractéristiques des données et du modèle rendent cet ajustement complexe.
@@ -221,7 +223,7 @@ Il est possible de tenir compte du caractère non-déterministe de la relation m
 On peut notamment considérer une distribution gaussienne:
 \begin{equation}
     \label{eq:scaling:general_pdf}
-    P(\yzb) = \N \left(\alpha_\yz + \beta_\yz Z + \gamma \, E(z) + \delta \, E(z) \, Z, \sigma_\yz^2 \right),
+    P(\yzb) = \N \left(\alpha_\yz + \beta_\yz Z + \gamma \, T(z) + \delta \, T(z) \, Z, \sigma_\yz^2 \right),
 \end{equation}
 où $\N(\mu, \nu)$ est la distribution normale de moyenne $\mu$ et variance $\nu$. \\
 On note $\sigma_\yz$ la dispersion intrinsèque de la relation d'échelle, encapsulant la variabilité des valeurs d'observable $Y$ pouvant être associés à une valeur de masse $Z$.
@@ -262,7 +264,6 @@ Pour un amas de galaxies $i$, on peut alors écrire:
 \begin{equation}
     \label{eq:scaling:pdf_data}
     P(x_i, y_i \,|\, X_i, Y_i) = \N_{\rm 2D}\big(\{X_i, Y_i\}, V_i\big),
-    %P(X_i, Y_i | x_i, y_i) = \N_{\rm 2D}\big(\{x_i, y_i\}, V_i\big),
 \end{equation}
 où $x_i$ et $y_i$ sont les valeurs mesurées de l'estimateur de masse et de l'observable, $X_i$ et $Y_i$ sont les vraies valeurs de ces deux grandeurs, et $V_i$ est la matrice de covariance des incertitudes sur $x_i$ et $y_i$. \\
 Ainsi, dans cette modélisation de la relation d'échelle, les valeurs réelles des estimateurs de masse et d'observable sont des paramètres de nuisance du modèle.
@@ -408,7 +409,7 @@ Le choix des intervalles $[-10^4, 10^4]$ (ou $[0, 10^4]$ dans le cas des valeurs
 Puisque les grandeurs en jeu dans l'ajustement sont mises à l'échelle (équation \ref{eq:scaling:sz}), ces intervalles sont suffisamment larges pour ne pas exclure de région de l'espace des paramètres pouvant fournir une bonne description des données.
 
 Certains paramètres ne se voient pas attribuer une distribution \prior\ uniforme.
-Pour les paramètres de pente, $\beta_\yz$ et $\beta_{X|Z}$, la distribution de Student à un degré de liberté est utilisée:
+Pour le paramètre de pente $\beta_\yz$, la distribution de Student à un degré de liberté est utilisée:
 \begin{equation}
     t_1(x) = \frac{1}{\pi} \big(1 + x^2\big)^{-1}.
 \end{equation}
@@ -417,7 +418,7 @@ L'utilisation de la distribution de Student revient donc à l'utilisation d'une 
 Ce choix peut donner lieu à des valeurs de pentes moins biaisées vers les grandes valeurs de pente qu'un \prior\ uniforme sur $\beta$ \cite{andreon_measurement_2013,sereno_bayesian_2016}. \\
 Un autre groupe de paramètres pour lesquels la distribution \prior\ n'est pas uniforme est l'ensemble des poids des gaussiennes considérées pour la modélisation de la distribution intrinsèque de la variable latente, $\pi_k,\; k \in [0\dots n_{\rm mix}]$.
 La distribution adoptée est la distribution de Dirichlet, qui permet à la somme des poids d'être égale à 1. \\
-Enfin, les paramètres quantifiant l'évolution de la relation d'échelle avec le redshift sont par défaut fixés par défaut à leur valeur autosimilaire, $\gamma=-2/3$ et $\delta=0$ (équation \ref{eq:scaling:sz}).
+Enfin, les paramètres quantifiant l'évolution de la relation d'échelle avec le redshift sont par défaut fixés à leur valeur autosimilaire, $\gamma=2/3$ et $\delta=0$ (équation \ref{eq:scaling:sz}).
 
 Notons que la distribution \prior\ décrite dans cette section est la distribution par défaut pour un ajustement de relation d'échelle.
 Il est possible de spécifier une autre distribution pour chaque paramètre, selon les objectifs de l'analyse.
@@ -438,7 +439,7 @@ Lors de la présentation de résultats dans les sections \ref{sec:scaling:valid}
         $\alpha_\yz$ & Ordonnée à l'origine   & $\mathcal{U}(-10^4, 10^4)$ \\
         $\beta_\yz$  & Pente                  & Student $t_1$ \\
         $\sigma_\yz$ & Dispersion intrinsèque & $\mathcal{U}(0, 10^4)$ \\
-        $\gamma$ & Évolution avec le redshift de la normalisation & $\delta(-2/3)$ \\
+        $\gamma$ & Évolution avec le redshift de la normalisation & $\delta(2/3)$ \\
         $\delta$ & Évolution avec le redshift de la pente & $\delta(0)$ \\
         % -------------------------------------------------------------------------- %
         \midrule
@@ -454,12 +455,6 @@ Lors de la présentation de résultats dans les sections \ref{sec:scaling:valid}
         $\mu_k$    & Moyennes des gaussiennes    & $\mathcal{U}(-10^4, 10^4)$ \\
         $\sigma_k$ & Dispersions des gaussiennes & $\mathcal{U}(0, 10^4)$ \\
         $\pi_k$    & Poids des gaussiennes       & Dirichlet($n_{\rm mix}$) \\
-        % -------------------------------------------------------------------------- %
-        %\midrule
-        %\multicolumn{3}{c}{\itshape Paramètres de nuisance: données} \\
-        %\midrule
-        %$(X_i, Y_i)$ & Valeurs réelles des estimateurs & $\N_{\rm 2D}(\{x_i, y_i\}, V_i$) \\
-        % -------------------------------------------------------------------------- %
         \bottomrule
     \end{tabular}
     \caption{%
@@ -504,7 +499,7 @@ Il offre une grande performance au vu du nombre important de paramètres dans l'
 L'échantillonnage réalisé dans \texttt{LIRA} utilise le logiciel JAGS\footnote{\textit{Just Another Gibbs Sampler}, \url{https://mcmc-jags.sourceforge.io/}}, dédié à l'échantillonnage de Gibbs pour des modèles bayésiens structurels.
 La marginalisation sur les paramètres de nuisance permet d'obtenir la distribution de probabilité des paramètres d'intérêt au vu des données.
 Cette distribution permet alors de calculer la probabilité $P(\yzb)$ qu'un amas de masse $Z$ soit détectable avec une valeur d'observable $Y$.
-Comme nous l'avons vu en section \mypageref{sec:cluster_nbcount}, cette probabilité peut être utilisée pour l'étalonnage en masse d'un échantillon d'amas de galaxies en vue de son exploitation cosmologique (équation \ref{eq:nbcount_obs}).
+Comme nous l'avons vu en section \mypageref{sec:cluster_nbcount}, cette probabilité peut être utilisée pour l'étalonnage en masse d'un échantillon d'amas de galaxies en vue de son exploitation cosmologique (équations \ref{eq:nbcount_obs, eq:nbcount_sel}).
 
 % ===================================================================================== %
 \section{Validation sur données simulées}
@@ -521,11 +516,11 @@ Ces jeux de données n'ont pas vocation à être des réalisations réalistes po
 Nous commençons par générer des données simples, en considérant la présence d'incertitudes de mesures décorrelées sur les deux axes, et l'existence d'une dispersion intrinsèque.
 Un total de cent points $i$ sont générés de la façon suivante:
 \begin{align}
-    \nonumber Z_i &\sim \N(0, 1); \\
-    \nonumber X_i &\sim \N(\alpha_{X|Z} + Z_i, \sigma_{X|Z}^2); \\
-    \nonumber Y_i &\sim \N(\alpha_\yz + \beta_\yz Z_i, \sigma_\yz^2); \\
-    \nonumber x_i &\sim \N(X_i, 0.01); \\
-              y_i &\sim \N(Y_i, 0.01),
+    \nonumber Z_i &\sim \N\ (0, 1); \\
+    \nonumber X_i &\sim \N\ (\alpha_{X|Z} + Z_i, \sigma_{X|Z}^2) \quad \text{(soit $\beta_{X|Z} = 1$)}; \\
+    \nonumber Y_i &\sim \N\ (\alpha_\yz + \beta_\yz Z_i, \sigma_\yz^2); \\
+    \nonumber x_i &\sim \N\ (X_i, 0.01); \\
+              y_i &\sim \N\ (Y_i, 0.01),
               \label{eq:scaling:sim_sample_valid}
 \end{align}
 où $A \sim B$ signifie \guillemotleft $A$ est distribué suivant $B$ \guillemotright, et les valeurs utilisées pour les paramètres sont consignées en table \ref{tab:scaling:valid}. \\
@@ -623,6 +618,8 @@ En effet, nous verrons par la suite que l'ajout de paramètres de nuisance dans 
     \caption{%
         Liste des valeurs d'entrée des paramètres, de leurs distributions \prior\ et des résultats pour les analyses de validation présentées en section \ref{sec:scaling:valid}.
         La distribution \prior\ des paramètres non-répertoriés dans cette table est celle par défaut (table \ref{tab:scaling:params}).
+        Lorsqu'elles ne sont pas précisées, les valeurs d'entrée des paramètres $\alpha_{X|Z}$ et $\sigma_{X|Z}$ sont nulles.
+        Les biais et dispersions des estimateurs des paramètres $\alpha_{X|Z}$ et $\sigma_{X|Z}$ ne sont pas répertoriés car ceux-ci sont des paramètres de nuisance, dont les contraintes ne sont pas l'objectif de l'analyse.
     }
     \label{tab:scaling:valid}
 \end{table}
@@ -719,7 +716,7 @@ Ces échantillons sont générés en suivant la procédure suivante, schématis�
         \begin{equation}
             \alpha_\yz = -0.19\;; \qquad \beta_\yz = 1.79\;; \qquad \sigma_\yz = 0.075.
         \end{equation}
-        Les valeurs des paramètres d'évolution avec le redshift sont fixées à leur valeur par défaut, $\gamma = -2/3$ et $\delta = 0$.
+        Les valeurs des paramètres d'évolution avec le redshift sont fixées à leur valeur par défaut, $\gamma = 2/3$ et $\delta = 0$.
         Ainsi, chaque amas se voit attribuer une valeur d'observable SZ selon sa masse et son redshift.
         Puisque nous n'étudions pas l'évolution de la relation avec le redshift au-delà de la prédiction autosimilaire, nous définissons l'observable SZ comme:
         \begin{equation}
@@ -787,13 +784,13 @@ L'ajustement est ensuite réalisé en tenant compte d'une coupure inférieure en
     \includegraphics[height=5.3cm]{Figures/Chap_scaling/LPSZ/2_threshold_highscatt_xi.pdf}
     \includegraphics[height=5.3cm, trim={3cm 0 0 0}, clip]{Figures/Chap_scaling/LPSZ/2_threshold_highscatt_zeta.pdf}
     \caption{
-        Biais $\xi$ et $\zeta$ sur les paramètres d'intérêt de la relation d'échelle pour une dispersion intrinsèque deux fois supérieure à celle mesurée par \textit{Planck} ($\sigma_\yz = 0.15$).
+        Biais $\xi$ et $\zeta$ sur les paramètres d'intérêt de la relation d'échelle pour une dispersion intrinsèque deux fois supérieure à celle supposée par \textit{Planck} ($\sigma_\yz = 0.15$).
         La légende est identique à celle de la figure \ref{fig:scaling:zeta_xi_threshold}.
     }
     \label{fig:scaling:zeta_xi_threshold_2}
 \end{figure*}
 
-Les distributions des valeurs de biais $\xi$ et $\zeta$ pour ces ajustements sont présentés en figure \ref{fig:scaling:zeta_xi_threshold}.
+Les distributions des valeurs de biais $\xi$ et $\zeta$ pour ces ajustements sont présentées en figure \ref{fig:scaling:zeta_xi_threshold}.
 On observe que les résultats ne sont pas biaisés, avec des valeurs moyennes de $\zeta$ de l'ordre de $0.05\sigma$.
 Lors de la prise en compte d'une coupure en observable à une valeur de $Y_{\rm low}$, les résultats sont légèrement biaisés ($\zeta \sim 0.5\sigma$).
 Ce résultat indique que la fonction de sélection du grand programme SZ n'est pas bien décrite par une coupure en observable à la valeur la plus basse pouvant être sélectionnée pour la construction de l'échantillon.
@@ -831,7 +828,7 @@ Cette interprétation de l'origine du biais est illustrée en figure \ref{fig:sc
 
 La sélection du LPSZ entraîne donc un biais sur l'ordonnée à l'origine de la relation d'échelle.
 La valeur de ce biais dépend de la dispersion intrinsèque autour de la relation d'échelle.
-Si la valeur de $\sigma_\yz$ mesurée par la collaboration \textit{Planck} \cite{planck_collaboration_planck_2011} est réaliste, le biais est complètement négligeable.
+Si la valeur de $\sigma_\yz$ supposée par la collaboration \textit{Planck} \cite{planck_collaboration_planck_2011} est réaliste, le biais est complètement négligeable.
 Si cette valeur est sous-estimée, le bais peut être significatif.
 Afin de pouvoir arriver à des résultats non-biaisés, il sera possible d'étudier l'évolution de la valeur de ce biais avec la dispersion intrinsèque grâce à des simulations, grâce à la répétition des études présentées dans cette section pour plusieurs valeurs de dispersion intrinsèque.
 Comme le montrent les figures \ref{fig:scaling:zeta_xi_threshold} et \ref{fig:scaling:zeta_xi_threshold_2}, les estimations de la dispersion intrinsèque de la relation d'échelle ne sont pas biaisées pour les deux valeurs testées.
@@ -886,6 +883,7 @@ Les incertitudes de 10\% sur les paramètres d'intérêt représentent une grand
     \end{tabular}
     \caption{%
         Liste des distributions \prior\ et des incertitudes relatives moyennes $\eta$ pour les paramètres d'intérêt de la relation d'échelle dans le cas du LPSZ.
+        Les dispersions des estimateurs des paramètres $\alpha_{X|Z}$ et $\sigma_{X|Z}$ ne sont pas répertoriés car ceux-ci sont des paramètres de nuisance, dont les contraintes ne sont pas l'objectif de l'analyse.
     }
     \label{tab:scaling:eta_lpsz}
 \end{table}
@@ -957,10 +955,10 @@ Cette extension est illustrée en figure \ref{fig:scaling:lpsz_lowm}.
 Elle correspond à l'ajout de deux boîtes à faibles valeurs de $Y$, une pour chaque intervalle en redshift de l'échantillon, comportant cinq amas chacune.
 L'extension représente alors seulement dix amas, soit bien moins que les 150 nécessaires à multiplier la taille de l'échantillon par quatre.
 
-Les incertitudes relatives sur les paramètres de la relation d'échelle pour 5000 réalisations d'échantillons comportant cette extension sont présentés en rouge sur la figure \ref{fig:scaling:eta_ext}.
+Les incertitudes relatives sur les paramètres de la relation d'échelle pour 5000 réalisations d'échantillons comportant cette extension sont présentées en rouge sur la figure \ref{fig:scaling:eta_ext}.
 On voit que les incertitudes sur l'ordonnée à l'origine et la dispersion intrinsèque de la relation sont inchangées par rapport à l'analyse de base (ligne noire pointillée).
 En revanche, l'incertitude sur la pente $\beta$ est diminuée, atteignant une valeur moyenne de $\sim$7\%.
-Ce gain correspond à une couverture étendue en masse, permettant de mieux ajuster la relation.
+Ce gain correspond à une couverture étendue en masse, permettant de mieux ajuster la pente de la relation.
 Le suivi de dix amas de basse masse pourrait donc améliorer les contraintes mises par le LPSZ sur la relation d'échelle, en plus d'études intéressantes sur les propriétés physiques de ces objets \cite{keruzore_exploiting_2020}.
 Il est toutefois à noter que si de tels amas existent (par exemple dans le dernier catalogue ACT \cite{hilton_atacama_2021}, voir figure \ref{fig:cluster_catalogs_mz}), le temps nécessaire pour observer des amas de basse masse est important.
 Il sera donc nécessaire de calculer le temps d'observation requis, pour éventuellement construire un échantillon de moins de dix amas.

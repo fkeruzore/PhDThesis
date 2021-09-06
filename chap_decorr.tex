@@ -23,7 +23,7 @@ Nous détaillons par la suite la nature de chacun des termes de l'équation (\re
 
 \subsubsection{Signal astrophysique d'intérêt: $S_k(t, \nu)$} % ----------------------- %
 L'objectif des observations avec NIKA2 est la production d'une cartographie aussi fidèle que possible du ciel dans les bandes passantes de l'instrument.
-Dans le cas des observations du grand programme SZ, les portions du ciel observées contiennent le signal SZ en provenance des amas de galaxies, mais aussi du signal provenant d'autres sources, par exemple des objets astrophysiques d'avant plan (ou d'arrière plan), des galaxies membres de l'amas, le fond diffus cosmologique, ou encore un fond créé par les sources non-résolues (nommé CIB pour \textit{Cosmic Infrared Background}).
+Dans le cas des observations du grand programme SZ, les portions du ciel observées contiennent le signal SZ en provenance des amas de galaxies, mais aussi du signal provenant d'autres sources, par exemple des objets astrophysiques d'avant-plan (ou d'arrière-plan), des galaxies membres de l'amas, le fond diffus cosmologique, ou encore un fond créé par les sources non-résolues (nommé CIB pour \textit{Cosmic Infrared Background}).
 L'ensemble de ces constituants forme une carte de la brillance de surface du ciel dans les bandes passantes de NIKA2, notée $M(x, y, \nu)$, où $(x, y)$ représentent les coordonnées célestes.
 Lors du balayage de la région par le télescope, un détecteur $k$ à une fréquence $\nu$ enregistre une variation de brillance de surface pouvant s'écrire:
 \begin{equation}
@@ -119,7 +119,7 @@ Ce mode commun peut être calculé de plusieurs façons, dont la description pro
 Comme nous l'avons vu, le signal atmosphérique dans les TOI, qui représente la source majeure de bruit, est le même pour tous les KID d'une matrice de NIKA2.
 C'est précisément cette similarité qui peut être exploitée pour retirer la contamination atmosphérique des données.
 En effet, le signal d'intérêt, par construction, apparaît comme une composante différente d'un détecteur à un autre, puisque chaque KID voit à un instant donné un point différent du ciel.
-Ainsi, la stratégie d'observation pas balayage du ciel fait que chaque KID passe sur la source à un instant différent; le signal astrophysique apparaît donc dans les TOI décalé en temps.
+Ainsi, la stratégie d'observation par balayage du ciel fait que chaque KID passe sur la source à un instant différent; le signal astrophysique apparaît donc dans les TOI décalé en temps.
 À l'inverse, on peut assimiler l'atmosphère à une source de bruit commune à chacun des détecteurs, et la calculer comme la médiane des TOI de chaque KID considéré\footnotemark.
 \footnotetext{On ne considère que les détecteurs valides; voir section \mypageref{sec:focal_plane_reconstruction}.}
 L'utilisation de la médiane permet ici de limiter le biais induit par le signal dans l'estimation de la contamination atmosphérique, qui sera discuté plus en détail en section \ref{sec:mask_decor}.
@@ -392,7 +392,7 @@ C'est là l'objectif de l'utilisation de \textit{scans} dans plusieurs direction
     \includegraphics[width=\linewidth]{Figures/Chap_decor/scans.pdf}
     \caption{
         \textbf{Haut:} carte de couverture (\textit{gauche}) et de déviation standard du bruit (\textit{droite}) à 150 GHz pour un \textit{scan} du grand programme SZ de NIKA2.
-        \textbf{Bas:} Même cartes pour la combinaison de quatre \textit{scans} dans quatre orientations différentes, incluant le \textit{scan} du panneau haut.
+        \textbf{Bas:} Mêmes cartes pour la combinaison de quatre \textit{scans} dans quatre orientations différentes, incluant le \textit{scan} du panneau haut.
     }
     \label{fig:nhits_std_maps}
 \end{figure*}
@@ -446,7 +446,7 @@ Nous verrons par exemple au chapitre \ref{chap:actj0215} que le bruit résiduel 
 
 C'est pourquoi la présence de bruit corrélé doit être prise en compte au cours des exploitations des observations d'amas de galaxies par NIKA2.
 Nous verrons au chapitre suivant que cette prise en compte est possible au travers de la matrice de covariance du bruit résiduel.
-Celle ci peut être calculée à partir du spectre de puissance comme suit:
+Celle-ci peut être calculée à partir du spectre de puissance comme suit:
 \begin{enumerate}[leftmargin=*]
     \item Un grand nombre ($N \sim 10^5$) de cartes de bruit blanc est généré.
         Dans chacune des cartes, chaque pixel est tiré aléatoirement dans une distribution gaussienne de moyenne $0$ et de variance $1$.
@@ -532,7 +532,7 @@ Ce dernier étant au dénominateur de l'équation (\ref{eq:transfer_function}), 
 \end{figure*}
 
 Le processus d'estimation de la fonction de transfert pour la décorrélation des observations de l'amas PSZ2-G183.90+42.99 est schématisé en figure \ref{fig:tf_schema}.
-La fonction de transfert résultante, représentée à droite de la figure, est caractéristiques de la décorrélation \textit{common mode one block} des observations NIKA2 d'amas de galaxies.
+La fonction de transfert résultante, représentée à droite de la figure, est caractéristique de la décorrélation \textit{common mode one block} des observations NIKA2 d'amas de galaxies.
 Elle est caractérisée par un filtrage des grandes échelles angulaires ($k < 0.5 \;\unit{arcmin^{-1}}$), résultant en une suppression quasi-totale du signal aux échelles plus grandes que le champ de vue instantané de NIKA2 ($6.5 \;\unit{arcmin}$), représentées par la région grisée à gauche de la figure.
 En revanche, les échelles angulaires plus petites sont bien conservées, avec un filtrage proche de $1$.
 Nous verrons dans le chapitre suivant que cette fonction de transfert est utilisée lors de la mesure des propriétés thermodynamiques du milieu intra-amas à partir des observations NIKA2 des amas du grand programme SZ, afin de tenir compte du filtrage induit par la décorrélation.
@@ -555,14 +555,14 @@ Cette section décrit la procédure employée et implémentée dans \texttt{PSTo
 % ------------------------------------------------------------------------------------- %
 \subsection{Données d'entrée}
 
-Les sources ponctuelles contaminant le signal SZ peuvent être des sources d'avant plan, d'arrière plan, ou même des galaxies membres de l'amas.
+Les sources ponctuelles contaminant le signal SZ peuvent être des sources d'avant-plan, d'arrière-plan, ou même des galaxies membres de l'amas.
 Dans tous les cas, ces sources peuvent être classifiées en deux catégories.
 D'une part, elle peuvent être des galaxies poussiéreuses émettant dans le domaine sub-millimétrique (SMG pour \textit{submillimeter galaxies}), avec un flux croissant avec la fréquence dans le domaine couvert par les observations NIKA2.
 Elles peuvent également être des sources radio, présentant une émission plus forte à basse fréquence\footnotemark.
 \footnotetext{Notons que cette distinction entre galaxie poussiéreuse et source radio est une simplification, le spectre d'émission de la poussière présentant une composante d'émission radio.}
 Les SMG sont plus simples à identifier avec NIKA2, puisque leur flux est plus élevé dans la bande à 260 GHz, où le signal SZ n'est en général pas détectable.
 
-Afin de mesurer le spectre d'une source, la connaissance de son flux dans une large gamme de fréquence est nécessaire.
+Afin de mesurer le spectre d'une source, la connaissance de son flux dans une large gamme de fréquences est nécessaire.
 \texttt{PSTools} permet de traiter la contamination due à des sources submillimétriques détectées par l'instrument SPIRE à bord du satellite \textit{Herschel} \cite{griffin_herschel-spire_2010}.
 Nous utilisons la combinaison des mesures de flux dans chacune des bandes de SPIRE (250, 350, et 500 ${\rm \mu m}$, soit 1200, 860, et 600 GHz, respectivement) et dans la bande à 260 GHz de NIKA2, dans laquelle le signal SZ est négligeable devant le bruit et le flux des sources ponctuelles.
 Il est également possible d'utiliser les flux des sources à plus haute fréquence dans les bandes passantes de l'instrument PACS à bord de \textit{Herschel} \cite{poglitsch_photodetector_2010}, lorsque ceux-ci sont publics.
@@ -688,7 +688,7 @@ Elle permet d'obtenir un filtrage relativement faible du signal aux échelles an
 Au sein du grand programme SZ de NIKA2, la décorrélation est réalisée à l'aide du \textit{pipeline} de la collaboration NIKA2, fruit d'un effort de la collaboration pour obtenir un outil permettant de passer des données en temps aux cartes du ciel.
 J'ai développé un logiciel basé sur ce \textit{pipeline} pour réaliser ce traitement dans le cas des observations du grand programme SZ.
 Ce logiciel permet d'interroger la base de données AMI du grand programme SZ, décrite en section \mypageref{sec:nk_ami}, pour obtenir la liste de \textit{scans} associés à un amas, réaliser la décorrélation de ces \textit{scans} et les coadditionner, puis de calculer la matrice de covariance du bruit résiduel et la fonction de transfert de la décorrélation.
-Il a été mis a disposition de la collaboration, et est aujourd'hui systématiquement utilisé pour le traitement des données brutes des amas du grand programme SZ.
+Il a été mis à disposition de la collaboration, et est aujourd'hui systématiquement utilisé pour le traitement des données brutes des amas du grand programme SZ.
 
 La décorrélation telle que présentée dans ce chapitre représente donc la procédure standard pour la décorrélation des données NIKA2 du grand programme SZ à l'heure de l'écriture de cette thèse.
 L'amélioration de la procédure est toutefois un sujet très actif au sein de la collaboration NIKA2.

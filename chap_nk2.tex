@@ -4,7 +4,7 @@ Nous avons également présenté les outils nécessaires pour pouvoir mener de t
 C'est dans ce contexte que s'inscrit le grand programme SZ de NIKA2, au sein duquel cette thèse s'est déroulée.
 NIKA2 est une caméra permettant d'observer le ciel dans le domaine millimétrique avec une résolution angulaire bien meilleure que celle des instruments utilisés pour construire des catalogues d'amas.
 L'instrument a été construit à Grenoble par la collaboration NIKA2, et choisie par l'Institut de Radioastronomie Millimétrique (IRAM) pour être un instrument résident de son télescope de 30 mètres.
-En retour de la construction de NIKA2, la collaboration s'est vu attribuer un total de 1200 heures d'observations avec l'instrument.
+En retour de la construction de NIKA2, la collaboration s'est vu attribuer un total de 1300 heures d'observations avec l'instrument.
 Le grand programme SZ est l'un des programmes bénéficiant de ce temps garanti.
 
 Dans ce chapitre, nous décrivons la caméra NIKA2 et le grand programme SZ.
@@ -389,8 +389,6 @@ Le nombre de détecteurs valides est évalué à l'aide des \textit{beammaps} d�
 Sont considérés comme valides les détecteurs pour lesquels la mesure de la variation de fréquence de résonance lors du passage sur une source brillante permet de déduire une cartographie de cette source.
 En d'autre termes, les détecteurs invalides incluent les détecteurs bruités dont la projection des données en temps ne permet pas d'identifier une source, ainsi que les détecteurs en diaphonie.
 Il est à noter que l'invalidité d'un détecteur n'est pas définitive, et est liée à la mesure des fréquences de résonance par l'électronique de lecture et à la connaissance \prior\ de la position de ces fréquences de résonance dans le plan focal.
-%au processus de reconstruction des fréquences de résonance dans le plan focal; un détecteur peut donc être invalide pendant une campagne d'observation, mais valide la suivante.
-%Les valeurs reportées en table \ref{tab:nk_specs} doivent donc être vues comme une indication de la performance de l'instrument pendant les campagnes de \textit{commissioning}, non comme une de ses caractéristiques constantes\footnote{C'est aussi une bonne nouvelle: puisque des détecteurs ne le sont pas définitivement et peuvent redevenir valides, on ne s'attend pas à ce que cette fraction se dégrade avec le temps.}.
 Ainsi, un détecteur non-valide ne l'est pas définitivement, et peut redevenir valide.
 Ces valeurs sont de 84\% et 90\% à 260 et 150 GHz respectivement, montrant qu'une grande majorité des détecteurs peuvent être lus, et l'efficacité du multiplexage fréquentiel utilisé dans NIKA2.
 
@@ -416,7 +414,6 @@ On peut alors définir l'efficacité du lobe principal comme le rapport entre l'
 
 Le lobe instrumental est représenté sur la figure \ref{fig:nk_beam}, extraite de \cite{perotto_calibration_2020}.
 On remarque sur le panneau gauche la structure complexe du lobe à 2D, incluant le lobe principal au centre, la figure de diffraction due à la structure quadrupolaire fixant le miroir secondaire au primaire (diagonales), et un anneau résultant de la diffraction par les jointures des panneaux pavant le miroir primaire.
-%, et l'anneau de diffraction correspondant au second pic de la tache d'Airy (voir section \ref{sec:30m_opt}, \pageref{sec:30m_opt}).
 On voit sur le panneau droit que le lobe complet est bien modélisé comme une somme de trois gaussiennes, alors que l'ajustement avec une seule gaussienne ne permet d'englober qu'une portion de la densité de flux de la source, qui est quantifiée par l'efficacité du lobe principal.
 
 Les largeurs et efficacités des lobes principaux de l'instrument mesurées au cours du \textit{commissioning} de NIKA2 sont rapportés en table \ref{tab:nk_specs}.
@@ -426,7 +423,7 @@ Comme nous le discuterons en \ref{sec:nk_sz}, ces valeurs sont intéressantes ca
 L'efficacité du lobe principal est de 47\% et 64\% à 260 et 150 GHz respectivement, montrant l'importance des structures secondaires du lobe dans les observations avec NIKA2.
 
 \subsubsection{Étalonnage} % ---------------------------------------------------------- %
-Comme nous l'avons vu précédemment, le système d'acquisition de données de NIKA2 mesurent la variation de fréquence de résonance des KID dans le temps.
+Comme nous l'avons vu précédemment, le système d'acquisition de données de NIKA2 mesure la variation de fréquence de résonance des KID dans le temps.
 Il est donc nécessaire d'associer l'amplitude de ces variations lors du passage sur une source astrophysique à une densité de flux.
 Pour cela, des sources de flux connu sont observées régulièrement au cours des campagnes d'observation avec NIKA2.
 Nous avons déjà vu en \ref{sec:focal_plane_reconstruction} que les \textit{beammaps} permettaient une mesure des gains des détecteurs individuels, qualifiée d'étalonnage relatif.
@@ -695,7 +692,7 @@ L'entropie $K_\e$ représente donc un traceur de l'histoire thermique du milieu 
     \centering
     \includegraphics[width=.6\linewidth]{Figures/Chap_nk/entropy_pratt.pdf}
     \caption{
-        Profils d'entropie mesurés à partir des observation \textit{XMM-Newton} des amas de l'échantillon REXCESS.
+        Profils d'entropie mesurés à partir des observations \textit{XMM-Newton} des amas de l'échantillon REXCESS.
         Les lignes pointillées noires marquent le profil en $r^{1.1}$ attendu pour une formation d'amas purement par effondrement gravitationnel.
         Les courbes bleues et rouges sont respectivement les profils d'amas classifiés comme \textit{cool-core} et à cœur perturbé.
         Figure extraite de \cite{pratt_gas_2010}.

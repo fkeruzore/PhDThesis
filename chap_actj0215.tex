@@ -133,7 +133,7 @@ Le profil de température projeté, extrait directement à partir des spectres 2
 \section{Contamination par des sources ponctuelles}\label{sec:act:ps}
 
 Comme nous l'avons vu précédemment, une estimation précise de la contamination par des sources ponctuelles est nécessaire dans l'objectif de mesurer les propriétés du milieu intra-amas.
-Cette étude est cruciale dans le cas de cet amas, étant donné son faible signal et sa faibles extension spatiale.
+Cette étude est cruciale dans le cas de cet amas, étant donné son faible signal et sa faible extension spatiale.
 Dans cette section, nous présentons la méthodologie utilisée pour estimer l'amplitude de cette contamination.
 
 % ------------------------------------------------------------------------------------ %
@@ -197,7 +197,7 @@ La capacité de \texttt{PSTools} à fournir ces distributions comme produit de s
         La région verte correspond à la bande passante de NIKA2 à 150 GHz.
         Les régions bleues correspondent aux intervalles de confiance à 1$\sigma$ et 2$\sigma$ sur l'ajustement de la SED.
         \textbf{Droite:} distribution de probabilité du flux à 150 GHz.
-        L'histogramme représente les flux obtenus pour les caînes de Markov, et la courbe bleue est la distribution de probabilité résultante.
+        L'histogramme représente les flux obtenus pour les chaînes de Markov, et la courbe bleue est la distribution de probabilité résultante.
     }
     \label{fig:act:sed}
 \end{figure*}
@@ -272,7 +272,7 @@ où $P_0$ est la normalisation du profil de pression, $b$ et $c$ sont les pentes
 % ------------------------------------------------------------------------------------ %
 \subsection{Analyse MCMC}
 
-\texttt{PANCO} utilise une procédure Monte Carlo à chaines de Markov (MCMC) pour ajuster le profil de pression du milieu intra-amas sur la carte NIKA2 à 150 GHz.
+\texttt{PANCO} utilise une procédure Monte Carlo à Chaînes de Markov (MCMC) pour ajuster le profil de pression du milieu intra-amas sur la carte NIKA2 à 150 GHz.
 À chaque pas du MCMC, un profil de pression gNFW est intégré le long de la ligne de visée pour obtenir un profil de paramètre de Compton $y$.
 Ce profil est ensuite projeté sur une grille pixelisée de la même façon que la carte NIKA2 pour obtenir une carte de paramètre de Compton.
 Cette carte est convoluée par le lobe de NIKA2, modélisé par une Gaussienne à deux dimensions de largeur à mi-hauteur $\mathrm{FWHM=18.5}$'', en accord avec l'étalonnage des cartes NIKA2 \cite{perotto_calibration_2020}.
@@ -285,7 +285,7 @@ Par conséquent, le coefficient est traité comme un paramètre de nuisance et a
 La contamination par les sources ponctuelles est ajustée simultanément avec le profil de pression du milieu intra-amas, plutôt que simplement soustraite en utilisant les flux des sources obtenus par extrapolation de SED.
 Chaque source est modélisée par un modèle de lobe de NIKA2 d'amplitude libre ajouté au modèle de carte de l'effet SZ.
 Le flux de chaque source est traité comme un paramètre de nuisance, avec un \prior\ donné par la distribution de probabilité calculée dans la section \ref{sec:act:ps}.
-Cette procédure présente l'avantage de tenir compte de l'incertitude sur les densité de flux extrapolées dans l'ajustement du profil de pression.
+Cette procédure présente l'avantage de tenir compte de l'incertitude sur les densités de flux extrapolées dans l'ajustement du profil de pression.
 Les sources S5 et S6 sont quant à elles jugées assez éloignées de l'amas pour être directement soustraites des données.
 Le modèle de carte de brillance de surface obtenu, modélisant simultanément l'effet SZ et la contamination par les sources ponctuelles, est convolué par la fonction de transfert présentée dans la figure \ref{fig:act:tf_noise} afin de tenir compte du filtrage créé par le pipeline NIKA2.
 
@@ -309,18 +309,24 @@ En résumé, à chaque pas du MCMC, un modèle de carte est calculé à partir d
     \item $C_\mathrm{conv},\,Z$ : le coefficient de conversion de $y$ vers Jy/beam et le niveau zéro de la carte.
 \end{itemize}
 La probabilité qu'un jeu de paramètres décrive nos données est obtenue en combinant la distribution \prior\ sur les paramètres et la fonction de vraisemblance $\mathcal{L}$ comparant le modèle de carte $\mathcal{M}$ aux données $\mathcal{D}$ :
-\begin{align}
-    \nonumber\mathrm{log}\,\mathcal{L}(\vartheta) =& -\frac{1}{2}\sum_{i=1}^{n_\text{pixels}} \bigg[\Big(\mathcal{M}(\vartheta) - \mathcal{D} \Big)^T \Sigma^{-1} \Big(\mathcal{M}(\vartheta) - \mathcal{D} \Big)\bigg]_i \\
-    & - \frac{1}{2} \left(\frac{Y_{500}^\mathrm{ACT} - Y_{500}(\vartheta)}{\Delta Y_{500}^\mathrm{ACT}}\right)^2,
+\begin{equation}
+    \mathrm{log}\,\mathcal{L}(\vartheta) =
+        -\frac{1}{2}
+        \big(\mathcal{M}(\vartheta) - \mathcal{D} \big)^T
+        \Sigma^{-1}
+        \big(\mathcal{M}(\vartheta) - \mathcal{D} \big)
+        - \frac{1}{2}
+        \left(\frac{Y_{500}^\mathrm{ACT} - Y_{500}(\vartheta)}{\Delta Y_{500}^\mathrm{ACT}}\right)^2,
     \label{eq:likelihood}
-\end{align}
+\end{equation}
 où $\Sigma$ est la matrice de covariance du bruit, évaluée à partir de $10^5$ réalisations aléatoire de bruit corrélé générées à partir du spectre de puissance présenté sur la figure \ref{fig:act:tf_noise}.
 Cette distribution de probabilité est échantillonnée à l'aide de la librairie Python \texttt{emcee} \cite{foreman-mackey_emcee_2019}.
-La convergence des chaines est controlee à intervalle régulier à l'aide du test de Gelman-Rubin \cite{gelman_inference_1992}.
-Une fois la convergence atteinte, une longueur de \textit{burn-in} est enlevée au début de chaque chaine.
+La convergence des chaînes est contrôlée à intervalle régulier à l'aide du test de Gelman-Rubin \cite{gelman_inference_1992}.
+Une fois la convergence atteinte, une longueur de \textit{burn-in} est enlevée au début de chaque chaîne.
 
 % ------------------------------------------------------------------------------------ %
 \subsection{Auto-consistance des estimations de flux des sources ponctuelles}
+\label{sec:act:ps_flat_prior}
 
 Les paramètres évalués lors de la reconstruction du milieu intra-amas incluent les flux des sources ponctuelles proches de l'amas.
 La comparaison des flux retrouvés par l'analyse MCMC avec ceux obtenus par extrapolation de SED révèle un accord des mesures.
@@ -336,7 +342,7 @@ Enfin, il est à noter que l'ajustement sans \prior\ sur le flux des sources don
     \centering
     \includegraphics[width=0.5\linewidth, trim={.35cm .5cm .35cm 1.4cm}, clip]{Figures/Chap_actj0215/ps_fluxes_comp.pdf}
     \caption{%
-        Comparaison des densités de flux des sources ponctuelles estimées par extrapolation de SED (abscisse) et par l'analyse jointe SZ--sources ponctuelles (ordonnée).
+        Comparaison des densités de flux des sources ponctuelles estimées par extrapolation de SED (abscisse) et par l'analyse jointe SZ--sources ponctuelles avec un \prior\ uniforme sur les flux (ordonnée, voir section \ref{sec:act:ps_flat_prior}).
         Les barres d'erreur représentent les 16èmes et 84èmes percentiles des distributions.
         Les deux estimateurs sont compatibles dans ces barres d'erreur pour chacune des sources.
     }
@@ -506,7 +512,7 @@ La contamination par les sources ponctuelles a été prise en compte dans une ap
 Cette analyse a permis de mesurer la distribution radiale de pression du milieu intra-amas de l'amas, et de combiner ce résultat avec des mesures X pour caractériser plus largement la thermodynamique du milieu intra-amas de \act.
 
 \vspace{5pt}
-Les conclusions tirées de ces résultats sont les suivantes.
+Les conclusions tirées de ces résultats sont les suivantes:
 \begin{itemize}[leftmargin=*]
 \setlength\itemsep{5pt}
 \item

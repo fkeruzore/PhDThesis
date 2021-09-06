@@ -123,15 +123,6 @@
 \fancyhead[LO]{\leftmark}
 \fancyhead[RO,LE]{\thepage}
 \fancyfoot[C]{}
-% Work with chapter*, from https://tex.stackexchange.com/questions/246693/fancyhdr-and-chapter
-%\renewcommand{\chaptermark}[1]{%
-%  \markboth{%
-%    \ifnum\value{chapter}>0
-%      \thechapter.\space
-%    \fi
-%    #1%
-%  }{}%
-%}
 
 %%% Misc
 \usepackage{graphicx}               % figures
@@ -180,7 +171,6 @@
 %
 \addbibresource{phd.bib}
 \AtEveryBibitem{%
-    %\clearfield{url}%
     \clearfield{urlyear}%
     \clearlist{language}%
     \clearfield{month}%
@@ -188,9 +178,7 @@
     \clearfield{issn}%
     \clearfield{doi}%
     \clearfield{series}%
-    %\clearfield{pages}%
     \clearfield{eid}%
-    %\clearfield{eprintclass}%
     \clearlist{publisher}%
     \clearfield{note}
 }
@@ -206,7 +194,8 @@
        {\finalandcomma}
        {}%
      \andothersdelim\bibstring[\emph]{andothers}}
-    {}}
+    {}
+}
 
 % Remove weird random smallcaps coming from french (why?)
 \addto\captionsfrench{\def\figurename{Figure}}
@@ -284,40 +273,37 @@
 \input{chap_intro.tex}
 
 % ------------------------------------------- %
-%\part{Cosmologie avec les amas de galaxies}
-
 \chapter{Évolution de l'Univers et des grandes structures}
 \label{chap:cosmo1}
 \minitoc
 \input{chap_cosmo.tex}
 
+% ------------------------------------------- %
 \chapter{Sonder la cosmologie à l'aide d'amas de galaxies}
 \label{chap:amas}
 \minitoc
 \input{chap_amas.tex}
 
 % ------------------------------------------- %
-%\part{NIKA2 et son grand programme SZ}
-
 \chapter{NIKA2 et son Grand Programme SZ}
 \label{chap:nika2}
 \minitoc
 \input{chap_nk2.tex}
 
 % ------------------------------------------- %
-%\part{Exploitation des donn\'ees de NIKA2}
-
 \chapter{Construction de cartes de l'effet SZ avec NIKA2}
 \label{chap:decorr}
 \minitoc
 \input{chap_decorr.tex}
 
-\chapter{Pipeline pour la mesure des propriétés thermodynamique du milieu intra-amas}
+% ------------------------------------------- %
+\chapter{Pipeline pour la mesure des propriétés thermodynamiques du milieu intra-amas}
 \chaptermark{Pipeline pour la mesure de profils de pression}
 \label{chap:panco}
 \minitoc
 \input{chap_panco.tex}
 
+% ------------------------------------------- %
 \chapter{Mesure des propriétés thermodynamiques d'un amas distant de faible masse}
 \chaptermark{Propriétés thermodynamiques de l'amas \act}
 \label{chap:actj0215}
@@ -325,8 +311,6 @@
 \input{chap_actj0215.tex}
 
 % ------------------------------------------- %
-%\part{Pr\'eparation \`a l'exploitation cosmologique du grand programme SZ de NIKA2}
-
 \chapter{La relation d'échelle SZ -- Masse}
 \label{chap:scaling}
 \minitoc

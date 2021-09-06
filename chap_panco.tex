@@ -1,7 +1,7 @@
 L'objectif premier des observations d'amas de galaxies avec NIKA2 est de mesurer les propriétés thermodynamiques du milieu intra-amas.
 En particulier, l'amplitude du signal tSZ mesuré en direction d'un amas permet la mesure de sa distribution de pression, qui peut ensuite être combinée à des observations X pour estimer la distribution de masse de l'amas, ainsi que d'autres propriétés thermodynamiques, comme décrit en section \mypageref{sec:lpsz_sci}.
 
-Le logiciel \texttt{PANCO} développé par F. \myciteauthor{ruppin_cosmologie_2018} a pour objectif d'automatiser ce processus dans le contexte du grand programme SZ de NIKA2.
+Le logiciel \texttt{PANCO} (\textit{Pipeline for the Analysis of NIKA2 Cluster Observations}) développé par F. \myciteauthor{ruppin_cosmologie_2018} a pour objectif d'automatiser ce processus dans le contexte du grand programme SZ de NIKA2.
 Au cours de ma thèse, après avoir utilisé ce logiciel, j'ai décidé d'en développer une version plus optimisée, basée sur l'utilisation de librairies Python dédiées au calcul numérique.
 L'objectif de ce développement était double.
 D'une part, il était nécessaire de fournir à la collaboration NIKA2 un code plus rapide, le temps d'exécution de \texttt{PANCO} étant trop grand pour permettre l'analyse d'échantillons d'amas.
@@ -83,7 +83,7 @@ Dans \texttt{PANCO2}, je propose deux modélisations du milieu intra-amas, illus
 
 Chacune des modélisations présente ses avantages et inconvénients.
 Le profil gNFW est une fonction continue du rayon, aisément extrapolable et avec un nombre fixe de paramètres, le rendant plus directement comparable à la littérature dans laquelle il est le plus répandu.
-Le profil non-paramétrique offre quant à lui une approche moins dépendante du modèle, et donc la possibilité de détecter des irrégularités dans le profil de pression, tels que des régions de surpression locales dues par exemple à des chocs.
+Le profil non-paramétrique offre quant à lui une approche moins dépendante du modèle, et donc la possibilité de détecter des irrégularités dans le profil de pression, telles que des régions de surpression locales dues par exemple à des chocs.
 Le plus grand avantage du profil non-paramétrique provient cependant des corrélations plus faibles entre ses paramètres, qui offre de meilleures performances dans l'ajustement, comme décrit dans la section \mypageref{sec:music_pressure}.
 
 \begin{SCfigure*}[][t]
@@ -140,16 +140,16 @@ Ce filtrage se caractérise par une perte de signal en périphérie de l'amas, c
 Une information sur ce signal est contenue dans le signal SZ intégré de l'amas, mesuré dans les relevés à plus grand champ de vue desquels est issu le catalogue du grand programme SZ, à savoir les relevés \textit{Planck} \cite{planck_collaboration_planck_2016-3} et ACT \cite{hasselfield_atacama_2013}.
 Ce signal est proportionnel à l'intégrale sphérique du profil de pression considéré jusqu'à un rayon donné $R$:
 \begin{equation}
-    Y_R = 4 \pi \frac{\sigma_\textsc{t}}{m_\e c^2} \int_0^R r^2 P\e(r) \d r.
+    Y_R = 4 \pi \frac{\sigma_\textsc{t}}{m_\e c^2} \int_0^R r^2 P_\e(r) \d r.
 \end{equation}
 Cette valeur peut donc être calculée à partir du modèle de profil de pression considéré, et comparée aux valeurs reportées dans les relevés SZ, imposant une contrainte effective sur le profil de pression dans les régions non contraintes par les observations NIKA2.
 Les valeurs de $Y_{500}$ sont disponibles pour tous les amas du grand programme SZ de NIKA2, mesurées par \textit{Planck} ou ACT, et sont systématiquement utilisées afin d'améliorer la contrainte du profil de pression dans la périphérie de l'amas.
 
 % ==================================================================================== %
-\section{Ajustement par méthode Monte Carlo à Chaines de Markov}
+\section{Ajustement par méthode Monte Carlo à Chaînes de Markov}
 \label{sec:panco:fit}
 
-Afin de déterminer le profil de pression du milieu intra-amas, le modèle de carte de brillance de surface décrit dans la section précédente est ajusté sur les données NIKA2 en utilisant un algorithme Monte Carlo à Chaines de Markov (MCMC).
+Afin de déterminer le profil de pression du milieu intra-amas, le modèle de carte de brillance de surface décrit dans la section précédente est ajusté sur les données NIKA2 en utilisant un algorithme Monte Carlo à Chaînes de Markov (MCMC).
 L'objectif est donc de trouver la distribution de probabilités des paramètres étant données les mesures effectuées par NIKA2.
 Cette distribution, dite postérieure, est donnée par le théorème de Bayes :
 \begin{equation}
@@ -177,7 +177,7 @@ Dans \texttt{PANCO2}, j'ai choisi d'utiliser une fonction de vraisemblance Gauss
       - \Delta_{\rm mass},
 \end{equation}
 où $D_\textsc{n}$ représente la carte NIKA2 à 150 GHz, $\mathcal{M}_\textsc{n}(\vartheta)$ le modèle de carte calculé à partir des paramètres $\vartheta$, et $\Sigma_\textsc{n}$ la matrice de covariance du bruit ;
-$Y_R^{\rm meas.}$ et $\Delta Y_R^{\rm meas.}$ sont la mesure de signal SZ intégré dans un rayon $R$ et son incertitude, et $Y_R(\vartheta)$ le signal SZ intégré correspondant au modèle considéré. \\
+$Y_R^{\rm meas.}$ et $\Delta Y_R^{\rm meas.}$ sont la mesure de signal SZ intégré dans un rayon $R$ et son incertitude, et $Y_R(\vartheta)$ le signal SZ intégré correspondant au modèle considéré (dans la suite, nous utiliserons $R = R_{500}$). \\
 Cette fonction de vraisemblance permet donc de comparer un modèle aux observations réalisées avec NIKA2, en tenant également compte de la contrainte sur le paramètre de Compton intégré mesuré par \textit{Planck} ou ACT.
 Dans le cadre d'un modèle gNFW, et si des données X sont fournies par l'utilisateur, le terme $\Delta_{\rm mass}$ est ajouté afin d'interdire les points pour lesquels le profil de masse décroit avec le rayon:
 \begin{equation}
@@ -226,7 +226,7 @@ Notons en particulier que les paramètres correspondant au flux des sources ponc
         \midrule
         $C_{\rm conv}$ & Conversion de $y$ en Jy/beam & Gaussienne définie par l'utilisateur \\[3pt]
         $Z$ & Niveau zéro de la carte & Gaussienne $\N(0,0.1 \; {\rm mJy/beam})$ \\[3pt]
-        $F_i, \; i = 0 \dotsc n_{\rm PS}$ & Flux des sources ponctuelles & -- Distribution issue de \texttt{PSTools} (section \ref{sec:decor:pstools} \\
+        $F_i, \; i = 0 \dotsc n_{\rm PS}$ & Flux des sources ponctuelles & -- Distribution issue de \texttt{PSTools} (section \ref{sec:decor:pstools}) \\
         & & -- Uniformes avec limites définies par l'utilisateur \\
         \bottomrule
     \end{tabular}
@@ -242,7 +242,7 @@ Notons en particulier que les paramètres correspondant au flux des sources ponc
 \subsection{Échantillonnage de la distribution de probabilités}
 \label{sec:mcmc_sampling}
 
-L'ajustement du profil de pression est réalisé par échantillonnage Monte Carlo à Chaines de Markov (MCMC) de la distribution postérieure définie par l'équation (\ref{eq:panco:bayes}).
+L'ajustement du profil de pression est réalisé par échantillonnage Monte Carlo à Chaînes de Markov (MCMC) de la distribution postérieure définie par l'équation (\ref{eq:panco:bayes}).
 L'avantage du MCMC par rapport à une maximisation de fonction de vraisemblance est l'obtention d'un ensemble de points de l'espace des paramètres distribués selon la postérieure de notre analyse, qui pourra ensuite être transposé dans l'espace des propriétés physiques du milieu intra-amas.
 
 \subsubsection{Principe du MCMC} % --------------------------------------------------- %
@@ -257,7 +257,7 @@ Cette marche aléatoire peut être décrite par une série d'étapes successives
     \item La procédure est répétée autant de fois que nécessaire pour obtenir un nombre d'échantillons jugé suffisant.
 \end{enumerate}
 
-Ce processus peut être réalisé en parallèle par plusieurs marcheurs, créant chacun simultanément un ensemble de points nommé chaine de Markov.
+Ce processus peut être réalisé en parallèle par plusieurs marcheurs, créant chacun simultanément un ensemble de points nommé chaîne de Markov.
 L'ensemble des positions $\vartheta$ acceptées par l'échantillonneur est alors distribué selon la fonction de distribution de probabilités considérée.
 
 %\subsubsection{Échantillonneur utilisé dans \texttt{PANCO2}}
@@ -271,46 +271,46 @@ En particulier, dans le cas de \texttt{PANCO2}, l'échantillonneur retenu est ce
     \includegraphics[width=.495\textwidth]{Figures/Chap_panco/mcmc_params.pdf}
     \includegraphics[width=.495\textwidth]{Figures/Chap_panco/mcmc_trace.pdf}
     \caption{
-        Illustration du mouvement des chaines d'un échantillonneur MCMC dans le cas d'une régression à deux paramètres $(\alpha, \beta)$, dans l'espace des paramètres (\textit{gauche}) et projeté pour chacun des paramètres individuellement (\textit{droite}).
-        Chaque couleur représente une chaine de Markov.
+        Illustration du mouvement des chaînes d'un échantillonneur MCMC dans le cas d'une régression à deux paramètres $(\alpha, \beta)$, dans l'espace des paramètres (\textit{gauche}) et projeté pour chacun des paramètres individuellement (\textit{droite}).
+        Chaque couleur représente une chaîne de Markov.
         L'étoile dans le panneau gauche représente le maximum de la distribution postérieure considérée.
     }
     \label{fig:panco:mcmc}
 \end{figure}
 
-\subsubsection{Convergence des chaines et autocorrélation} % ------------------------- %
-L'échantillonnage MCMC réalisé par \texttt{PANCO2} est automatiquement stoppé lorsque la convergence des chaines a été atteinte, c'est-à-dire à partir de l'instant où l'ajout de nouveaux points aux chaines de Markov n'apporterait pas d'information significative par rapport à ceux déjà générés.
-La convergence est basée sur trois critères : l'adaptation des chaines, leur mélange, et leur autocorrélation, décrite ci-après.
+\subsubsection{Convergence des chaînes et autocorrélation} % ------------------------- %
+L'échantillonnage MCMC réalisé par \texttt{PANCO2} est automatiquement stoppé lorsque la convergence des chaînes a été atteinte, c'est-à-dire à partir de l'instant où l'ajout de nouveaux points aux chaînes de Markov n'apporterait pas d'information significative par rapport à ceux déjà générés.
+La convergence est basée sur trois critères : l'adaptation des chaînes, leur mélange, et leur autocorrélation, décrite ci-après.
 
 Le point de départ du MCMC dans l'espace des paramètres est arbitraire et ne se trouve pas nécessairement dans la région d'intérêt.
-Par conséquent, il est nécessaire d'amputer chaque chaine d'une longueur d'adaptation, correspondant au nombre de pas nécessaires à chaque marcheur pour rejoindre cette région d'intérêt.
-Cette longueur, qualifiée de \textit{burn-in}, est systématiquement ignorée afin de ne considérer que les échantillons correspondant à des chaines stationnaires et ne dépendant pas du point de départ arbitraire.
+Par conséquent, il est nécessaire d'amputer chaque chaîne d'une longueur d'adaptation, correspondant au nombre de pas nécessaires à chaque marcheur pour rejoindre cette région d'intérêt.
+Cette longueur, qualifiée de \textit{burn-in}, est systématiquement ignorée afin de ne considérer que les échantillons correspondant à des chaînes stationnaires et ne dépendant pas du point de départ arbitraire.
 La figure \ref{fig:panco:mcmc} illustre cette adaptation : le panneau gauche montre le déplacement des marcheurs vers la région d'intérêt, symbolisée par l'étoile noire, et le panneau droit permet d'estimer une longueur de \textit{burn-in} d'environ une centaine de pas.
 
-Le mélange des chaines quantifie la similarité entre les distributions de points générés par chacune d'entre elles.
-Des chaines mélangées seront donc stationnaires et statistiquement similaires, comme illustré dans le panneau droit de la figure \ref{fig:panco:mcmc} dans le régime stationnaire.
+Le mélange des chaînes quantifie la similarité entre les distributions de points générés par chacune d'entre elles.
+Des chaînes mélangées seront donc stationnaires et statistiquement similaires, comme illustré dans le panneau droit de la figure \ref{fig:panco:mcmc} dans le régime stationnaire.
 Un critère permettant d'évaluer ce mélange est le critère de \myciteauthor{gelman_inference_1992}:
 \begin{equation}
     \label{eq:panco:rhat}
     \hat{R} \equiv \sqrt{\frac{V}{W}} < 1.02
 \end{equation}
-où $W$ est la variance moyenne des échantillons d'une chaine et $V$ la variance entre les différentes chaines.
+où $W$ est la variance moyenne des échantillons d'une chaîne et $V$ la variance entre les différentes chaînes.
 
 Les échantillons produits par la marche aléatoire décrite ci-dessus ne sont pas indépendants.
 En effet, la position de chaque point dépend par construction de la position précédente.
-On parle alors d'autocorrélation des chaines.
+On parle alors d'autocorrélation des chaînes.
 La longueur moyenne séparant deux points pouvant être considérés indépendants peut être calculée d'après la série de positions acceptées formant la chaîne de Markov:
 \begin{equation}
     \tau = 1 + 2 \sum_{i=1}^{n} \rho(\vartheta_0, \vartheta_i)
 \end{equation}
-où $n$ est la longueur de la chaine considérée, et $\rho(\vartheta_0, \vartheta_i)$ est le coefficient de corrélation entre $\vartheta_0$ et $\vartheta_i$.
+où $n$ est la longueur de la chaîne considérée, et $\rho(\vartheta_0, \vartheta_i)$ est le coefficient de corrélation entre $\vartheta_0$ et $\vartheta_i$.
 
 À intervalle régulier au cours de l'échantillonnage, \texttt{PANCO2} évalue ces trois critères, et accepte la convergence si :
 \begin{itemize}[leftmargin=*]
     \setlength\itemsep{5pt}
-    \item Toutes les chaines ont parcouru une longueur supérieure à cinq fois la longueur de \textit{burn-in} définie par l'utilisateur ;
-    \item Plus des deux tiers des chaines passent le test de \citeauthor{gelman_inference_1992} (\ref{eq:panco:rhat}) ;
-    \item Ces chaines ont parcouru plus de cinquante fois leur longueur d'autocorrélation.
+    \item Toutes les chaînes ont parcouru une longueur supérieure à cinq fois la longueur de \textit{burn-in} définie par l'utilisateur ;
+    \item Plus des deux tiers des chaînes passent le test de \citeauthor{gelman_inference_1992} (\ref{eq:panco:rhat}) ;
+    \item Ces chaînes ont parcouru plus de cinquante fois leur longueur d'autocorrélation.
 \end{itemize}
 Les valeurs numériques utilisées dans ces tests sont des paramètres de l'analyse pouvant être modifiés par l'utilisateur.
 Le choix particulier de deux tiers des chaînes et cinquante longueurs d'autocorrélation, utilisé par défaut, provient des tests sur simulations développés en section \ref{sec:panco:simus}.
@@ -318,7 +318,7 @@ Le choix particulier de deux tiers des chaînes et cinquante longueurs d'autocor
 % ------------------------------------------------------------------------------------- %
 \subsection{Évaluation des propriétés thermodynamiques} \label{sec:panco:thermo}
 
-Les chaines de Markov produites par l'échantillonneur constituent un ensemble de points suivant la distribution de probabilité postérieure dans l'espace des paramètres du modèle.
+Les chaînes de Markov produites par l'échantillonneur constituent un ensemble de points suivant la distribution de probabilité postérieure dans l'espace des paramètres du modèle.
 On peut les écrire comme un vecteur $\mathbf{\vartheta}$, de dimension $n$ le nombre de points dans les chaînes, dont chaque composante $i \in [1 \dots n]$ est un vecteur dans l'espace des paramètres.
 Cela permet de définir un vecteur de profils de pression $\mathbf{P}(r)$, dont chaque composante $i$ est le profil associé aux paramètres du point $\mathbf{\vartheta}_i$ des chaînes de Markov:
 \begin{equation}
@@ -326,8 +326,8 @@ Cela permet de définir un vecteur de profils de pression $\mathbf{P}(r)$, dont 
     \mathbf{P}(r) = P_\e(r, \mathbf{\vartheta_i}),
 \end{equation}
 où $P_\e(r)$ est le modèle de profil de pression choisi, gNFW ou non-paramétrique. \\
-La distribution des composantes de $\mathbf{P}(r)$ permet donc d'étudier la distribution postérieure dans l'espace non plus des paramètres, mais des profils de pressions.
-On peut ainsi calculer l'incertitude sur le profil de pression comme la dispersion des composantes de $\mathbf{P}(r)$, ou encore comme les quantiles de cette distribution (les deux options sont implémentés dans \texttt{PANCO2}, et peuvent être choisis par l'utilisateur).
+La distribution des composantes de $\mathbf{P}(r)$ permet donc d'étudier la distribution postérieure dans l'espace non plus des paramètres, mais des profils de pression.
+On peut ainsi calculer l'incertitude sur le profil de pression comme la dispersion des composantes de $\mathbf{P}(r)$, ou encore comme les quantiles de cette distribution (les deux options sont implémentées dans \texttt{PANCO2}, et peuvent être choisis par l'utilisateur).
 
 \subsubsection{Interpolations du modèle non-paramétrique} % --------------------------- %
 \label{sec:panco:interp_np}
@@ -384,7 +384,7 @@ La procédure utilisée pour calculer les grandeurs intégrées est la suivante:
     \item Une valeur de $R_{500,i}$ est calculée pour chacune des composantes $i$ du vecteur de profils de contraste, en trouvant le rayon pour lequel il est égal à $500$;
     \item Une valeur de $Y_{500, i}$ est calculée pour chacune des composantes $i$ du vecteur $\mathbf{P}(r)$ par:
     \begin{equation}
-        Y_{500, i} = \int^{R_{500, i}} r^2 P_i(r) \, \d r,
+        Y_{500, i} = 4\pi \frac{\sigma_\textsc{t}}{m_\e c^2}\int^{R_{500, i}} r^2 P_i(r) \, \d r,
     \end{equation}
     et une valeur de $M_{500, i}$ à partir des profils de masse hydrostatique:
     \begin{equation}
@@ -422,6 +422,8 @@ Les cartes obtenues sont ajustées avec \texttt{PANCO2} afin de tester sa validi
 Cette analyse utilise un profil de pression non-paramétrique, dont les valeurs de rayons $R$ sont définies pour couvrir le signal attendu avec NIKA2, de son lobe à son champ de vue.
 Cette distribution de rayons sera détaillée en \mypageref{sec:panco:binning}.
 Dans cette section, nous décrivons les résultats pour cet amas synthétique, et présentons par la même occasion les figures produites par \texttt{PANCO2}.
+Notons qu'une analyse similaire a été menée pour l'ajustement d'un modèle gNFW.
+Les résultats sont très similaires pour les deux modèles (offrant une reconstruction non-biaisée du profil de pression), aussi ne présentons-nous ici que les résultats de l'ajustement d'un modèle non-paramétrique.
 
 \subsubsection{Résultats de l'ajustement} % ------------------------------------------- %
 Les résultats de l'ajustement permettent d'observer un accord entre le modèle ajusté par \texttt{PANCO2} et la vérité, utilisée pour générer les cartes.
@@ -496,7 +498,7 @@ La matrice de corrélation sera utilisée pour déterminer la distribution radia
         Les points bleus représentent le meilleur ajustement en non-paramétrique.
         L'enveloppe bleue représente l'incertitude sur ce profil obtenue par interpolation gNFW des résultats non-paramétriques.
         La courbe pointillée noire est le profil de pression utilisé pour générer la carte de l'amas.
-        \textbf{Droite:} Matrice de corrélation entre les points du profil de pression, obtenues à partir des chaînes de Markov.
+        \textbf{Droite:} Matrice de corrélation entre les points du profil de pression, obtenue à partir des chaînes de Markov.
     }
     \label{fig:panco2:actlike_press}
 \end{figure*}
@@ -517,7 +519,7 @@ Comme pour le profil de pression, les enveloppes sont obtenues par interpolation
     \caption{
         Profils de température (\textit{haut gauche}), d'entropie (\textit{haut droit}), et de masse hydrostatique (\textit{bas}) obtenus par combinaison du profil de pression ajusté par \texttt{PANCO2} et du profil de densité mesuré en X pour \act.
         Les points bleus représentent la combinaison du meilleur ajustement du profil de pression en non-paramétrique avec le profil de densité mesuré en X.
-        Les enveloppes bleues représentent l'incertitude sur ces profil obtenue par interpolation gNFW des résultats non-paramétriques.
+        Les enveloppes bleues représentent l'incertitude sur ces profils obtenue par interpolation gNFW des résultats non-paramétriques.
     }
     \label{fig:panco2:actlike_thermo}
 \end{figure*}
@@ -558,7 +560,7 @@ La distribution dans le plan $M_{500}-Y_{500}$ pour chaque amas du LPSZ est une 
     \includegraphics[width=.6\linewidth]{Figures/Chap_panco/demo_plots/integrated_values.pdf}
     \caption{
         Distributions des grandeurs caractéristiques intégrées $R_{500}$, $Y_{500}$, et $M_{500}$ obtenues par l'ajustement avec \texttt{PANCO2} de la carte simulée d'un amas synthétique.
-        Les distributions présentées sont les distribution marginalisées à une dimension (éléments diagonaux) et à deux dimensions (éléments extra-diagonaux).
+        Les distributions présentées sont les distributions marginalisées à une dimension (éléments diagonaux) et à deux dimensions (éléments extra-diagonaux).
         Les contours présentés sont les intervalles de confiance à $1\sigma$ et $2\sigma$.
     }
     \label{fig:panco2:actlike_integ}
@@ -665,7 +667,7 @@ La fonction de transfert et la matrice de covariance du bruit utilisées pour g�
     \includegraphics[height=6.5cm, trim={0cm 0cm 1cm 1.0cm}, clip]{Figures/Chap_panco/profiles_music_2/00047.0.82.pdf}
     %\includegraphics[height=5.75cm, trim={1.4cm 0.5cm 0.8cm 1.0cm}, clip]{Figures/Chap_panco/profiles_music/Bin2_cl00067_map.pdf} \hspace{15pt}
     %\includegraphics[height=5.75cm, trim={0cm 0cm 1cm 1.0cm}, clip]{Figures/Chap_panco/profiles_music_2/00067.0.82.pdf}
-    \caption{Illustration des cartes NIKA2 simulées (\textit{gauche}) et profils de pression mesurés (\textit{droite}) pour trois amas MUSIC: deux à $z=0.54$(\textit{haut, milieu}) et un à $z=0.82$ (\textit{bas}).
+    \caption{Illustration des cartes NIKA2 simulées (\textit{gauche}) et profils de pression mesurés (\textit{droite}) pour trois amas MUSIC: deux à $z=0.54$ (\textit{haut, milieu}) et un à $z=0.82$ (\textit{bas}).
         La légende des cartes est la même que pour la figure \ref{fig:panco:all_maps_music}.
         Les lignes pointillées noires représentent les profils de pression réels des amas tels qu'extraits de la simulation MUSIC.
         Les profils bleus sont ceux obtenus par ajustement avec \texttt{PANCO2}.
@@ -683,7 +685,7 @@ Ce gain de temps permettrait de mener des études systématiques plus approfondi
 Les résultats montrent un excellent accord entre les profils mesurés par \texttt{PANCO2} et ceux extraits de la simulation MUSIC.
 Trois exemples sont présentés dans la figure \ref{fig:panco:music_profs}, illustrant la compatibilité entre le profil de pression réel et les résultats de \texttt{PANCO2} pour trois des amas de l'échantillon MUSIC.
 On y voit un excellent accord dans les barres d'erreur entre les profils de pression ajustés par \texttt{PANCO2} et les données d'entrée sur toute la couverture radiale considérée dans l'ajustement, du lobe de NIKA2 à $2 \times R_{500}$, soit hors du champ de vue pour les amas considérés.
-Cet accord permet de conclure que les résultats de \texttt{PANCO2} sont satisfaisant, même lorsque le logiciel est confronté à des données réalistes affectées des bruits et filtrages caractéristiques des observations d'amas avec NIKA2.
+Cet accord permet de conclure que les résultats de \texttt{PANCO2} sont satisfaisants, même lorsque le logiciel est confronté à des données réalistes affectées des bruits et filtrages caractéristiques des observations d'amas avec NIKA2.
 
 % ==================================================================================== %
 \section{Conclusions}
