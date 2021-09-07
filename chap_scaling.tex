@@ -63,7 +63,6 @@ D'après l'équation (\ref{eq:scaling:t_m_r}), la masse $M_\Delta$ contenue dans
 En combinant les équations (\ref{eq:scaling:r_delta}) et (\ref{eq:scaling:m_r_delta}), on aboutit à:
 \begin{equation}
     \label{eq:scaling:t_m_r_delta}
-    %M_\Delta = \frac{2 k_\textsc{b} T}{Gm} \left[ \frac{2GM_\Delta}{\Delta \times H^2(z)} \right]^{1/3}.
     k_\textsc{b} T = m \Delta^{1/3} \left[\frac{G M_\Delta H(z)}{4}\right]^{2/3}.
 \end{equation}
 Le paramètre de Compton $Y_\Delta$ intégré dans le rayon $R_\Delta$ est quant à lui défini par l'intégrale sphérique du profil de pression dans la sphère, comme décrit dans l'équation (\ref{eq:sz_yinteg}):
@@ -74,7 +73,6 @@ Le paramètre de Compton $Y_\Delta$ intégré dans le rayon $R_\Delta$ est quant
 L'équation d'état des gaz parfaits et l'équation (\ref{eq:scaling:t_m_r_delta}) permettent d'écrire le profil de pression des électrons du gaz comme:
 \begin{align}
     \nonumber P_\e(r) &= n_\e(r) k_\textsc{b} T_\e \\
-    %\nonumber &= \frac{G m}{2} \frac{M_\Delta}{R_\Delta} n_\e(r) \\
               &= \mu m_{\rm p} n_\e(r) \Delta^{1/3} \left[\frac{G M_\Delta H(z)}{4}\right]^{2/3}.
 \end{align}
 où $\mu$ est le poids moléculaire moyen du gaz et $m_{\rm p}$ la masse du proton, de sorte à ce que $m = \mu m_{\rm p}$. \\
@@ -247,7 +245,7 @@ Afin de tenir compte des imperfections caractéristiques de l'estimateur de mass
 \end{equation}
 où $\alpha_{X|Z}$ est le biais de l'estimateur de masse, $\beta_{X|Z}$ quantifie l'évolution de ce biais avec la masse de l'amas, et $\sigma_{X|Z}$ est la dispersion de l'estimateur. \\
 Dans le cas de la masse hydrostatique, $\alpha_{X|Z}$ est le biais hydrostatique $b$ discuté en section \mypageref{sec:hse_bias}.
-L'équation (\ref{eq:scaling:mass_estim}) constitue un autre des sous-modèles de l'approche hiérarchique. %, et peut être combinée à l'équation (\ref{eq:scaling:general_pdf}) pour obtenir la distribution de probabilité suivie par l'observable $Y$ d'un amas à partir de son estimateur de masse $X$.
+L'équation (\ref{eq:scaling:mass_estim}) constitue un autre des sous-modèles de l'approche hiérarchique.
 
 \subsubsection{Incertitudes de mesure} % ---------------------------------------------- %
 
@@ -296,7 +294,6 @@ Les valeurs de $y$ correspondantes sont générées en considérant une relation
 \begin{equation}
     \alpha = 0; \quad \beta = 1; \quad \sigma = 0.25.
 \end{equation}
-%Cette relation réelle est représentée sur le panneau gauche de la figure \ref{fig:malmquist} par une ligne noire pointillée.
 La relation d'échelle correspondante est représentée par une ligne noire pointillée sur le panneau gauche de la figure \ref{fig:malmquist}, et la valeur des paramètres dans le plan $(\alpha, \beta)$  de la même façon dans le panneau droit.
 L'ajustement\footnotemark\ des 100 points de cet échantillon permet d'obtenir une relation proche de celle utilisée pour générer les points, représentée par la ligne noire pleine.
 Les intervalles de confiance sur les paramètres $\alpha$ et $\beta$ sont représentés en noir sur le panneau gauche de la figure \ref{fig:malmquist}, et sont compatibles avec la vérité.
@@ -683,7 +680,6 @@ La dispersion $\eta$ des estimateurs de la pente et de l'ordonnée à l'origine 
 
 Les différentes caractéristiques des jeux de données utilisés pour l'ajustement de relations d'échelle masse-observable peuvent être pris en compte par le modèle probabiliste présenté en section \ref{sec:scaling:model}.
 L'ajustement de ce modèle avec \texttt{LIRA} permet d'obtenir des estimateurs peu biaisés des paramètres d'intérêt de la relation d'échelle.
-%Ces estimateurs sont toutefois dispersés, et cette dispersion augmente avec le nombre de paramètres de nuisances non-contraints dans l'analyse.
 La dispersion de ces estimateurs comprend la propagation des effets systématiques, qui sont considérés par l'ajout de paramètres de nuisance dans l'ajustement.
 Dans une analyse cosmologique, cette dispersion implique des contraintes moins fortes sur les paramètres cosmologiques.
 Il est donc utile de s'interroger en amont sur la pertinence physique des différents paramètres de nuisance utilisés, afin de pouvoir éventuellement diminuer l'espace des paramètres accessible et ainsi augmenter la précision des analyses, sans pour autant compromettre leur justesse.

@@ -260,7 +260,6 @@ Cette marche aléatoire peut être décrite par une série d'étapes successives
 Ce processus peut être réalisé en parallèle par plusieurs marcheurs, créant chacun simultanément un ensemble de points nommé chaîne de Markov.
 L'ensemble des positions $\vartheta$ acceptées par l'échantillonneur est alors distribué selon la fonction de distribution de probabilités considérée.
 
-%\subsubsection{Échantillonneur utilisé dans \texttt{PANCO2}}
 Un exemple commun de MCMC est donné par l'algorithme de Metropolis-Hastings \cite{metropolis_monte_1949,hastings_monte_1970}, où la fonction de proposition est une distribution Gaussienne de largeur constante et la probabilité d'acceptance est donnée par $p = P(\vartheta') < P(\vartheta)$.
 Celui-ci est limité par la nécessité de définir au préalable une fonction de proposition immuable au cours de l'échantillonnage.
 \texttt{PANCO2} utilise la librairie \texttt{emcee} \cite{foreman-mackey_emcee_2019}, proposant plusieurs implémentations en Python d'échantillonneurs adaptant leur fonction de proposition au cours de l'échantillonnage, introduits par \myciteauthor{goodman_ensemble_2010}.
@@ -665,8 +664,6 @@ La fonction de transfert et la matrice de covariance du bruit utilisées pour g�
     \includegraphics[height=6.5cm, trim={0cm 0cm 1cm 1.0cm}, clip]{Figures/Chap_panco/profiles_music_2/00032.0.54.pdf}
     \includegraphics[height=6.5cm, trim={1.4cm 0.5cm 0.8cm 1.0cm}, clip]{Figures/Chap_panco/profiles_music/Bin2_cl00047_map.pdf} \hspace{10pt}
     \includegraphics[height=6.5cm, trim={0cm 0cm 1cm 1.0cm}, clip]{Figures/Chap_panco/profiles_music_2/00047.0.82.pdf}
-    %\includegraphics[height=5.75cm, trim={1.4cm 0.5cm 0.8cm 1.0cm}, clip]{Figures/Chap_panco/profiles_music/Bin2_cl00067_map.pdf} \hspace{15pt}
-    %\includegraphics[height=5.75cm, trim={0cm 0cm 1cm 1.0cm}, clip]{Figures/Chap_panco/profiles_music_2/00067.0.82.pdf}
     \caption{Illustration des cartes NIKA2 simulées (\textit{gauche}) et profils de pression mesurés (\textit{droite}) pour trois amas MUSIC: deux à $z=0.54$ (\textit{haut, milieu}) et un à $z=0.82$ (\textit{bas}).
         La légende des cartes est la même que pour la figure \ref{fig:panco:all_maps_music}.
         Les lignes pointillées noires représentent les profils de pression réels des amas tels qu'extraits de la simulation MUSIC.

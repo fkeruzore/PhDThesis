@@ -93,7 +93,6 @@ La dernière composante de l'équation (\ref{eq:toi}) est le bruit intrinsèque 
 Ce bruit est dominé par les brisures spontanées de paires de Cooper et le bruit de photons.
 Il est par nature aléatoire et propre à chaque détecteur, et n'est donc pas corrélé entre les différents KID de NIKA2.
 Par conséquent, sa contribution aux données en temps ne peut pas être évaluée, ni donc être soustraite: il s'agit donc de la composante limitant la sensibilité de l'instrument.
-%Puisqu'il est propre à chaque détecteur et n'est pas corrélé, il est bien décrit par un bruit blanc.
 Ce bruit n'étant pas corrélé entre les différents détecteurs, sa contribution aux cartes du ciel construites à partir des observations NIKA2 est bien décrite par un bruit blanc non-corrélé spatialement.
 Par conséquent, une procédure de soustraction des contaminants parfaite peut aboutir à une carte du ciel dans laquelle le bruit est entièrement décorrélé, justifiant les hypothèses de bruit blanc dans les cartes qui seront discutées par la suite.
 
@@ -312,7 +311,6 @@ En effet, la combinaison de ces deux grandeurs fixe la distance sur le ciel sép
 Pour les observations du grand programme SZ de NIKA2, la fréquence d'échantillonnage est $f = 24 \;\unit{Hz}$, et la vitesse de déplacement du télescope de $v = 40 \;\unit{arcsec/s}$.
 Le rapport $v/f$ donne donc la distance angulaire séparant deux échantillons consécutifs, qui est de $1.67 \;\unit{arcsec}$.
 La taille de pixels est donc choisie comme $3 \;\unit{arcsec}$, permettant à deux échantillons consécutifs de ne jamais être séparés de plus d'un pixel.
-%Ce critère assure qu'aucun pixel de la carte ne puisse n'être associée à aucun échantillon. % phrase à double-négation...
 Ce critère assure que chaque pixel de la carte soit utilisé pour la projection d'au moins un échantillon.
 
 Une fois la grille de pixels définie, la matrice de pointage $P_k(t, x, y)$ associée à chaque KID est calculée.
@@ -519,7 +517,6 @@ Puisque le processus subi par le signal simulé est identique à celui subi par 
 L'intérêt de l'ajout de bruit blanc dans la carte de signal simulé $S_{\rm in.}$ apparaît clairement dans l'équation (\ref{eq:transfer_function}).
 Si cette étape n'était pas réalisée, il existe un risque que le spectre de puissance de la carte présente des zéros.
 Ce dernier étant au dénominateur de l'équation (\ref{eq:transfer_function}), la fonction de transfert peut diverger.
-%L'analyse des données de l'amas \act\ présentée au chapitre \ref{chap:actj0215} présentera la fonction de transfert obtenue pour la décorrélation des données de cet amas en utilisant la méthode \textit{common mode one block}, montrée en figure \ref{fig:act:tf_noise}.
 
 \begin{figure*}[t]
     \centering

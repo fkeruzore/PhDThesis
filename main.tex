@@ -2,40 +2,23 @@
 \documentclass[a4paper, 12pt, twoside]{book}
 \usepackage[top=2.5cm, bottom=3cm, left=2.25cm, right=1.75cm]{geometry}
 
-%%% Fonts because I'm a nerd
+% ------------------------------------------------------------------------------------ %
+% ========== Font options ============================================================ %
+% ------------------------------------------------------------------------------------ %
+
+% Uses a mix of Times-like fonts (TeX Gyre Termes + STIX) to get everything right
 \usepackage{setspace}
 \usepackage{amsmath}
-\def\myfont{1} % 0=MinionPro, 1=Times, 2=Libertine
 \usepackage[MnSymbol]{mathspec}
-\if\myfont0   % Minion Pro
-    \setstretch{1.025}
-    \setlength{\parskip}{5pt}
-    \setlength{\parindent}{15pt}
-    \setmainfont[
-        Path = /Users/keruzore/Documents/fonts/,
-        BoldFont={Minion Pro Bold.otf},
-        ItalicFont={Minion Pro Italic.ttf},
-        BoldItalicFont={Minion Pro Bold Italic.ttf},
-        Scale=MatchLowercase
-    ]{Minion Pro Regular.otf}
-    \setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Minion Pro}
-    \setmathrm[]{Minion Pro}
-\else
-    \setstretch{1.02}
-    \setlength{\parskip}{10pt}
-    \setlength{\parindent}{15pt}
-    \if\myfont1   % Times/STIX/Termes
-        \setmainfont{TeX Gyre Termes}
-        \setmathsfont(Digits,Latin)[Scale=MatchLowercase]{TeX Gyre Termes}
-        \setmathsfont(Greek)[Scale=MatchLowercase]{STIXGeneral}
-        \setmathrm[]{STIXGeneral}
-        \setmathcal[Scale=MatchUppercase]{TeX Gyre Chorus}
-    \else\if\myfont2 % Linux Libertine
-        \setmainfont{Linux Libertine O}
-        \setmathsfont(Digits,Latin,Greek)[Scale=MatchLowercase]{Linux Libertine O}
-        \setmathrm[]{Linux Libertine O}
-    \fi
-\fi
+\setstretch{1.02}
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{15pt}
+\setmainfont{TeX Gyre Termes}
+\setmathsfont(Digits,Latin)[Scale=MatchLowercase]{TeX Gyre Termes}
+\setmathsfont(Greek)[Scale=MatchLowercase]{STIXGeneral}
+\setmathrm[]{STIXGeneral}
+\setmathcal[Scale=MatchUppercase]{TeX Gyre Chorus}
+
 % Make digits be in correct font in URLs (this SUCKS)
 \makeatletter
     \DeclareMathSymbol{0}{\mathalpha}{\eu@DigitsArabic@symfont}{`0}
@@ -50,49 +33,25 @@
     \DeclareMathSymbol{9}{\mathalpha}{\eu@DigitsArabic@symfont}{`9}
 \makeatother
 
-%%% Language options
+% ------------------------------------------------------------------------------------ %
+% ========== Language options ======================================================== %
+% ------------------------------------------------------------------------------------ %
+
 \usepackage{polyglossia}
 \setmainlanguage{french}
 \usepackage{csquotes}
 
-%%% Fix apostrophe kerning in MinionPro
-\if\myfont0
-    \makeatletter
-    \edef\qu@te{\string'} % save a copy of the ordinary apostrophe
-    \catcode`'=\active    % make ' active
-    \begingroup
-    \obeylines\obeyspaces%
-    \gdef\@resetactivechars{%
-    \def^^M{\@activechar@info{EOL}\space}%
-    \def {\@activechar@info{space}\space}%
-    }%
-    \endgroup
-    \providecommand\texorpdfstring[2]{#1}
-    \protected\def'{\texorpdfstring{\texqu@te}{\string'}}
-    \@ifpackagewith{inputenc}{utf8}
-      {\DeclareUnicodeCharacter{2019}{\texqu@te}}{}
-    \def\texqu@te{\relax
-      \ifmmode
-        \expandafter^\expandafter\bgroup\expandafter\prim@s
-      \else
-        \expandafter\futurelet\expandafter\@let@token\expandafter\qu@t@
-      \fi}
-    \def\qu@t@{%
-      \ifx'\@let@token
-        \qu@te\qu@te\expandafter\@gobble
-      \else
-        {\kern0em}\qu@te{\kern0em}\penalty\@M\hskip\expandafter\z@skip
-      \fi}
-    \scantokens\expandafter{%
-      \expandafter\def\expandafter\pr@m@s\expandafter{\pr@m@s}}
-    \makeatother
-\fi
+% ------------------------------------------------------------------------------------ %
+% ========== Color options =========================================================== %
+% ------------------------------------------------------------------------------------ %
 
-%%% Colors because I'm a nerd
 \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks, allcolors=Maroon]{hyperref}
 
-%%% Good looking sections&chapters
+% ------------------------------------------------------------------------------------ %
+% ========== Sections & chapters options ============================================= %
+% ------------------------------------------------------------------------------------ %
+
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
   {\normalsize\huge\color{black}}%
@@ -101,21 +60,22 @@
    {\bfseries\fontsize{40}{40}\selectfont\thechapter}}%
   {10 pt}%
   {\flushright\bfseries\Huge}%
-\titlespacing\section{0pt}{12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
-\titlespacing\subsection{0pt}{12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
+\titlespacing\section{0pt}{      12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{   12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
 \titlespacing\subsubsection{0pt}{12pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}
 
-%%% Mini table of contents at the beginning of chapters
+% ------------------------------------------------------------------------------------ %
+% ========== Mini table of contents ================================================== %
+% ------------------------------------------------------------------------------------ %
+
 \usepackage{minitoc}
 \setcounter{minitocdepth}{2}
 \setcounter{tocdepth}{2}
 
-% Remove bottom page number from ALL pages
-\makeatletter
-  \let\ps@plain\ps@empty
-\makeatother
+% ------------------------------------------------------------------------------------ %
+% ========== Headers and footers ===================================================== %
+% ------------------------------------------------------------------------------------ %
 
-%%% Headers and footers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -124,30 +84,36 @@
 \fancyhead[RO,LE]{\thepage}
 \fancyfoot[C]{}
 
-%%% Misc
+% Remove bottom page number from ALL pages
+\makeatletter
+  \let\ps@plain\ps@empty
+\makeatother
+
+% ------------------------------------------------------------------------------------ %
+% ========== Misc packages =========================================================== %
+% ------------------------------------------------------------------------------------ %
+
 \usepackage{graphicx}               % figures
 \usepackage[font=footnotesize]{caption}
 \usepackage[rightcaption]{sidecap}  % caption on side
-\sidecaptionvpos{figure}{c}
+    \sidecaptionvpos{figure}{c}
 \usepackage{afterpage}              % Force next page on figures
-%\usepackage{parskip}                % Set length between paragraphs
 \usepackage{booktabs}               % better table rules
 \usepackage{tabularx}               % control widths
 \usepackage{multirow}               % multi-row cells in tables
 \usepackage{enumitem}               % better lists
 \usepackage{lipsum}                 % Latin placeholder text
 \usepackage{hyperref}               % hyperlinks
-\usepackage{afterpage}
-\usepackage{cleveref}
 \usepackage[toc,page]{appendix}     % Appendices
 \usepackage{stackengine}            % Stack figures
 \usepackage{pdfpages}               % Add ADUM cover
 \usepackage{scrextend}              % To make function forcing even last page
 
-%%% Itemize bullet
-\renewcommand{\labelitemi}{--}
+% ------------------------------------------------------------------------------------ %
+% ========== Bibliography ============================================================ %
+% ------------------------------------------------------------------------------------ %
 
-%%% Clear bib
+\usepackage{cleveref}
 \usepackage[%
     backend=biber,
     style=numeric,
@@ -158,18 +124,17 @@
     maxcitenames=2, % there are more than {max} total
     backref=true,
 ]{biblatex}
-\renewbibmacro{in:}{,}
-\DeclareFieldFormat{postnote}{#1}
-% clickable links without full URL
+
+% Clickable links without full URL
 \DefineBibliographyStrings{french}{url = {link}}
 \DeclareFieldFormat{url}{%
   \ifhyperref
     {\href{#1}{Lien}}
     {\url{#1}}
 }
+
+% Clean style
 \DefineBibliographyStrings{french}{phdthesis = {Thèse de doctorat}}
-%
-\addbibresource{phd.bib}
 \AtEveryBibitem{%
     \clearfield{urlyear}%
     \clearlist{language}%
@@ -182,6 +147,8 @@
     \clearlist{publisher}%
     \clearfield{note}
 }
+\renewbibmacro{in:}{,}
+\DeclareFieldFormat{postnote}{#1}
 
 % Italicize et al.
 \renewbibmacro*{name:andothers}{% Based on name:andothers from biblatex.def
@@ -202,16 +169,12 @@
 \addto\captionsfrench{\def\tablename{Table}}
 \DefineBibliographyExtras{french}{\restorecommand\mkbibnamefamily} % author names in bib
 
-%%% Ensure last page has even number
-\newcommand{\OpenNewPageIfNeeded}{%
-  \ifthispageodd{%
-    \newpage
-    \null
-  }{%
-  }%
-}
+\addbibresource{phd.bib}
 
-%%% New commands
+% ------------------------------------------------------------------------------------ %
+% ========== New commands ============================================================ %
+% ------------------------------------------------------------------------------------ %
+
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\N}{\mathcal{N}\,}
 \newcommand{\da}{\mathcal{D}_\textsc{a}}
@@ -235,9 +198,19 @@
     \citeyear{#1} \cite{#1}%
 }
 \newcommand{\mypageref}[1]{\ref{#1} (page \pageref{#1})}
+\renewcommand{\labelitemi}{--} % Itemize bullet
+\newcommand{\OpenNewPageIfNeeded}{% Ensure last page has even number
+  \ifthispageodd{%
+    \newpage
+    \null
+  }{%
+  }%
+}
 
+% ------------------------------------------------------------------------------------ %
+% ========== Title, author =========================================================== %
+% ------------------------------------------------------------------------------------ %
 
-%%% Begin
 \title{Cosmologie avec des amas de galaxies à partir d'observations de l'effet Sunyaev-Zeldovich avec la caméra NIKA2}
 \author{Florian \textsc{K\'eruzor\'e}}
 \date{}
@@ -257,6 +230,10 @@
     Télescope de 30 mètres de l'IRAM
 }
 
+% ------------------------------------------------------------------------------------ %
+% ========== Table of Contents ======================================================= %
+% ------------------------------------------------------------------------------------ %
+
 \setlength{\parskip}{2.5pt}
 %\newpage
 \dominitoc[n]
@@ -264,7 +241,9 @@
 \adjustmtc
 \setlength{\parskip}{5pt}
 
-% ==================================================================================== %
+% ------------------------------------------------------------------------------------ %
+% ========== Chapters ================================================================ %
+% ------------------------------------------------------------------------------------ %
 
 \chapter*{Introduction}
 \label{chap:intro}
@@ -330,11 +309,17 @@
 \markboth{}{\uppercase{Perspectives}}
 \input{chap_persp.tex}
 
-% ==================================================================================== %
+% ------------------------------------------------------------------------------------ %
+% ========== Bibliography ============================================================ %
+% ------------------------------------------------------------------------------------ %
+
 \printbibliography
 \addcontentsline{toc}{chapter}{Bibliographie}
 
-% ==================================================================================== %
+% ------------------------------------------------------------------------------------ %
+% ========== Back cover ============================================================== %
+% ------------------------------------------------------------------------------------ %
+
 \clearpage
 \OpenNewPageIfNeeded
 \includepdf[pages={1}]{abstracts.pdf}

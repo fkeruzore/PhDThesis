@@ -272,7 +272,6 @@ Enfin, ces cartes sont utilisées pour la mesure du lobe instrumental observé p
 
 Avant d'observer des sources, il est nécessaire de s'assurer que le télescope est à même de livrer des observations fidèles du ciel.
 Il faut donc s'assurer que le KID de référence est correctement aligné avec l'axe optique du télescope, et que ce dernier est correctement focalisé.
-%celui-ci est capable de pointer à des coordonnées voulues, et qu'il est correctement focalisé.
 
 Le pointage du télescope est vérifié en réalisant un mouvement d'aller-retour sur une source, tout d'abord en azimut, puis en élévation, formant une croix dans le plan du ciel.
 Des profils Gaussiens sont ajustés sur les TOIs d'un détecteur de référence au centre des matrices de NIKA2.
@@ -351,7 +350,6 @@ Les résultats principaux de ces mesures sont consignés dans la table \ref{tab:
         \midrule
         Longueur d'onde de référence [mm]   & 1.15 & 2.00 \\
         Fréquence de référence [GHz]        & 260  & 150  \\
-        %Fréquence centrale [GHz]            & 254.7 et 257.4 & 150.9 \\
         \midrule
         \multicolumn{3}{c}{\itshape Nombre de détecteurs} \\
         \midrule
@@ -361,9 +359,6 @@ Les résultats principaux de ces mesures sont consignés dans la table \ref{tab:
         \multicolumn{3}{c}{\itshape Résolution angulaire et champ de vue} \\
         \midrule
         Largeur à mi-hauteur (FWHM) du lobe principal [arcsec] & $11.1 \pm 0.2$ & $17.6 \pm 0.1$ \\
-        Efficacité du lobe principal [\%]   & $47 \pm 3$ & $64 \pm 3$ \\
-        %Largeur à mi-hauteur (FWHM) du lobe de référence [arcsec] & $12.5$ & $18.5$ \\
-        %Efficacité du lobe de référence [\%]    & $61 \pm 3$ & $72 \pm 3$ \\
         Champ de vue instantané [arcmin]    & 6.5 & 6.5 \\
         \midrule
         \multicolumn{3}{c}{\itshape Incertitudes de pointage et d'étalonnage} \\
@@ -435,7 +430,6 @@ La sensibilité de NIKA2 est quantifiée par sa NEFD (\textit{Noise Equivalent F
 Celle-ci est définie comme l'erreur statistique à $1\sigma$ sur la densité de flux mesurée pour une observation d'une seconde d'une source ponctuelle.
 Elle est calculée pour une opacité nulle, c'est-à-dire une transmission atmosphérique égale à un (voir équation \ref{eq:tau_trans}).
 Son évaluation pour NIKA2, décrite dans la section 10 de \cite{perotto_calibration_2020}, est basée sur la dispersion du bruit résiduel dans les cartes de toutes les sources de densité de flux inférieures à $1 \;\unit{Jy}$ observées pendant les campagnes de mesure des performances de l'instrument\footnote{Voir section \mypageref{sec:map_coadd} pour la définition des cartes de dispersion de bruit résiduel.}.
-%la dispersion de différentes mesures de la densité de flux en provenance de la galaxie HLS J0918+5142.
 Les valeurs mesurées sont de $30$ et $9 \;\unit{mJy \cdot s^{1/2}}$ à 260 et 150 GHz respectivement, faisant de NIKA2 une caméra à grande sensibilité.
 
 La sensibilité de l'instrument peut également être définie par sa \textit{mapping speed}.
@@ -611,9 +605,7 @@ Les produits finaux seront pour chacun des amas de l'échantillon du LPSZ:
 \setlength\itemsep{5pt}
     \item Les cartes NIKA2 de la région de l'amas, à 150 et 260 GHz, étalonnées et soustraites du bruit corrélé (voir chapitre \ref{chap:decorr});
     \item Le profil de pression de l'amas mesuré avec le logiciel \texttt{PANCO2}, développé dans le cadre de cette thèse, et présenté au chapitre \ref{chap:panco};
-    \item Les profils d'autres propriétés thermodynamiques du milieu intra-amas obtenues par combinaison avec des données externes, notamment dans le domaine des rayons X; %-- voir discussion ci-après;
     \item Les valeurs des grandeurs caractéristiques intégrées de l'amas, $R_{500}$, $Y_{500}$, et $M_{500}$, qui pourront être utilisées par la communauté pour améliorer la mesure de la relation d'échelle masse-observable dans les analyses cosmologiques de catalogues d'amas de galaxies -- voir section \ref{sec:scaling}, et chapitre \ref{chap:scaling}.
-    %pour des combinaisons des données du grand programme SZ dans des analyses cosmologiques ajustant la relation d'échelle masse-observable simultanément avec la cosmologie -- voir section \ref{sec:scaling}.
 \end{itemize}
 Toutes ces informations seront rendues publiques sous la forme d'un catalogue, et utilisables par la communauté pour combiner les informations issues de l'analyse des amas du LPSZ avec d'autres données futures, afin d'enrichir la connaissance de la physique des amas de galaxies grâce à l'échantillon du LPSZ.
 
