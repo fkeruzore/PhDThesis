@@ -206,7 +206,7 @@ Notons en particulier que les paramètres correspondant au flux des sources ponc
 \afterpage{
 \begin{table}[t]
     \setlength{\tabcolsep}{15pt}
-    \small
+    \footnotesize
     \centering
     \begin{tabular}{c l l}
         \toprule
@@ -626,10 +626,10 @@ Les amas resimulés offrent donc une physique bien plus riche que les halos d'or
 Chaque amas est resimulé à partir de conditions initiales à un redshift $z=9$ jusqu'à $z=0$, et des \textit{snapshots} sont enregistrés à plusieurs redshifts intermédiaires afin de pouvoir étudier l'évolution des amas au cours du processus de formation des structures.
 
 L'échantillon considéré pour la validation de \texttt{PANCO2} est un sous-ensemble de l'échantillon MUSIC sélectionné pour être similaire à l'échantillon du grand programme SZ de NIKA2.
-Cet échantillon, créé par \myciteauthor{ruppin_impact_2019-1}, comporte 32 amas, couvrant une gamme de masse similaire à celle couverte par le grand programme SZ, à des redshifts de 0.54 et 0.82.
+Cet échantillon, créé par \myciteauthor{ruppin_impact_2019}, comporte 32 amas, couvrant une gamme de masse similaire à celle couverte par le grand programme SZ, à des redshifts de 0.54 et 0.82.
 Les amas ont été sélectionnés afin d'avoir autant d'amas morphologiquement relaxés que d'amas perturbés.
 Cet échantillon est particulièrement adapté à la validation de \texttt{PANCO2} : il est composé d'amas réalistes similaires à ceux du grand programme SZ de NIKA2.
-Des observations NIKA2 simulées sont produites pour ces amas selon la procédure décrite dans \cite{ruppin_impact_2019-1}.
+Des observations NIKA2 simulées sont produites pour ces amas selon la procédure décrite dans \cite{ruppin_impact_2019}.
 La pression -- connue -- du milieu intra-amas est intégrée le long d'une ligne de visée arbitraire afin d'obtenir une carte de paramètre de Compton, qui est ensuite convertie en unités de brillance de surface.
 Celle-ci est ensuite convoluée par le lobe instrumental de NIKA2 et par une fonction de transfert fiducielle réaliste, et une réalisation de bruit corrélé est ajoutée suivant un spectre de puissance de bruit réaliste.
 Les cartes résultantes sont donc des simulations réalistes d'observations avec NIKA2 des amas de l'échantillon.
@@ -673,8 +673,8 @@ La fonction de transfert et la matrice de covariance du bruit utilisées pour g�
     \label{fig:panco:music_profs}
 \end{figure*}
 
-La convergence du MCMC est atteinte en environ une à deux heures par amas, représentant un gain d'un facteur $\sim 40$ par rapport à \texttt{PANCO}, qui réalisait l'ajustement des mêmes cartes en deux à trois jours par amas d'après \myciteauthor{ruppin_impact_2019-1}\footnotemark.
-\footnotetext{Il est important de préciser que \texttt{PANCO} a été utilisé dans \cite{ruppin_impact_2019-1} pour ajuster simultanément des cartes simulées NIKA2 et \textit{Planck} des amas MUSIC, alors que l'analyse \texttt{PANCO2} décrite ici n'a considéré que les cartes NIKA2.}
+La convergence du MCMC est atteinte en environ une à deux heures par amas, représentant un gain d'un facteur $\sim 40$ par rapport à \texttt{PANCO}, qui réalisait l'ajustement des mêmes cartes en deux à trois jours par amas d'après \myciteauthor{ruppin_impact_2019}\footnotemark.
+\footnotetext{Il est important de préciser que \texttt{PANCO} a été utilisé dans \cite{ruppin_impact_2019} pour ajuster simultanément des cartes simulées NIKA2 et \textit{Planck} des amas MUSIC, alors que l'analyse \texttt{PANCO2} décrite ici n'a considéré que les cartes NIKA2.}
 Il est à noter qu'en considérant le bruit comme blanc -- c'est à dire en négligeant les éléments extra-diagonaux de la matrice de covariance du bruit -- \texttt{PANCO2} est capable de réaliser l'ajustement en cinq à quinze minutes par amas seulement, soit environ dix fois plus vite.
 Ce constat motive grandement la poursuite du travail sur la soustraction du bruit corrélé dans les cartes NIKA2, afin d'obtenir des spectres de puissance de bruit résiduel les plus plats possibles et de pouvoir négliger les corrélations pixel-à-pixel du bruit dans les cartes.
 Ce gain de temps permettrait de mener des études systématiques plus approfondies, comme l'évolution des résultats avec le \textit{binning} du profil de pression non-paramétrique sur l'ensemble des données du grand programme SZ de NIKA2.

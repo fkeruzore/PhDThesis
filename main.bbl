@@ -5213,7 +5213,6 @@
       \field{labeltitlesource}{title}
       \field{abstract}{This book lays out the scientific goals to be addressed by the next-generation ground-based cosmic microwave background experiment, {CMB}-S4, envisioned to consist of dedicated telescopes at the South Pole, the high Chilean Atacama plateau and possibly a northern hemisphere site, all equipped with new superconducting cameras. {CMB}-S4 will dramatically advance cosmological studies by crossing critical thresholds in the search for the B-mode polarization signature of primordial gravitational waves, in the determination of the number and masses of the neutrinos, in the search for evidence of new light relics, in constraining the nature of dark energy, and in testing general relativity on large scales.}
       \field{day}{1}
-      \field{journaltitle}{{arXiv} e-prints}
       \field{month}{10}
       \field{title}{{CMB}-S4 Science Book, First Edition}
       \field{urlday}{9}
@@ -19705,94 +19704,69 @@
       \endverb
       \keyw{cosmological parameters,galaxies: clusters: general,galaxies: clusters: intracluster medium,X-rays: galaxies: clusters,distance scale}
     \endentry
-    \entry{ruppin_impact_2019}{article}{}
-      \name{author}{9}{}{%
+    \entry{ruppin_impact_2019-1}{article}{}
+      \name{author}{4}{}{%
         {{hash=b0ba255a81d44f7c29e195c992a3096b}{%
            family={Ruppin},
            familyi={R\bibinitperiod},
            given={F.},
            giveni={F\bibinitperiod}}}%
-        {{hash=aa701d7323fb35b81f2447b1cfcba88c}{%
-           family={Sembolini},
-           familyi={S\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-        {{hash=ce77c60c14905272942541cf9c2eeeee}{%
-           family={Petris},
-           familyi={P\bibinitperiod},
-           given={M.\bibnamedelimi De},
-           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=2e3c2dd743b0f9e12f87aeb190a08199}{%
-           family={Adam},
-           familyi={A\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=0688fd2f9e870bb4fba3068a4c831aa9}{%
-           family={Cialone},
-           familyi={C\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=6c5adb4fadad9c100be40f563583c09c}{%
-           family={Macías-Pérez},
-           familyi={M\bibinithyphendelim P\bibinitperiod},
-           given={J.\bibnamedelimi F.},
-           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
         {{hash=045860f129661a6f85934ef14049da7f}{%
            family={Mayet},
            familyi={M\bibinitperiod},
            given={F.},
            giveni={F\bibinitperiod}}}%
+        {{hash=6c5adb4fadad9c100be40f563583c09c}{%
+           family={Macías-Pérez},
+           familyi={M\bibinithyphendelim P\bibinitperiod},
+           given={J.\bibnamedelimi F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
         {{hash=068a825a3674b639b450b49a873c7e51}{%
            family={Perotto},
            familyi={P\bibinitperiod},
            given={L.},
            giveni={L\bibinitperiod}}}%
-        {{hash=db5cd5d2a04327662f59957f98803517}{%
-           family={Yepes},
-           familyi={Y\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
       }
       \strng{namehash}{44e2e57a14ec49b49673359e37319daf}
-      \strng{fullhash}{120b681b35ed2e94614d0cd51f6e0836}
+      \strng{fullhash}{7b68b0ef79875d197d164c189c6d5c46}
       \strng{bibnamehash}{44e2e57a14ec49b49673359e37319daf}
       \strng{authorbibnamehash}{44e2e57a14ec49b49673359e37319daf}
       \strng{authornamehash}{44e2e57a14ec49b49673359e37319daf}
-      \strng{authorfullhash}{120b681b35ed2e94614d0cd51f6e0836}
+      \strng{authorfullhash}{7b68b0ef79875d197d164c189c6d5c46}
       \field{extraname}{1}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{{<}i{>}Context{<}i/{>}. The mean pressure profile of the galaxy cluster population plays an essential role in cosmological analyses. An accurate characterization of the shape, intrinsic scatter, and redshift evolution of this profile is necessary to estimate some of the biases and systematic effects that currently prevent cosmological analyses based on thermal Sunyaev-Zel’dovich ({tSZ}) surveys from obtaining precise and unbiased cosmological constraints. This is one of the main goals of the ongoing {NIKA}2 {SZ} large program, which aims at mapping the {tSZ} signal of a representative cluster sample selected from the {<}i{>}Planck{<}i/{>} and {ACT} catalogs and spans a redshift range 0.5 {<} {<}i{>}z{<}i/{>} {<} 0.9.{<}i{>}Aims{<}i/{>}. To estimate the impact of intracluster medium ({ICM}) disturbances that can be detected by {NIKA}2 on the mean pressure profile of galaxy clusters, we realized a study based on a synthetic cluster sample that is similar to that of the {NIKA}2 {SZ} large program.{<}i{>}Methods{<}i/{>}. To reach this goal we employed the hydrodynamical N-body simulation Marenostrum {MUltidark} {SImulations} of galaxy Clusters ({MUSIC}). We simulated realistic {NIKA}2 and {<}i{>}Planck{<}i/{>} {tSZ} observations, which were jointly analyzed to estimate the {ICM} pressure profile of each cluster. A comparison of the deprojected profiles with the true radial profiles directly extracted from the {MUSIC} simulation allowed us to validate the {NIKA}2 {tSZ} pipeline and to study the impact of {ICM} disturbances on the characterization of the {ICM} pressure distribution even at high redshift. After normalizing each profile by the integrated quantities estimated under the hydrostatic equilibrium hypothesis, we evaluated the mean pressure profile of the twin sample and show that it is compatible with that extracted directly from the {MUSIC} simulation in the scale range that can be recovered by {NIKA}2. We studied the impact of cluster dynamical state on both its shape and associated scatter.{<}i{>}Results{<}i/{>}. We observe that at {<}i{>}R{<}i/{>}{<}sub{>}500{<}sub/{>} the scatter of the distribution of normalized pressure profiles associated with the selected morphologically disturbed clusters is 65\% larger than that associated with relaxed clusters. Furthermore, we show that using a basic modeling of the thermal pressure distribution in the deprojection procedure induces a significant increase of the scatter associated with the mean normalized pressure profile compared to the true distribution extracted directly from the simulation.{<}i{>}Conclusions{<}i/{>}. We conclude that the {NIKA}2 {SZ} large program will facilitate characterization of the potential redshift evolution of the mean pressure profile properties due to the performance of the {NIKA}2 camera, thereby allowing for a precise measurement of cluster morphology and {ICM} thermodynamic properties up to {<}i{>}R{<}i/{>}{<}sub{>}500{<}sub/{>} at high redshift.}
-      \field{day}{1}
-      \field{issn}{0004-6361, 1432-0746}
-      \field{journaltitle}{Astronomy \& Astrophysics}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{ABSTRACT}. Cosmological analyses based on surveys of galaxy clusters observed through the Sunyaev–Zel’dovich ({SZ}) effect strongly rely on the mean pressure prof}
+      \field{day}{21}
+      \field{issn}{0035-8711}
+      \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
       \field{langid}{english}
       \field{month}{11}
-      \field{shortjournal}{A\&A}
-      \field{shorttitle}{Impact of {ICM} disturbances on the mean pressure profile of galaxy clusters}
-      \field{title}{Impact of {ICM} disturbances on the mean pressure profile of galaxy clusters: A prospective study of the {NIKA}2 {SZ} large program with {MUSIC} synthetic clusters}
-      \field{urlday}{28}
-      \field{urlmonth}{10}
+      \field{number}{1}
+      \field{shortjournal}{Mon Not R Astron Soc}
+      \field{title}{Impact of the mean pressure profile of galaxy clusters on the cosmological constraints from the Planck {tSZ} power spectrum}
+      \field{urlday}{4}
+      \field{urlmonth}{11}
       \field{urlyear}{2019}
-      \field{volume}{631}
+      \field{volume}{490}
       \field{year}{2019}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{A21}
-      \range{pages}{-1}
+      \field{pages}{784\bibrangedash 796}
+      \range{pages}{13}
       \verb{doi}
-      \verb 10.1051/0004-6361/201935059
+      \verb 10.1093/mnras/stz2669
       \endverb
       \verb{file}
-      \verb Snapshot:/Users/keruzore/Zotero/storage/6U68S97X/aa35059-19.html:text/html;Full Text PDF:/Users/keruzore/Zotero/storage/XY5J6QPM/Ruppin et al. - 2019 - Impact of ICM disturbances on the mean pressure pr.pdf:application/pdf
+      \verb Snapshot:/Users/keruzore/Zotero/storage/H5RGKNXR/5573283.html:text/html;Full Text PDF:/Users/keruzore/Zotero/storage/FYTEPWV6/Ruppin et al. - 2019 - Impact of the mean pressure profile of galaxy clus.pdf:application/pdf
       \endverb
       \verb{urlraw}
-      \verb https://www-aanda-org.in2p3.bib.cnrs.fr/articles/aa/abs/2019/11/aa35059-19/aa35059-19.html
+      \verb https://academic-oup-com.in2p3.bib.cnrs.fr/mnras/article/490/1/784/5573283
       \endverb
       \verb{url}
-      \verb https://www-aanda-org.in2p3.bib.cnrs.fr/articles/aa/abs/2019/11/aa35059-19/aa35059-19.html
+      \verb https://academic-oup-com.in2p3.bib.cnrs.fr/mnras/article/490/1/784/5573283
       \endverb
     \endentry
     \entry{mantz_cosmology_2014}{article}{}
@@ -38264,69 +38238,94 @@
       \verb https://doi.org/10.1111/j.1365-2966.2012.21007.x
       \endverb
     \endentry
-    \entry{ruppin_impact_2019-1}{article}{}
-      \name{author}{4}{}{%
+    \entry{ruppin_impact_2019}{article}{}
+      \name{author}{9}{}{%
         {{hash=b0ba255a81d44f7c29e195c992a3096b}{%
            family={Ruppin},
            familyi={R\bibinitperiod},
            given={F.},
            giveni={F\bibinitperiod}}}%
-        {{hash=045860f129661a6f85934ef14049da7f}{%
-           family={Mayet},
-           familyi={M\bibinitperiod},
+        {{hash=aa701d7323fb35b81f2447b1cfcba88c}{%
+           family={Sembolini},
+           familyi={S\bibinitperiod},
            given={F.},
            giveni={F\bibinitperiod}}}%
+        {{hash=ce77c60c14905272942541cf9c2eeeee}{%
+           family={Petris},
+           familyi={P\bibinitperiod},
+           given={M.\bibnamedelimi De},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=2e3c2dd743b0f9e12f87aeb190a08199}{%
+           family={Adam},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0688fd2f9e870bb4fba3068a4c831aa9}{%
+           family={Cialone},
+           familyi={C\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
         {{hash=6c5adb4fadad9c100be40f563583c09c}{%
            family={Macías-Pérez},
            familyi={M\bibinithyphendelim P\bibinitperiod},
            given={J.\bibnamedelimi F.},
            giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=045860f129661a6f85934ef14049da7f}{%
+           family={Mayet},
+           familyi={M\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
         {{hash=068a825a3674b639b450b49a873c7e51}{%
            family={Perotto},
            familyi={P\bibinitperiod},
            given={L.},
            giveni={L\bibinitperiod}}}%
+        {{hash=db5cd5d2a04327662f59957f98803517}{%
+           family={Yepes},
+           familyi={Y\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
       }
       \strng{namehash}{44e2e57a14ec49b49673359e37319daf}
-      \strng{fullhash}{7b68b0ef79875d197d164c189c6d5c46}
+      \strng{fullhash}{120b681b35ed2e94614d0cd51f6e0836}
       \strng{bibnamehash}{44e2e57a14ec49b49673359e37319daf}
       \strng{authorbibnamehash}{44e2e57a14ec49b49673359e37319daf}
       \strng{authornamehash}{44e2e57a14ec49b49673359e37319daf}
-      \strng{authorfullhash}{7b68b0ef79875d197d164c189c6d5c46}
+      \strng{authorfullhash}{120b681b35ed2e94614d0cd51f6e0836}
       \field{extraname}{5}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{{ABSTRACT}. Cosmological analyses based on surveys of galaxy clusters observed through the Sunyaev–Zel’dovich ({SZ}) effect strongly rely on the mean pressure prof}
-      \field{day}{21}
-      \field{issn}{0035-8711}
-      \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{{<}i{>}Context{<}i/{>}. The mean pressure profile of the galaxy cluster population plays an essential role in cosmological analyses. An accurate characterization of the shape, intrinsic scatter, and redshift evolution of this profile is necessary to estimate some of the biases and systematic effects that currently prevent cosmological analyses based on thermal Sunyaev-Zel’dovich ({tSZ}) surveys from obtaining precise and unbiased cosmological constraints. This is one of the main goals of the ongoing {NIKA}2 {SZ} large program, which aims at mapping the {tSZ} signal of a representative cluster sample selected from the {<}i{>}Planck{<}i/{>} and {ACT} catalogs and spans a redshift range 0.5 {<} {<}i{>}z{<}i/{>} {<} 0.9.{<}i{>}Aims{<}i/{>}. To estimate the impact of intracluster medium ({ICM}) disturbances that can be detected by {NIKA}2 on the mean pressure profile of galaxy clusters, we realized a study based on a synthetic cluster sample that is similar to that of the {NIKA}2 {SZ} large program.{<}i{>}Methods{<}i/{>}. To reach this goal we employed the hydrodynamical N-body simulation Marenostrum {MUltidark} {SImulations} of galaxy Clusters ({MUSIC}). We simulated realistic {NIKA}2 and {<}i{>}Planck{<}i/{>} {tSZ} observations, which were jointly analyzed to estimate the {ICM} pressure profile of each cluster. A comparison of the deprojected profiles with the true radial profiles directly extracted from the {MUSIC} simulation allowed us to validate the {NIKA}2 {tSZ} pipeline and to study the impact of {ICM} disturbances on the characterization of the {ICM} pressure distribution even at high redshift. After normalizing each profile by the integrated quantities estimated under the hydrostatic equilibrium hypothesis, we evaluated the mean pressure profile of the twin sample and show that it is compatible with that extracted directly from the {MUSIC} simulation in the scale range that can be recovered by {NIKA}2. We studied the impact of cluster dynamical state on both its shape and associated scatter.{<}i{>}Results{<}i/{>}. We observe that at {<}i{>}R{<}i/{>}{<}sub{>}500{<}sub/{>} the scatter of the distribution of normalized pressure profiles associated with the selected morphologically disturbed clusters is 65\% larger than that associated with relaxed clusters. Furthermore, we show that using a basic modeling of the thermal pressure distribution in the deprojection procedure induces a significant increase of the scatter associated with the mean normalized pressure profile compared to the true distribution extracted directly from the simulation.{<}i{>}Conclusions{<}i/{>}. We conclude that the {NIKA}2 {SZ} large program will facilitate characterization of the potential redshift evolution of the mean pressure profile properties due to the performance of the {NIKA}2 camera, thereby allowing for a precise measurement of cluster morphology and {ICM} thermodynamic properties up to {<}i{>}R{<}i/{>}{<}sub{>}500{<}sub/{>} at high redshift.}
+      \field{day}{1}
+      \field{issn}{0004-6361, 1432-0746}
+      \field{journaltitle}{Astronomy \& Astrophysics}
       \field{langid}{english}
       \field{month}{11}
-      \field{number}{1}
-      \field{shortjournal}{Mon Not R Astron Soc}
-      \field{title}{Impact of the mean pressure profile of galaxy clusters on the cosmological constraints from the Planck {tSZ} power spectrum}
-      \field{urlday}{4}
-      \field{urlmonth}{11}
+      \field{shortjournal}{A\&A}
+      \field{shorttitle}{Impact of {ICM} disturbances on the mean pressure profile of galaxy clusters}
+      \field{title}{Impact of {ICM} disturbances on the mean pressure profile of galaxy clusters: A prospective study of the {NIKA}2 {SZ} large program with {MUSIC} synthetic clusters}
+      \field{urlday}{28}
+      \field{urlmonth}{10}
       \field{urlyear}{2019}
-      \field{volume}{490}
+      \field{volume}{631}
       \field{year}{2019}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{784\bibrangedash 796}
-      \range{pages}{13}
+      \field{pages}{A21}
+      \range{pages}{-1}
       \verb{doi}
-      \verb 10.1093/mnras/stz2669
+      \verb 10.1051/0004-6361/201935059
       \endverb
       \verb{file}
-      \verb Snapshot:/Users/keruzore/Zotero/storage/H5RGKNXR/5573283.html:text/html;Full Text PDF:/Users/keruzore/Zotero/storage/FYTEPWV6/Ruppin et al. - 2019 - Impact of the mean pressure profile of galaxy clus.pdf:application/pdf
+      \verb Snapshot:/Users/keruzore/Zotero/storage/6U68S97X/aa35059-19.html:text/html;Full Text PDF:/Users/keruzore/Zotero/storage/XY5J6QPM/Ruppin et al. - 2019 - Impact of ICM disturbances on the mean pressure pr.pdf:application/pdf
       \endverb
       \verb{urlraw}
-      \verb https://academic-oup-com.in2p3.bib.cnrs.fr/mnras/article/490/1/784/5573283
+      \verb https://www-aanda-org.in2p3.bib.cnrs.fr/articles/aa/abs/2019/11/aa35059-19/aa35059-19.html
       \endverb
       \verb{url}
-      \verb https://academic-oup-com.in2p3.bib.cnrs.fr/mnras/article/490/1/784/5573283
+      \verb https://www-aanda-org.in2p3.bib.cnrs.fr/articles/aa/abs/2019/11/aa35059-19/aa35059-19.html
       \endverb
     \endentry
     \entry{menanteau_atacama_2013}{article}{}
