@@ -2,6 +2,8 @@
 \documentclass[a4paper, 12pt, twoside]{book}
 \usepackage[top=2.5cm, bottom=3cm, left=2.25cm, right=1.75cm]{geometry}
 
+\def\printerversion{0} % Set to 1 for printer version, 0 for digital
+
 % ------------------------------------------------------------------------- %
 % ========== Font options ================================================= %
 % ------------------------------------------------------------------------- %
@@ -245,11 +247,19 @@
 % ========== Chapters ===================================================== %
 % ------------------------------------------------------------------------- %
 
+\if\printerversion1
+    \afterpage{\null \thispagestyle{empty} \newpage}
+    \afterpage{\null \thispagestyle{empty} \newpage}
+\fi
 \chapter*{Remerciements}
 \markboth{}{\uppercase{Remerciements}}
 \input{merci.tex}
 \adjustmtc
 
+\if\printerversion1
+    \afterpage{\null \thispagestyle{empty} \newpage}
+    \afterpage{\null \thispagestyle{empty} \newpage}
+\fi
 \chapter*{Introduction}
 \label{chap:intro}
 \addcontentsline{toc}{chapter}{\nameref{chap:intro}}
